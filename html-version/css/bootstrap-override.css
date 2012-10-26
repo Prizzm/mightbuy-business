@@ -18,8 +18,23 @@
 .clear-left{
   clear:left;
 }
+.m-left5{
+  margin-left:5px;
+}
+.m-right5{
+  margin-right:5px;
+}
 .m-left10{
   margin-left:10px;
+}
+.m-right20{
+  margin-right:20px;
+}
+.m-top5{
+  margin-top:5px;
+}
+.m-top10{
+  margin-top:10px;
 }
 html {
   height: 100%;
@@ -151,7 +166,7 @@ label, legend{
 }
 .bg-dark{
   background-color:rgba(0,0,0,0.1);
-  box-shadow:-5px 0 0 0 #2e2e2e;
+  box-shadow: -5px 0 0 0 #2E2E2E;
   height: auto;
   min-height: 500px;
 }
@@ -182,16 +197,19 @@ a.logout{
 }
 table.table{
   margin:0;
+}
+table.table td,table.table th{
   background:#fff;
 }
-table thead th, table tbody td, table th, table td, table td a, table td input[type="submit"], table td button, .table-header, .pagination ul > li > a, .table tbody td label, .table tbody td h5, .table tbody td span{
+table thead th, table tbody td, table th, table td, table td a, table td input[type="submit"], table td button,
+.table-header, .pagination ul > li > a, .table tbody td label, .table tbody td h5, .table tbody td span, .table-footer, .nav.nav-tabs li a {
   -moz-text-shadow:none;
   -webkit-text-shadow:none;
   text-shadow:none;
   font-family: Arial, Helvetica, sans-serif;
 }
-table thead th, table tbody td, table th, table td{
-  font-size:12px;
+table th, table td, .table label, .table input, .table select, .table textarea, .table-footer {
+  font-size: 12px;
 }
 .table thead th, .table th, .table tbody td, .table td {
   text-align:center;
@@ -200,7 +218,7 @@ table thead th, table tbody td, table th, table td{
   text-align:left;
   color:#333;
 }
-.table tbody td a, .table td a{
+.table tbody td a, .table td a, .table-footer a{
   color:#900
 }
 .table-container{
@@ -244,12 +262,43 @@ table thead th, table tbody td, table th, table td{
   padding-left: 0;
   padding-right: 18px;
 }
+.table legend{
+  color:#000;
+  font-weight:bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
 .remove-bold{
   font-weight:normal;
 }
 .pagination {
   height: auto;
   margin: 0;
+  float: right;
+}
+.table td.add-deal{
+  padding: 0;
+  background:none;
+}
+.table td.add-deal form{
+  background:#fff;
+  margin:0 15px;
+  padding: 10px 20px;
+}
+.form-horizontal .control-group {
+  margin-bottom: 5px;
+}
+.table .span3.textarea{
+  float:left;
+}
+.table input[type="text"]{
+  padding: 0 5px;
+  margin-top: 5px;
+}
+.table td .label-mini{
+  width: 50px;
+  float:left;
+  text-align: right;
+  padding-right:10px;
 }
 .pagination ul{
   -moz-box-shadow:none;
@@ -274,7 +323,7 @@ table thead th, table tbody td, table th, table td{
   border-radius: 3px;
 }
 .pagination ul > li.no-style > a{
-  border:none;
+  border:1px solid transparent;
   background:none;
 }
 .pagination ul > li.active > a, .pagination ul > li > a:hover{
@@ -282,21 +331,10 @@ table thead th, table tbody td, table th, table td{
   color:#fff;
 }
 .pagination ul > li.disabled > a:hover{
+  border:1px solid transparent;
   background:none;
-  border:none;
   color:#999;
 }
-
-
-
-
-
-
-
-
-
-
-
 .btn.btn-add{
   padding-left: 7px;
   padding-right: 7px;
@@ -391,6 +429,27 @@ table thead th, table tbody td, table th, table td{
 .nav-list > li > a:hover{
   background:none;
 }
+.nav.nav-tabs{
+  float:right;
+  margin: 0 0 -7px 0;
+}
+.nav.nav-tabs li a{
+  font-size:12px;
+  color: #333;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
 .btn-yellow, input[type="submit"].btn-yellow, .menu-title{
   margin-top: 10px;
   color:#5b5d52;
@@ -465,10 +524,23 @@ table thead th, table tbody td, table th, table td{
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5), inset 0 0 5px 3px rgba(0, 0, 0, 0.25);
   background: #841c21;
 }
+.form-horizontal .control-label {
+  width: 220px;
+}
+.form-horizontal .controls {
+  margin-left: 240px;
+}
+
 /* Large desktop */
 @media (min-width: 1200px) {
   .user-info {
     padding-right:0;
+  }
+  .form-horizontal .controls {
+    margin-left: 320px;
+  }
+  .form-horizontal .control-label {
+    width: 300px;
   }
   .menu-title, .other-menus {
     width: 260px;
@@ -496,7 +568,13 @@ table thead th, table tbody td, table th, table td{
     width: 177px;
   }
   .table-container {
-  padding: 10px 10px 15px 10px;
+    padding: 10px 10px 15px 10px;
+  }
+  .form-horizontal .control-label {
+    width: 180px;
+  }
+  .form-horizontal .controls {
+    margin-left: 200px;
   }
 }
  
