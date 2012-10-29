@@ -1,3 +1,29 @@
+GIT
+  remote: git://github.com/code-mancers/ministry_of_state.git
+  revision: 1ab001546961fc9b0ea65f1ad7bc5d17bb16fc8f
+  specs:
+    ministry_of_state (0.0.1)
+      rails (>= 3.0.3)
+
+GIT
+  remote: git://github.com/styx/timeline_fu.git
+  revision: d5476a0fc5f666fa410d232faf7a63d9280b7a05
+  specs:
+    timeline_fu (0.4.5)
+      activerecord
+
+PATH
+  remote: vendor/mightbuy-models
+  specs:
+    mightbuy_models (0.0.1)
+      devise (= 1.4.7)
+      dragonfly (= 0.9.12)
+      friendly_id (~> 4.0.8)
+      mini_magick (= 3.4)
+      pg (~> 0.11.0)
+      rails (~> 3.2.8)
+      squeel (= 1.0.11)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -29,7 +55,11 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     addressable (2.3.2)
+    airbrake (3.1.6)
+      builder
+      girl_friday
     arel (3.0.2)
+    bcrypt-ruby (3.0.1)
     bootstrap-sass (2.1.0.1)
     builder (3.0.4)
     capybara (1.1.2)
@@ -46,6 +76,7 @@ GEM
       ffi (~> 1.0, >= 1.0.6)
     ci_reporter (1.7.0)
       builder (>= 2.1.2)
+    cocoon (1.1.0)
     coderay (1.0.8)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -54,6 +85,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.3.3)
+    connection_pool (0.9.2)
     cucumber (1.2.1)
       builder (>= 2.1.2)
       diff-lcs (>= 1.1.3)
@@ -64,11 +96,18 @@ GEM
       cucumber (>= 1.1.8)
       nokogiri (>= 1.5.0)
     database_cleaner (0.8.0)
+    devise (1.4.7)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.0.3)
+      warden (~> 1.0.3)
     diff-lcs (1.1.3)
+    dragonfly (0.9.12)
+      rack
     email_spec (1.2.1)
       mail (~> 2.2)
       rspec (~> 2.0)
     erubis (2.7.0)
+    excon (0.16.7)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (2.2.0)
@@ -76,18 +115,39 @@ GEM
     factory_girl_rails (1.3.0)
       factory_girl (~> 2.2.0)
       railties (>= 3.0.0)
+    faraday (0.8.4)
+      multipart-post (~> 1.1)
     ffi (1.1.3)
+    friendly_id (4.0.8)
     gherkin (2.11.1)
       json (>= 1.4.6)
+    girl_friday (0.10.0)
+      connection_pool (~> 0.9.0)
     haml (3.1.7)
+    has_scope (0.5.1)
+    hashie (1.2.0)
     headless (0.3.1)
+    heroku (2.33.0)
+      heroku-api (~> 0.3.5)
+      launchy (>= 0.3.2)
+      netrc (~> 0.7.7)
+      rest-client (~> 1.6.1)
+      rubyzip
+    heroku-api (0.3.5)
+      excon (~> 0.16.1)
     hike (1.2.1)
+    httpauth (0.2.0)
     i18n (0.6.1)
+    inherited_resources (1.3.1)
+      has_scope (~> 0.5.0)
+      responders (~> 0.6)
     journey (1.0.4)
     jquery-rails (2.1.3)
       railties (>= 3.1.0, < 5.0)
       thor (~> 0.14)
     json (1.7.5)
+    jwt (0.1.5)
+      multi_json (>= 1.0)
     launchy (2.1.1)
       addressable (~> 2.3)
     libwebsocket (0.1.5)
@@ -96,11 +156,47 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta-tags (1.2.6)
+      actionpack
+    meta_search (1.1.3)
+      actionpack (~> 3.1)
+      activerecord (~> 3.1)
+      activesupport (~> 3.1)
+      polyamorous (~> 0.5.0)
     method_source (0.8.1)
     mime-types (1.19)
+    mini_magick (3.4)
+      subexec (~> 0.2.1)
     multi_json (1.3.6)
+    multipart-post (1.1.5)
+    netrc (0.7.7)
     nokogiri (1.5.5)
+    oa-core (0.3.2)
+    oauth (0.4.7)
+    oauth2 (0.8.0)
+      faraday (~> 0.8)
+      httpauth (~> 0.1)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      rack (~> 1.2)
+    omniauth (1.1.1)
+      hashie (~> 1.2)
+      rack
+    omniauth-facebook (1.4.0)
+      omniauth-oauth2 (~> 1.0.2)
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-oauth2 (1.0.3)
+      oauth2 (~> 0.8.0)
+      omniauth (~> 1.0)
+    omniauth-twitter (0.0.13)
+      multi_json (~> 1.3)
+      omniauth-oauth (~> 1.0)
+    orm_adapter (0.0.7)
     pg (0.11.0)
+    polyamorous (0.5.0)
+      activerecord (~> 3.0)
     polyglot (0.3.3)
     pry (0.9.10)
       coderay (~> 1.0.5)
@@ -135,6 +231,10 @@ GEM
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
+    responders (0.9.3)
+      railties (~> 3.1)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (2.11.0)
       rspec-core (~> 2.11.0)
       rspec-expectations (~> 2.11.0)
@@ -177,6 +277,11 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.6)
+    squeel (1.0.11)
+      activerecord (~> 3.0)
+      activesupport (~> 3.0)
+      polyamorous (~> 0.5.0)
+    subexec (0.2.2)
     thor (0.16.0)
     tilt (1.3.3)
     treetop (1.4.11)
@@ -186,6 +291,8 @@ GEM
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    warden (1.0.6)
+      rack (>= 1.0)
     xpath (0.1.4)
       nokogiri (~> 1.3)
 
@@ -193,19 +300,34 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airbrake
   bootstrap-sass
   capybara
   capybara-webkit
   ci_reporter
+  cocoon
   coffee-rails (~> 3.2.1)
   cucumber-rails
   database_cleaner
+  devise (= 1.4.7)
+  dragonfly
   email_spec
   factory_girl_rails (= 1.3.0)
+  friendly_id
   haml
   headless
+  heroku
+  inherited_resources
   jquery-rails
   launchy
+  meta-tags
+  meta_search
+  mightbuy_models!
+  mini_magick
+  ministry_of_state!
+  oa-core
+  omniauth-facebook (= 1.4.0)
+  omniauth-twitter
   pg
   pry-rails
   quiet_assets
@@ -216,4 +338,5 @@ DEPENDENCIES
   simplecov
   simplecov-rcov
   sqlite3
+  timeline_fu!
   uglifier (>= 1.0.3)

@@ -18,22 +18,30 @@ end
 gem 'jquery-rails'
 gem 'haml'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+# Authentication
+gem 'devise', '1.4.7'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook', '1.4.0'
+gem 'oa-core'
+gem 'inherited_resources'
+gem 'meta-tags'
+gem 'cocoon'
+gem 'mini_magick'
+gem 'dragonfly'
+gem "meta_search"
+gem 'heroku'
+gem 'airbrake'
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
+gem 'friendly_id'
 
 gem 'pg'
+
+gem 'ministry_of_state', git: "git://github.com/code-mancers/ministry_of_state.git"
+
+gem "timeline_fu", git: "git://github.com/styx/timeline_fu.git"
+
+gem "mightbuy_models", :path => "vendor/mightbuy-models"
 
 group :development do
   gem 'pry-rails'
