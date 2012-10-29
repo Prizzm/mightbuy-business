@@ -1,3 +1,0 @@
-[submodule "app/models"]
-	path = app/models
-	url = git@github.com:Prizzm/mightbuy-models.git
