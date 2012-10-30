@@ -17,6 +17,7 @@ module MightbuyBusiness
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
+    config.autoload_paths += %W(lib).map { |path| Rails.root + path }
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -58,5 +59,13 @@ module MightbuyBusiness
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Dragonfly middleware.
+    config.middleware.insert 1, 'Dragonfly::Middleware', :images
   end
 end
+
+# load configatron here!
+require "mightbuy_business/config"
+MightbuyBusiness.load_config
+

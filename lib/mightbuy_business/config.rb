@@ -23,7 +23,7 @@ module MightbuyBusiness
 
 
   def self.load_config
-    @@mightbuy_config = Mightbuy::Config.instance
+    @@mightbuy_config = MightbuyBusiness::Config.instance
   end
 
   def self.config
@@ -31,4 +31,5 @@ module MightbuyBusiness
   end
 end
 
-MB = Mightbuy
+MB = MightbuyBusiness
+
