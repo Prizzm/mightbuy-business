@@ -32,7 +32,7 @@ gem 'dragonfly'
 gem "meta_search"
 gem 'heroku'
 gem 'airbrake'
-
+gem 'configatron'
 gem 'friendly_id'
 
 gem 'pg'

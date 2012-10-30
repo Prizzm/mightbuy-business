@@ -1,0 +1,13 @@
+development: &local
+  email:
+    sender: noreply@mightbuy.it
+  app_url: "http://localhost:3000"
+
+test:
+  <<: *local
+
+production:
+  <<: *local
+  email:
+    sender: noreply@mightbuy.it
+  app_url: "https://www.mightbuy.it"
