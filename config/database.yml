@@ -21,7 +21,7 @@ production:
   encoding: unicode
   reconnect: false
   pool: 5
-  database: mightbuy_production
+  database: mightbuy_development
   username:
   password:
 
