@@ -1,0 +1,139 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.container > .content {
+  position:relative;
+  width: 340px;
+  margin: 15% auto 0 auto;
+  background: #610303;
+  border:5px solid #fff;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  overflow: hidden;
+  z-index: 1;
+}
+.container > .content::after {
+  width: 150%;
+  position:absolute;
+  top:0;
+  left: -25%;
+  right: 0;
+  height: 150px;
+  /* Old browsers */
+  background: -moz-radial-gradient(top, ellipse cover,  #c79191 0%, #650304 60%); /* FF3.6+ */
+  background: -webkit-gradient(radial, top center, 0px, center center, 100%, color-stop(0%,#c79191), color-stop(60%,#650304)); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(top, ellipse cover,  #C79191 0%,#650304 60%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(top, ellipse cover,  #c79191 0%,#650304 60%); /* Opera 12+ */
+  background: -ms-radial-gradient(top, ellipse cover,  #c79191 0%,#650304 60%); /* IE10+ */
+  background: radial-gradient(ellipse at top,  #c79191 0%,#650304 60%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c79191', endColorstr='#650304',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  z-index: 0;
+  -moz-border-radius: 6px 6px 0 0;
+  -webkit-border-radius: 6px 6px 0 0;
+  border-radius: 6px 6px 0 0;
+  background-repeat: no-repeat;
+  background-position: top center;
+  content: "";
+}
+.login-form {
+  padding: 33px 33px 0 33px;
+  margin-left: 20px;
+  position: relative;
+  z-index: 1;
+}
+h2.logo{
+  font-size: 60px;
+  margin-top: 34px;
+  margin-left: 0;
+}
+h2.logo span{
+  font-family: "Museo300", Arial, Helvetica, sans-serif;
+  position: absolute;
+  font-size: 24px;
+  top: 33px;
+  left: 101px;
+}
+legend {
+  margin-right: -50px;
+  font-weight: bold;
+  color: #404040;
+}
+hr{
+  border-top-color: rgba(0, 0, 0, 0.20);
+  border-bottom-color: rgba(255, 255, 255, 0.10);
+}
+input[type="text"], input[type="password"]{
+  width:260px;
+}
+.b-right-dark{
+  border-right:1px solid rgba(0, 0, 0, 0.20);
+}
+.row-fluid .span6.b-right-light{
+  border-left:1px solid  rgba(255, 255, 255, 0.10);
+  margin:0;
+}
+a{
+  color:#fff;
+  display:block;
+}
+a:hover{
+  text-decoration:none;
+}
+a .normal-font{
+  color:#fff;
+  font-size:14px;
+  display:block;
+}
+a:hover .normal-font{
+  color:yellow
+}
+a:active .normal-font{
+  color:orange
+}
+a .tiny-font{
+  color:#ab797a;
+  font-size:10px;
+  font-family: Tahoma;
+}
+.c-holder-left, .c-holder-right{
+  min-height: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+}
+.c-holder-right{
+  padding-left: 20px;
+}
+.footer{
+  padding: 0 13px 20px 20px
+}
+.trapezoid-bg{
+  background: image-url('trapezoid-bg.png') no-repeat center top;
+  width: 100%;
+  height: 540px;
+  position: absolute;
+  z-index: 0;
+  top: 193px;
+}
+hr.m-bot0{
+ margin-bottom:0; 
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .login-form {
+    margin-left: 0;
+  }
+  .container > .content {
+    margin:20px auto;
+  }
+  .row-fluid .span6 {
+    width: 48.93617021276595%;
+    display: block;
+    float: left;
+  }
+}

@@ -16,9 +16,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'haml'
-
-
 # Authentication
 gem 'devise', '1.4.7'
 gem 'omniauth-twitter'
