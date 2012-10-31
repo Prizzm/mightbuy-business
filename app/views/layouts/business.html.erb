@@ -15,7 +15,23 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%= yield %>
+    <div class="container silhouette-bg">
+      <div class="header">
+        <div class="row">
+          <div class="span6">
+          <h2 class="logo">MightBuy.<span>for business</span></h2>
+          </div>
+          <div class="span6 hidden-phone">
+            <div class="sale-text">
+              sales
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hr"></div>
+      <%= yield %>
+    </div>
+
     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     <%= javascript_include_tag :application -%>
     <div id="mixpanel" style="visibility: hidden; "></div>
