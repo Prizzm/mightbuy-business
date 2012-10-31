@@ -26,15 +26,22 @@
       <div class="row-fluid">
         <div class="span6 b-right-dark">
           <div class="c-holder-left">
-            <a href="#"> <span class="normal-font">Password recovery</span> <span class="tiny-font">You forgot your password?</span> </a>
+            <%= link_to(new_business_staff_password_path) do -%>
+              <span class="normal-font">Password recovery</span>
+              <span class="tiny-font">You forgot your password?</span>
+            <% end -%>
           </div>
         </div>
         <div class="span6 b-right-light">
           <div class="c-holder-right">
-            <a href="#"> <span class="normal-font">Register account</span> <span class="tiny-font">Register a new account here!</span> </a>
+            <%= link_to(new_business_path) do -%>
+              <span class="normal-font">Register account</span>
+              <span class="tiny-font">Register a new account here!</span>
+            <% end -%>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
