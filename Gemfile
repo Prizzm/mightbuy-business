@@ -31,7 +31,7 @@ gem 'heroku'
 gem 'airbrake'
 gem 'configatron'
 gem 'friendly_id'
-
+gem 'activeadmin'
 gem 'pg'
 
 gem 'ministry_of_state', git: "git://github.com/code-mancers/ministry_of_state.git"
