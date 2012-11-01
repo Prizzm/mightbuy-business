@@ -33,6 +33,7 @@ gem 'configatron'
 gem 'friendly_id'
 gem 'activeadmin'
 gem 'pg'
+gem 'simple_form'
 
 gem 'ministry_of_state', git: "git://github.com/code-mancers/ministry_of_state.git"
 

@@ -6,52 +6,9 @@
       <div class="login-form">
         <h2 class="logo signup">MightBuy.<span>for business</span></h2>
         <hr>
-        <form action="">
-          <fieldset>
-            <div class="row-fluid">
-              <div class="span6">
-                <label>Full Name of User</label>
-                <input type="text">
-              </div>
-              <div class="span6">
-                <label>Business Name</label>
-                <input type="text">
-              </div>
-            </div>
-            <div class="row-fluid">
-              <div class="span6">
-                <label>Email</label>
-                <input type="text">
-              </div>
-              <div class="span6">
-                <label>Business URL</label>
-                <input type="text">
-              </div>
-            </div>
-            <div class="row-fluid">
-              <div class="span6">
-                <label>Password</label>
-                <input type="text">
-              </div>
-              <div class="span6">
-                <label>Phone number</label>
-                <input type="text">
-              </div>
-            </div>
-            <div class="row-fluid">
-              <div class="span6">
-                <label>Password Confirmation</label>
-                <input type="text">
-              </div>
-              <div class="span6">
-                <button class="btn btn-yellow w80 pull-right" type="submit" style="margin-top: 25px;">
-                  Signup
-                </button>
-              </div>
-            </div>
-            <hr class="m-bot0">
-          </fieldset>
-        </form>
+        <%= form_for(@business_user, :url => businesses_path) do |f|-%>
+          <%= render :partial => "signup_form", :locals => {:f => f} -%>
+        <% end -%>
       </div>
     </div>
     <div class="footer">
