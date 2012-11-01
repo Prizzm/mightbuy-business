@@ -16,19 +16,8 @@
   </head>
   <body>
     <div class="container silhouette-bg">
-      <div class="header">
-        <div class="row">
-          <div class="span6">
-          <h2 class="logo">MightBuy.<span>for business</span></h2>
-          </div>
-          <div class="span6 hidden-phone">
-            <div class="sale-text">
-              sales
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="hr"></div>
+      <%= render partial: "shares/header" %>
+      
       <%= yield %>
     </div>
 
