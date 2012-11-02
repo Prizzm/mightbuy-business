@@ -8,9 +8,12 @@ class BusinessesController < ApplicationController
   end
 
   def create
-    @business_user = BusinessUser.new(params[:business])
+    @business_user = BusinessUser.new(params[:business_user])
     if @business_user.save
-
+      redirect_to business_path(@business_user.business)
+    else
+      flash[:error] = @business_user.errors.full_messages
+      render :action => "new"
     end
   end
 
