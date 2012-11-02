@@ -1,8 +1,10 @@
-@mixin opacity ($x, $y){
-        filter: alpha(Opacity=$y);
-  -moz-opacity: $x;
-       opacity: $x;
-// example: @include opacity(1,100);
+@mixin opacity ($opacity: 100) {
+  filter: alpha(opactiy=($opacity));
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opactiy=#{$opacity})";
+  -moz-opacity: $opacity/100;
+  -khtml-opacity: $opacity/100;
+  opacity: $opacity/100;
+// example: @include opacity(100);
 }
 
 @mixin text-shadow ($eval: 5px) {
