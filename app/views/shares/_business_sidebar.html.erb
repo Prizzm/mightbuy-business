@@ -1,0 +1,41 @@
+<div class="span3 hidden-phone">
+  <div class="user-info">
+    <div class="customer-brand">
+      <%= @business.name -%>
+    </div>
+    <div class="customer-name">
+      <div>
+        Hello <span><%= current_business_staff.name -%></span>
+      </div>
+      <%= link_to("logout",destroy_business_staff_session_path, method: :delete) -%>
+    </div>
+  </div>
+  <div class="menu-title">
+    Dashboard
+  </div>
+  <ul class="nav nav-list">
+    <li class="">
+      <a href="#">Dashboard
+        <div class="arrow-left"></div>
+      </a>
+    </li>
+    <li class="">
+      <a href="#">Products
+        <div class="arrow-left"></div>
+      </a>
+    </li>
+    <li class="">
+      <a href="#">Potential Customers
+        <div class="arrow-left"></div>
+      </a>
+    </li>
+    <li class="active">
+      <a href="#">Customers Leads
+        <div class="arrow-left"></div>
+      </a>
+    </li>
+  </ul>
+  <div class="clear"></div>
+  <a class="other-menus" href="#">Account</a>
+  <a class="other-menus" href="#">Help</a>
+</div>
