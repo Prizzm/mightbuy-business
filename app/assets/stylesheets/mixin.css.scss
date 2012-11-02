@@ -1,3 +1,10 @@
+@mixin opacity ($x, $y){
+        filter: alpha(Opacity=$y);
+  -moz-opacity: $x;
+       opacity: $x;
+// example: @include opacity(1,100);
+}
+
 @mixin text-shadow ($eval: 5px) {
   -webkit-text-shadow: $eval;
      -moz-text-shadow: $eval;
@@ -44,6 +51,17 @@
   background: linear-gradient(to bottom, $a 0%, $b 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$a', endColorstr='$b',GradientType=0 ); /* IE6-9 */
 // example: @include gradient(#52a8e8, #f5f5f5);
+}
+@mixin gradient-3shades($a:0, $b:0, $c:0){
+  background: $a; /* Old browsers */
+  background: -moz-linear-gradient(top, $a 0%, $b 50%, $c 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $a), color-stop(50%, $b), color-stop(100%, $c)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $a 0%, $b 50%, $c 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $a 0%, $b 50%, $c 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $a 0%, $b 50%, $c 100%); /* IE10+ */
+  background: linear-gradient(to bottom, $a 0%, $b 50%, $c 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$a', endColorstr='$b',GradientType=0 ); /* IE6-9 */
+// example: @include gradient-3shades(#52a8e8, #f5f5f5, #f5f5f5);
 }
 @mixin gradient-variables($a:0, $a1:0, $b:0, $b1:0){
   background: $a; /* Old browsers */

@@ -439,7 +439,6 @@ input[type="submit"].btn-yellow, .btn-yellow, .menu-title{
   display: block;
   margin-bottom:30px;
 }
-
 .btn-red{
   color: #fff;
   border: none;
@@ -447,7 +446,7 @@ input[type="submit"].btn-yellow, .btn-yellow, .menu-title{
   padding: 10px 15px;
   text-decoration: none;
   font: 18px/100% inherit;
-  @include gradient(#a73534, #852322);
+  @include gradient-3shades(#8d1d1c, #a73534, #852322);
   @include text-shadow(0 1px 0 #900);
   @include border-radius(10px);
   @include box-shadow(0 2px 2px 0 rgba(0, 0, 0, 0.5));
@@ -462,10 +461,26 @@ input[type="submit"].btn-yellow, .btn-yellow, .menu-title{
     background: #841c21;
     @include box-shadow-2values(0 1px 1px 0 rgba(0, 0, 0, 0.5), inset 0 0 5px 3px rgba(0, 0, 0, 0.25));
   }
+  &.disabled, &.disabled:active, &[disabled]{
+    color: #666;
+    @include gradient-3shades(#ccc, #fff, #999);
+    @include box-shadow(none);
+    @include opacity(1, 100);
+  }
 }
 .form-horizontal .control-label {
   width: 220px;
 }
 .form-horizontal .controls {
   margin-left: 240px;
+}
+.verify-alert{
+  font:bold 14px Arial, Helvetica, sans-serif;
+  color: #A6383E;
+  border: 1px solid #C66;
+  margin: 7px 7px 30px 7px;
+  padding: 10px 15px 10px 44px;
+  @include border-radius(5px);
+  @include text-shadow(1px 0 0 #CCC);
+  background: image-url('info-icon.png') no-repeat 7px 7px #F99;
 }
