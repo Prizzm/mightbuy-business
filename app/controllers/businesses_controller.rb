@@ -28,13 +28,14 @@ class BusinessesController < ApplicationController
 
   def update
     if @business.update_attributes(params[:business])
+      @business.update_column('profile_updated',true)
       flash[:notice] = "Updated business details successfully, we need to verify your business url before you can proceed."
     end
-    render action: "complete_profile",layout: 'business'
+    @business.reload
+    render action: "complete_profile"
   end
 
   def complete_profile
-    render layout: 'business'
   end
 
   private

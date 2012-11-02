@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121102064812) do
+ActiveRecord::Schema.define(:version => 20121102180411) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -138,6 +138,7 @@ ActiveRecord::Schema.define(:version => 20121102064812) do
     t.string   "pinterest_handle"
     t.text     "address"
     t.boolean  "url_verified"
+    t.boolean  "profile_updated"
   end
 
   create_table "cards", :force => true do |t|
