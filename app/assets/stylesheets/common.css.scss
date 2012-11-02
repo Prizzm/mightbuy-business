@@ -2,47 +2,47 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container > .content {
-  position:relative;
-  width: 340px;
-  margin: 15% auto 0 auto;
-  background: #610303;
-  border:5px solid #fff;
-  -webkit-border-radius: 10px 10px 10px 10px;
-  -moz-border-radius: 10px 10px 10px 10px;
-  border-radius: 10px 10px 10px 10px;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-  box-shadow: 0 1px 2px rgba(0,0,0,.15);
-  overflow: hidden;
-  z-index: 1;
-}
-.container > .content::after {
-  width: 150%;
-  position:absolute;
-  top:0;
-  left: -25%;
-  right: 0;
-  height: 150px;
-  /* Old browsers */
-  background: -moz-radial-gradient(top, ellipse cover,  #c79191 0%, #650304 60%); /* FF3.6+ */
-  background: -webkit-gradient(radial, top center, 0px, center center, 100%, color-stop(0%,#c79191), color-stop(60%,#650304)); /* Chrome,Safari4+ */
-  background: -webkit-radial-gradient(top, ellipse cover,  #C79191 0%,#650304 60%); /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(top, ellipse cover,  #c79191 0%,#650304 60%); /* Opera 12+ */
-  background: -ms-radial-gradient(top, ellipse cover,  #c79191 0%,#650304 60%); /* IE10+ */
-  background: radial-gradient(ellipse at top,  #c79191 0%,#650304 60%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c79191', endColorstr='#650304',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  z-index: 0;
-  -moz-border-radius: 6px 6px 0 0;
-  -webkit-border-radius: 6px 6px 0 0;
-  border-radius: 6px 6px 0 0;
-  background-repeat: no-repeat;
-  background-position: top center;
-  content: "";
-}
-.container > .content.signup {
-  width:650px;
-  margin-top:7%;
+@import "mixin";
+
+.container {
+
+  &>.content {
+    position:relative;
+    width: 340px;
+    margin: 15% auto 0 auto;
+    background: #610303;
+    border:5px solid #fff;
+    @include border-radius(10px 10px 10px 10px);
+    @include box-shadow(0 1px 2px rgba(0,0,0,.15));
+    overflow: hidden;
+    z-index: 1;
+    
+    &::after {
+      content: "";
+      z-index: 0;
+      width: 150%;
+      position:absolute;
+      top:0;
+      left: -25%;
+      right: 0;
+      height: 150px;
+      @include border-radius(6px 6px 0 0);
+      background: #650304;/* Old browsers */
+      background: -moz-radial-gradient(top, ellipse cover,  #c79191 0%, #650304 60%); /* FF3.6+ */
+      background: -webkit-gradient(radial, top center, 0px, center center, 100%, color-stop(0%,#c79191), color-stop(60%,#650304)); /* Chrome,Safari4+ */
+      background: -webkit-radial-gradient(top, ellipse cover,  #C79191 0%,#650304 60%); /* Chrome10+,Safari5.1+ */
+      background: -o-radial-gradient(top, ellipse cover,  #c79191 0%,#650304 60%); /* Opera 12+ */
+      background: -ms-radial-gradient(top, ellipse cover,  #c79191 0%,#650304 60%); /* IE10+ */
+      background: radial-gradient(ellipse at top,  #c79191 0%,#650304 60%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c79191', endColorstr='#650304',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+      background-repeat: no-repeat;
+      background-position: top center;
+    }
+  }
+  &>.content.signup {
+    width:650px;
+    margin-top:7%;
+  }
 }
 .login-form {
   padding: 33px 33px 0 33px;
@@ -50,7 +50,8 @@
   position: relative;
   z-index: 1;
 }
-h2.logo-business, h2.logo{
+
+h2.logo-business{
   font-family: "Museo500", Arial, Helvetica, sans-serif;
   font-size: 54px;
   font-weight: normal;
@@ -59,32 +60,36 @@ h2.logo-business, h2.logo{
   margin-left: 40px;
   position: relative;
   line-height: 100%;
-}
-h2.logo-business span, h2.logo span {
-  font-family: "Museo300", Arial, Helvetica, sans-serif;
-  position: absolute;
-  font-size: 22px;
-  top: 31px;
-  left: 91px;
+  
+  span{
+    font-family: "Museo300", Arial, Helvetica, sans-serif;
+    position: absolute;
+    font-size: 22px;
+    top: 31px;
+    left: 91px;
+  }
 }
 h2.logo{
+  @extend h2.logo-business;
   font-size: 60px;
   margin-top: 0;
   margin-left: 0;
-}
-h2.logo span{
-  font-family: "Museo300", Arial, Helvetica, sans-serif;
-  position: absolute;
-  font-size: 24px;
-  top: 33px;
-  left: 101px;
+  
+  span{
+    font-family: "Museo300", Arial, Helvetica, sans-serif;
+    position: absolute;
+    font-size: 24px;
+    top: 33px;
+    left: 101px;
+  }
 }
 h2.logo.signup{
   margin:0 auto;
   text-align: center;
-}
-h2.logo.signup span{
-  left: 253px;
+  
+  span{
+    left: 253px;
+  }
 }
 .signup .btn-yellow.w80{
   margin-right: 12px;
@@ -118,33 +123,38 @@ input[type="text"], input[type="password"]{
 a{
   color:#fff;
   display:block;
+  
+  .normal-font{
+    color:#fff;
+    font-size:14px;
+    display:block;
+  }
+  .tiny-font{
+    color:#ab797a;
+    font-size:10px;
+    font-family: Tahoma;
+  }
+  &:hover{
+    text-decoration:none;
+      
+    .normal-font{
+      color:yellow
+    }
+  }
+  &:active{
+    .normal-font{
+      color:orange
+    }
+  }
 }
-a:hover{
-  text-decoration:none;
-}
-a .normal-font{
-  color:#fff;
-  font-size:14px;
-  display:block;
-}
-a:hover .normal-font{
-  color:yellow
-}
-a:active .normal-font{
-  color:orange
-}
-a .tiny-font{
-  color:#ab797a;
-  font-size:10px;
-  font-family: Tahoma;
-}
-.c-holder-left, .c-holder-right{
+.c-holder-left{
   min-height: 30px;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 10px;
 }
 .c-holder-right{
+  @extend .c-holder-left;
   padding-left: 20px;
 }
 .footer{
@@ -166,78 +176,5 @@ hr.m-bot0{
 }
 .trapezoid-bg.forgot{
   top: 165px;
-}
-/* Large desktop */
-@media (min-width: 1200px) {
-  .trapezoid-bg {
-    top: 230px;
-  }
-  .trapezoid-bg.forgot{
-    top: 195px;
-  }
-  input[type="text"], input[type="password"] {
-    width: 270px;
-  }
-  .signup .btn-yellow.w80 {
-    margin-right: 6px;
-  
-}
-  h2.logo.signup span {
-    left: 257px;
-  }
-}
-/* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {
-  .trapezoid-bg {
-    top: 380px;
-  }
-  .signup .btn-yellow.w80 {
-    margin-right: 10px;
-  }
-  .trapezoid-bg.forgot{
-    top: 350px;
-  }
-  .container > .content {
-    margin: 45% auto 0 auto;
-  }
-  .container > .content.signup{
-    margin: 35% auto 0 auto;
-  }
-}
-/* Landscape phones and down */
-@media (max-width: 480px) {
-  .login-form {
-    margin-left: 0;
-  }
-  h2.logo {
-    text-align: center;
-  }
-  .container > .content {
-    margin:20px auto;
-  }
-  .row-fluid .span6 {
-    width: 48.93617021276595%;
-    display: block;
-    float: left;
-  }
-  .container > .content.signup {
-    width: auto;
-    margin:20px;
-  }
-  .signup .row-fluid .span6{
-    float:none
-  }
-  .signup .btn-yellow.w80{
-    float:none;
-  }
-  .signup .row-fluid .span6.b-right-dark, .signup .row-fluid .span6.b-right-light{
-    float:left
-  } 
-  h2.logo.signup span {
-    left: 124px;
-  }
-  .signup input[type="text"], .signup input[type="password"] {
-    width: 310px;
-  }
 }
 .fill-bg{background:#ccc}

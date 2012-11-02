@@ -1,0 +1,145 @@
+/* Large desktop */
+@media (min-width: 1200px) {
+  .user-info {
+    padding-right:0;
+  }
+  .form-horizontal{
+    .controls {
+      margin-left: 320px;
+    }
+    .control-label {
+      width: 300px;
+    }
+  }
+  .menu-title, .other-menus {
+    width: 260px;
+  }
+  .nav-list {
+    width: 290px;
+  } 
+  .btn-yellow.w274, input[type="submit"].btn-yellow.w274{
+    min-width: 284px;
+  } 
+  .trapezoid-bg {
+    top: 230px;
+    
+    &.forgot{
+      top: 195px;
+    }
+  }
+  input[type="text"], input[type="password"] {
+    width: 270px;
+  }
+  .signup .btn-yellow.w80 {
+    margin-right: 6px;
+  }
+  h2.logo.signup span {
+    left: 257px;
+  }
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  .profile-form{
+    margin-left: -30px;
+    
+    input[type="text"], input[type="password"] {
+      width: 175px;
+    }
+  }
+  .customer-name, .user-info {
+    padding-right:0;
+  }
+  .menu-title, .other-menus{
+    width:147px;
+  }
+  .nav-list {
+    width: 177px;
+  }
+  .table-container {
+    padding: 10px 10px 15px 10px;
+  }
+  .form-horizontal{
+    .controls {
+      margin-left: 200px;
+    }
+    .control-label {
+      width: 180px;
+    }
+  }
+  .trapezoid-bg {
+    top: 380px;
+  }
+  .signup .btn-yellow.w80 {
+    margin-right: 10px;
+  }
+  .trapezoid-bg.forgot{
+    top: 350px;
+  }
+  .container {
+    &>.content {
+      margin: 45% auto 0 auto;
+    }
+    &>.content.signup{
+      margin: 35% auto 0 auto;
+    }
+  }
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+} 
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .header h2.logo {
+    margin-left: 85px;
+  }
+  h2.logo {
+    text-align: center;
+  
+    &.signup span {
+      left: 124px;
+    }
+  }
+  .profile-form {
+    display:block;
+    margin:0 40px 15px 40px;
+    padding-bottom:1px;
+  }
+  .login-form {
+    margin-left: 0;
+  }
+  .container{
+  
+    &>.content {
+      margin:20px auto;
+    }
+    
+    &>.content.signup {
+      width: auto;
+      margin:20px;
+    }
+  }
+  .row-fluid .span6 {
+    width: 48.93617021276595%;
+    display: block;
+    float: left;
+  }
+  .signup{
+    .row-fluid{
+      .span6{
+        &.b-right-dark, &.b-right-light{
+          float:left;
+        } 
+        float:none;
+      }
+    }
+    .btn-yellow.w80{
+      float:none;
+    }
+    input[type="text"], input[type="password"] {
+      width: 310px;
+    }
+  }
+}
