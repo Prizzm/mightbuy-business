@@ -1,7 +1,7 @@
 class BusinessesController < ApplicationController
   skip_before_filter :authenticate_business_staff!, only: [:new, :create, :foo]
 
-  before_filter :find_business, only: [:show, :complete_profile]
+  before_filter :find_business, only: [:show, :complete_profile, :update]
 
   layout 'application'
 
@@ -12,6 +12,7 @@ class BusinessesController < ApplicationController
   def create
     @business_user = BusinessUser.new(params[:business_user])
     if @business_user.save
+      sign_in @business_user.business_staff, bypass: true
       redirect_to root_path
     else
       flash[:error] = @business_user.errors.full_messages
@@ -21,8 +22,15 @@ class BusinessesController < ApplicationController
 
   def show
     unless @business.url_verified
-      redirect_to complete_profile_businesses_path
+      redirect_to complete_profile_business_path
     end
+  end
+
+  def update
+    if @business.update_attributes(params[:business])
+      flash[:notice] = "Updated business details successfully, we need to verify your business url before you can proceed."
+    end
+    render action: "complete_profile",layout: 'business'
   end
 
   def complete_profile

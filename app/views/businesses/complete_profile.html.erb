@@ -9,76 +9,7 @@
 <div class="row">
   <div class="span9 offset2">
     <div class="profile-form">
-      <form action="">
-        <div class="row">
-          <div class="span8">
-            <legend>
-              Profile Information
-            </legend>
-            <img class="img-polaroid pull-left" src="/assets/company-logo.gif" />
-            <div class="pull-left">
-              <div>
-                <button class="btn btn-yellow w100 pull-left" type="submit">
-                  Use Image
-                  <br/>
-                  From Web
-                </button>
-              </div>
-              <div>
-                <button class="btn btn-yellow w100 pull-left clear-left" type="submit">
-                  Upload
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="span4">
-            <label>Business Name</label>
-            <input type="text" />
-            <label>Website Address</label>
-            <input type="text" />
-            <button class="btn btn-yellow btn-add" type="submit">
-              <i class="icon-plus"></i>
-            </button>
-            <label>Phone</label>
-            <input type="text" />
-            <button class="btn btn-yellow btn-add" type="submit">
-              <i class="icon-plus"></i>
-            </button>
-            <label>Address</label>
-            <input type="text" />
-            <button class="btn btn-yellow btn-add" type="submit">
-              <i class="icon-plus"></i>
-            </button>
-          </div>
-          <div class="span4">
-            <label>Email Address</label>
-            <input type="text" />
-            <button class="btn btn-yellow btn-add" type="submit">
-              <i class="icon-plus"></i>
-            </button>
-            <label>Twitter Handle</label>
-            <input type="text" />
-            <button class="btn btn-yellow btn-add" type="submit">
-              <i class="icon-plus"></i>
-            </button>
-            <label>Facebook Website Address</label>
-            <input type="text" />
-            <button class="btn btn-yellow btn-add" type="submit">
-              <i class="icon-plus"></i>
-            </button>
-            <label>Pinterest</label>
-            <input type="text" />
-            <button class="btn btn-yellow btn-add" type="submit">
-              <i class="icon-plus"></i>
-            </button>
-          </div>
-        </div>
-      </form>
+      <%= render :partial => "business_form" -%>
     </div>
   </div>
 </div>
-<button class="btn btn-red w230 m-auto" type="submit">
-  Save Profile Information
-</button>

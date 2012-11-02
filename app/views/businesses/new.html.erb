@@ -6,7 +6,7 @@
       <div class="login-form">
         <h2 class="logo signup">MightBuy.<span>for business</span></h2>
         <hr>
-        <%= form_for(@business_user, :url => businesses_path) do |f|-%>
+        <%= form_for(@business_user, :url => business_path) do |f|-%>
           <%= render :partial => "signup_form", :locals => {:f => f} -%>
         <% end -%>
       </div>
