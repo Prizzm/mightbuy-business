@@ -3,7 +3,7 @@ class BusinessesController < ApplicationController
 
   before_filter :find_business, only: [:show, :complete_profile, :update]
 
-  layout 'application'
+  layout :choose_layout
 
   def new
     @business_user = BusinessUser.new()
@@ -41,5 +41,13 @@ class BusinessesController < ApplicationController
 
   def find_business
     @business = current_business_staff.business
+  end
+
+  def choose_layout
+    if action_name == 'new'
+      'application'
+    else
+      'business'
+    end
   end
 end
