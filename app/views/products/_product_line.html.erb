@@ -7,9 +7,9 @@
 <td>
   <%= product.topics.count -%>
 </td>
-<td>
-  <a href="#">4</a>
-  <button class="btn btn-danger btn-mini m-left10">
+<td class="product-deals">
+  <%= link_to product.bargins.count, "#", class: "product-deals-count" -%>
+  <button class="btn btn-danger btn-mini m-left10 add-deal-button" data-product-id="<%= product.id -%>">
     Add Deal
   </button>
 </td>
