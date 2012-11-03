@@ -32,37 +32,7 @@
       <% end -%>
     </table>
     <div class="table-footer clearfix">
-      <div class="pagination pagination-right">
-        <ul>
-          <li class="disabled no-style">
-            <a href="#">&laquo; First</a>
-          </li>
-          <li class="disabled no-style">
-            <a href="#">&laquo; Prevoius</a>
-          </li>
-          <li class="active">
-            <a href="#">1</a>
-          </li>
-          <li>
-            <a href="#">2</a>
-          </li>
-          <li>
-            <a href="#">3</a>
-          </li>
-          <li>
-            <a href="#">4</a>
-          </li>
-          <li>
-            <a href="#">5</a>
-          </li>
-          <li class=" no-style">
-            <a href="#">Next &raquo;</a>
-          </li>
-          <li class=" no-style">
-            <a href="#">Last &raquo;</a>
-          </li>
-        </ul>
-      </div>
+      <%= paginate @customers, :theme => 'mightbuy_theme' -%>
     </div>
   </div>
 </div>
