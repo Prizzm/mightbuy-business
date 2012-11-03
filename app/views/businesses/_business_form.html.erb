@@ -2,7 +2,7 @@
   <%= render partial: "business_logo_form", locals: { business: @business } -%>
 </div>
 
-<%= form_for(@business, :url => business_path) do |f| -%>
+<%= form_for(@business, :url => action_url) do |f| -%>
   <div class="row">
     <div class="span4">
       <label>Business Name</label>
