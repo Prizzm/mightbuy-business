@@ -1,6 +1,9 @@
-<tr>
+<tr id="add-deal-form-wrapper-<%= productId %>" >
   <td colspan="5" class="add-deal">
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="post" action="/products/<%= productId %>/deals" accept-charset="UTF-8" data-remote="true">
+      <div style="margin:0;padding:0;display:inline">
+        <input type="hidden" value="✓" name="utf8">
+      </div>
       <legend>
         <span class="remove-bold">Add a Deal for </span><%= productName %>
       </legend>

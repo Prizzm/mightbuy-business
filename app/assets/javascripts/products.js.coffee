@@ -23,13 +23,15 @@ class @Mightbuy.ProductsList
     $(".add-deal-button").click (e) ->
       el = $(e.currentTarget)
 
-      productId   = el.attr("data-product-id")
-      productRow  = $("#product-entry-#{productId}")
-      productName = productRow.find(".product-name").text()
-      template = JST["templates/add_deal"]
-        productId:   productId
-        productName: productName
-      productRow.after $(template)
+      productId = el.attr("data-product-id")
+      dealForm  = $("#add-deal-form-wrapper-#{productId}")
+      if dealForm.length < 1
+        productRow  = $("#product-entry-#{productId}")
+        productName = productRow.find(".product-name").text()
+        template = JST["templates/add_deal"]
+          productId:   productId
+          productName: productName
+        productRow.after $(template)
 
       e.preventDefault()
 

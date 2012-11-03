@@ -15,8 +15,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render partial: "shares/notifications" %>
-<div class="container">
+  <div id="flash-notifications">
+    <%= render partial: "shares/notifications" %>
+  </div>
+<div class="container silhouette-bg unevenheights">
   <%= render partial: "shares/header" %>
 </div>
 <div class="container silhouette-bg unevenheights">
