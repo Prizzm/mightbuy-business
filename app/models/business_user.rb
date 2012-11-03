@@ -19,7 +19,8 @@ class BusinessUser
 
   def save
     Business.transaction do
-      @business = Business.create!(url: business_url, name: business_name, phone: phone_number, email: email)
+      @business = Business.create!(name: business_name, phone: phone_number, email: email)
+      BusinessUrl.create!(domain: business_url, business: @business)
       @business_staff = BusinessStaff.create!(email: email, password: password, password_confirmation: password_confirmation, name: fullname, business: business)
       true
     end

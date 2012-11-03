@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121103020606) do
+ActiveRecord::Schema.define(:version => 20121103024054) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -120,6 +120,13 @@ ActiveRecord::Schema.define(:version => 20121103020606) do
   add_index "business_staffs", ["email"], :name => "index_business_staffs_on_email", :unique => true
   add_index "business_staffs", ["reset_password_token"], :name => "index_business_staffs_on_reset_password_token", :unique => true
 
+  create_table "business_urls", :force => true do |t|
+    t.string   "domain"
+    t.integer  "business_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "businesses", :force => true do |t|
     t.string   "name"
     t.string   "latitude"
@@ -131,7 +138,6 @@ ActiveRecord::Schema.define(:version => 20121103020606) do
     t.text     "description"
     t.string   "logo_uid"
     t.string   "email"
-    t.string   "url"
     t.string   "phone"
     t.string   "facebook_url"
     t.string   "twitter_handle"

@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require prettify
+//= require mightbuy
 //= require_tree .

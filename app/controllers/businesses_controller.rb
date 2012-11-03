@@ -39,11 +39,6 @@ class BusinessesController < ApplicationController
   end
 
   private
-
-  def find_business
-    @business = current_business_staff.business
-  end
-
   def choose_layout
     if action_name == 'new'
       'application'

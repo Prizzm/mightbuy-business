@@ -28,11 +28,15 @@
       <%= f.text_field :name -%>
 
       <label>Website Address</label>
-      <%= f.text_field :url -%>
+      <div class='business-urls'>
+        <%= fields_for :business_urls do |business_url| -%>
+          <%= business_url.text_field :domain -%>
 
-      <button class="btn btn-yellow btn-add" type="submit">
-        <i class="icon-plus"></i>
-      </button>
+          <a href="javascript:void(0);" class="btn btn-yellow btn-add more-url">
+            <i class="icon-plus"></i>
+          </a>
+        <% end -%>
+      </div>
 
       <label>Phone</label>
       <%= f.text_field :phone -%>

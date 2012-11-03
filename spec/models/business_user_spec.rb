@@ -18,7 +18,7 @@ describe BusinessUser do
       business_staff = BusinessStaff.find_by_email("hemant@example.com")
       business_staff.should_not be_nil
 
-      business = Business.find_by_url("http://mightbuy.it")
+      business = Business.find_by_email("hemant@example.com")
       business.should_not be_nil
     end
   end
