@@ -1,0 +1,41 @@
+<tr id="edit-product-<%= @product.id -%>">
+  <td colspan="5" class="add-deal">
+    <%= form_for(@product, remote: true,html: {class: "form-horizontal"}) do |f| -%>
+      <legend>
+        Update the product
+      </legend>
+      <div class="row">
+        <div class="span8">
+          <div class="control-group">
+            <label class="control-label">Product Name:</label>
+
+            <div class="controls">
+              <%= f.text_field :name, class: "span3" -%>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">URL:</label>
+
+            <div class="controls">
+              <%= f.text_field :url, class: "span3" -%>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">List Price:</label>
+
+            <div class="controls">
+              <%= f.text_field :price, class: "span3" -%>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="controls m-top5">
+              <%= f.submit("Save Product", class: "btn btn-danger") -%>
+              <button class="btn btn-danger m-left5">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+    <% end -%>
+  </td>
+</tr>

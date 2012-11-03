@@ -1,0 +1,8 @@
+<% if @product && @product.update_attributes!(params[:product]) -%>
+  $("#product-<%= @product.id -%>").html("<%= escape_javascript(render :partial => 'product_line', locals: {product: @product}) -%>")
+<% end -%>
+<% if @product -%>
+  $("#edit-product-<%= @product.id -%>").remove();
+<% end -%>
+
+

@@ -1,0 +1,23 @@
+<td>
+  <%= link_to(product.url, product_path(product)) -%>
+</td>
+<td>
+  <%= product.name -%>
+</td>
+<td>
+  <%= product.topics.count -%>
+</td>
+<td>
+  <a href="#">4</a>
+  <button class="btn btn-danger btn-mini m-left10">
+    Add Deal
+  </button>
+</td>
+<td>
+  <%= link_to(edit_product_path(product), class: "btn btn-mini", remote: true) do -%>
+    <i class="icon-pencil"></i>
+  <% end -%>
+  <%= link_to(product_path(product), method: :delete, class: 'btn btn-mini btn-danger') do -%>
+    <i class="icon-remove icon-white"></i>
+  <% end -%>
+</td>

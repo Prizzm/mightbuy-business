@@ -18,6 +18,17 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
+  def edit
+    @product = @business.all_products.detect {|product| product.id == params[:id].to_i }
+    unless @product
+      render nothing: true
+    end
+  end
+
+  def update
+    @product = @business.all_products.detect { |product| product.id == params[:id].to_i }
+  end
+
   def destroy
     @product = @business.products.find_by_id(params[:id])
     if @product && @product.destroy
