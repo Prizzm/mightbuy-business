@@ -14,19 +14,19 @@
     Dashboard
   </div>
   <ul class="nav nav-list">
-    <li class="">
+    <li class="<%= active_tab_class('products') -%>">
       <%= link_to(products_path) do -%>
         Products
         <div class="arrow-left"></div>
       <% end -%>
     </li>
-    <li class="">
+    <li class="<%= active_tab_class('customers') -%>">
       <%= link_to(customers_path) do -%>
         Potential Customers
         <div class="arrow-left"></div>
       <% end -%>
     </li>
-    <li class="active">
+    <li class="<%= active_tab_class('leads') -%>">
       <a href="#">Customers Leads
         <div class="arrow-left"></div>
       </a>

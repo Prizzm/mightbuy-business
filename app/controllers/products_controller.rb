@@ -5,4 +5,8 @@ class ProductsController < ApplicationController
   def index
     @products = Kaminari.paginate_array(@business.all_products.to_a).page(params[:page]).per(10)
   end
+
+  def create
+
+  end
 end
