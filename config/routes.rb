@@ -7,5 +7,7 @@ MightbuyBusiness::Application.routes.draw do
     end
   end
 
+  resources :products
+
   root :to => "welcome#index"
 end
