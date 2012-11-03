@@ -3,7 +3,7 @@
 
   <div class="table-container">
     <div class="table-header clearfix">
-      <button class="btn btn-small btn-danger pull-right">
+      <button class="btn btn-small btn-danger pull-right add-product-btn">
         Add Products
       </button>
       <div class="title">
@@ -11,6 +11,9 @@
       </div>
     </div>
     <table class="table">
+      <tr class="add-product-row hide">
+        <%= render :partial => "add_product" -%>
+      </tr>
       <tr>
         <th>URL</th>
         <th>Product Name</th>
