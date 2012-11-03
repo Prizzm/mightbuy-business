@@ -16,8 +16,10 @@
 </head>
 <body>
 <%= render partial: "shares/notifications" %>
-<div class="container silhouette-bg unevenheights">
+<div class="container">
   <%= render partial: "shares/header" %>
+</div>
+<div class="container silhouette-bg unevenheights">
   <div class="row">
     <%= render :partial => "/shares/business_sidebar" -%>
     <%= yield %>

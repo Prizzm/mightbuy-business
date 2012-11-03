@@ -36,6 +36,11 @@
   h2.logo.signup span {
     left: 257px;
   }
+  .account-profile{
+    input[type="text"], input[type="password"], textarea {
+      width: 300px;
+    }
+  }
 }
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------ */
 /* Portrait tablet to landscape and desktop */
@@ -43,6 +48,11 @@
   .profile-form{
     margin-left: -30px;
     
+    input[type="text"], input[type="password"], textarea {
+      width: 175px;
+    }
+  }
+  .account-profile{
     input[type="text"], input[type="password"], textarea {
       width: 175px;
     }
@@ -141,5 +151,8 @@
     input[type="text"], input[type="password"] {
       width: 310px;
     }
+  }
+  .btn-red.w230, input[type="submit"].btn-red.w230{
+    margin-left:0
   }
 }

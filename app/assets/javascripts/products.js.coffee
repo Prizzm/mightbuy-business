@@ -9,6 +9,7 @@ $.fn.setAllToMaxHeight = ->
 
 $(document).ready ->
   $("div.unevenheights").setAllToMaxHeight()
+  $('.account-profile .btn.btn-red.w230').removeClass("disabled")
 
 $(window).resize ->
   $("div.unevenheights").setAllToMaxHeight()
