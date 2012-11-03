@@ -14,7 +14,6 @@ describe Business do
       products.should_not be_empty
       products.should include(@topic.product)
     end
-
   end
 end
 
