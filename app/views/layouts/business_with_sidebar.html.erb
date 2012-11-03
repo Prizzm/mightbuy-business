@@ -18,8 +18,10 @@
 <%= render partial: "shares/notifications" %>
 <div class="container silhouette-bg unevenheights">
   <%= render partial: "shares/header" %>
-  <%= render :partial => "/shares/business_sidebar" -%>
-  <%= yield %>
+  <div class="row">
+    <%= render :partial => "/shares/business_sidebar" -%>
+    <%= yield %>
+  </div>
 </div>
 
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>

@@ -23,6 +23,8 @@ class BusinessesController < ApplicationController
   def show
     unless @business.url_verified
       redirect_to complete_profile_business_path
+    else
+      render layout: 'business_with_sidebar'
     end
   end
 
