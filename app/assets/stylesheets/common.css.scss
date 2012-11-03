@@ -110,11 +110,14 @@ hr{
   border-top-color: rgba(0, 0, 0, 0.20);
   border-bottom-color: rgba(255, 255, 255, 0.10);
 }
-input[type="text"], input[type="password"]{
+input[type="text"], input[type="password"], input[type="email"]{
   width:260px;
 }
 .b-right-dark{
   border-right:1px solid rgba(0, 0, 0, 0.20);
+}
+.b-right-dark a, .b-right-light a{
+  display:block;
 }
 .row-fluid .span6.b-right-light{
   border-left:1px solid  rgba(255, 255, 255, 0.10);
@@ -177,3 +180,6 @@ hr.m-bot0{
   top: 165px;
 }
 .fill-bg{background:#ccc}
+p.error_notification, span.error{
+  color:yellow;
+}

@@ -1,15 +1,46 @@
-<h2>Forgot your password?</h2>
-
-<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="inputs">
-    <%= f.input :email, :required => true %>
+<div class="container silhouette-bg">
+  <div class="trapezoid-bg forgot hidden-phone"></div>
+  <div class="content">
+    <div class="top-gradient"></div>
+    <div class="row">
+      <div class="login-form">
+        <h2 class="logo">MightBuy.<span>for business</span></h2>
+        <hr/>
+        <%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+          <%= f.error_notification %>
+        
+          <div class="inputs">
+            <%= f.input :email %>
+          </div>
+        
+          <div class="actions">
+            <%= f.button :submit, "Send me reset password instructions", :class=>"btn btn-yellow w274" %>
+          </div>
+          <hr class="m-bot0"/>
+        <% end %>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="row-fluid">
+        <div class="span6 b-right-dark">
+          <div class="c-holder-left">
+            <%= link_to(new_session_path(resource_name)) do -%>
+              <span class="normal-font">Sign In</span>
+              <span class="tiny-font">Already a member, login!</span>
+            <% end -%>
+          </div>
+        </div>
+        <div class="span6 b-right-light">
+          <div class="c-holder-right">
+            <%= link_to(new_business_path) do -%>
+              <span class="normal-font">Register account</span>
+              <span class="tiny-font">Register a new account here!</span>
+            <% end -%>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render :partial => "devise/shared/links" %>
+</div>
+<!--h2>Forgot your password?</h2>
+<%= render :partial => "devise/shared/links" %-->

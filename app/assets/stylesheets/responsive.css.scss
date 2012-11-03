@@ -27,7 +27,7 @@
       top: 195px;
     }
   }
-  input[type="text"], input[type="password"] {
+  input[type="text"], input[type="password"], input[type="email"] {
     width: 270px;
   }
   .signup .btn-yellow.w80 {
@@ -94,6 +94,9 @@
       margin: 35% auto 0 auto;
     }
   }
+  input[type="email"] {
+    width:260px;
+  }
 }
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------ */
 /* Landscape phone to portrait tablet */
@@ -148,7 +151,7 @@
     .btn-yellow.w80{
       float:none;
     }
-    input[type="text"], input[type="password"] {
+    input[type="text"], input[type="password"], input[type="email"] {
       width: 310px;
     }
   }
