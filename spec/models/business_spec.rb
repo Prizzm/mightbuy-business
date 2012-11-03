@@ -15,5 +15,11 @@ describe Business do
       products.should include(@topic.product)
     end
   end
+
+  context "fetching customers of a business" do
+    it "should return customers" do
+
+    end
+  end
 end
 

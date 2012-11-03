@@ -1,0 +1,68 @@
+<div class="span9 bg-dark unevenheights">
+  <h3 class="page-title align-right">People connected to your business through MightBuy</h3>
+
+  <div class="table-container">
+    <div class="table-header clearfix">
+      <div class="title">
+        Potential Customers
+      </div>
+    </div>
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>Your Product</th>
+        <th>Total Products</th>
+        <th>Details</th>
+      </tr>
+      <% @customers.each do |customer| -%>
+        <tr>
+          <td>
+            <a href="#">
+            <%= customer.name -%>
+            </a>
+          </td>
+          <td>
+            <%= customer.company_products(@business).size -%>
+          </td>
+          <td>
+            <%= customer.topics.size -%>
+          </td>
+          <td><a href="#">view details</a></td>
+        </tr>
+      <% end -%>
+    </table>
+    <div class="table-footer clearfix">
+      <div class="pagination pagination-right">
+        <ul>
+          <li class="disabled no-style">
+            <a href="#">&laquo; First</a>
+          </li>
+          <li class="disabled no-style">
+            <a href="#">&laquo; Prevoius</a>
+          </li>
+          <li class="active">
+            <a href="#">1</a>
+          </li>
+          <li>
+            <a href="#">2</a>
+          </li>
+          <li>
+            <a href="#">3</a>
+          </li>
+          <li>
+            <a href="#">4</a>
+          </li>
+          <li>
+            <a href="#">5</a>
+          </li>
+          <li class=" no-style">
+            <a href="#">Next &raquo;</a>
+          </li>
+          <li class=" no-style">
+            <a href="#">Last &raquo;</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
