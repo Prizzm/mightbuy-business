@@ -1,0 +1,6 @@
+<%= remotipart_response do -%>
+  $("#business-logo-form-wrapper").html(
+    "<%= escape_javascript(render partial: 'business_logo_form', locals: { business: @business }) -%>");
+  Mightbuy.logoUploader = new Mightbuy.LogoUploader();
+  $(document).trigger('close.facebox')
+<% end -%>

@@ -1,7 +1,7 @@
 class BusinessesController < ApplicationController
   skip_before_filter :authenticate_business_staff!, only: [:new, :create, :foo]
-
   before_filter :find_business, only: [:show, :complete_profile, :update, :profile, :update_profile]
+  respond_to :html, :js
 
   layout :choose_layout
 
@@ -34,7 +34,10 @@ class BusinessesController < ApplicationController
       flash[:notice] = "Updated business details successfully, we need to verify your business url before you can proceed."
     end
     @business.reload
-    render action: "complete_profile"
+
+    respond_with(@business) do |format|
+      format.html { render action: "complete_profile" }
+    end
   end
 
   def update_profile

@@ -44,6 +44,10 @@ gem "timeline_fu", git: "git://github.com/styx/timeline_fu.git"
 
 gem "mightbuy_models", :path => "vendor/mightbuy-models"
 
+gem 'remotipart', '~> 0.4'
+gem 'facebox-rails'
+gem 'jquery-fileupload-rails', '0.3.4'
+
 group :development do
   gem 'pry-rails'
   gem "quiet_assets"

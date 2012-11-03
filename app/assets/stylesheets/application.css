@@ -11,5 +11,6 @@
  *= require_self
  *= require jquery.ui.all
  *= require prettify.css
+ *= require jquery.facebox
  *= require_tree .
  */
