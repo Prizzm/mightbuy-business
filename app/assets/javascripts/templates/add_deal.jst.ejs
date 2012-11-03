@@ -1,0 +1,58 @@
+<tr>
+  <td colspan="5" class="add-deal">
+    <form class="form-horizontal">
+      <legend>
+        <span class="remove-bold">Add a Deal for </span><%= productName %>
+      </legend>
+      <div class="row">
+        <div class="span8">
+          <div class="control-group">
+            <label class="control-label">Price:</label>
+            <div class="controls">
+              <input class="span1" type="text"/>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">% Off:</label>
+            <div class="controls">
+              <input class="span1" type="text"/>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Collect payment from:</label>
+            <div class="controls">
+              <label class="radio inline">
+                <input name="collect" type="radio" id="inlineCheckbox1" value="MightBuy">
+                MightBuy </label>
+              <label class="radio inline">
+                <input name="collect" type="radio" id="inlineCheckbox1" value="URL">
+                URL </label>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">URL:</label>
+            <div class="controls">
+              <input class="span3" type="text"/>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Offer</label>
+            <div class="controls">
+              <textarea class="m-top5 span3" rows="2"></textarea>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="controls m-top5">
+              <button class="btn btn-danger">
+                Authorize deal
+              </button>
+              <button class="btn btn-danger m-left5">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </td>
+</tr>
