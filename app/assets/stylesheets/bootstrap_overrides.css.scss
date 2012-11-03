@@ -440,6 +440,7 @@ input[type="submit"].btn-yellow, .btn-yellow, .menu-title{
 .btn-red.w230, input[type="submit"].btn-red.w230{
   width:230px;
   display: block;
+  margin-top:20px;
   margin-bottom:30px;
 }
 .btn-red{
@@ -509,8 +510,18 @@ input[type="submit"].btn-yellow, .btn-yellow, .menu-title{
   @include gradient(#940a09, #630303);
 }
 .alert-success{
-  @include gradient(#8fc400, #8fc400);
+  @include gradient(#006e2e, #006e2e);
 }
 .alert-info{
   @include gradient(#64b6db, #309dcf);
+}
+.link-white{
+  color:#fff;
+  font-size:14px;
+  float:right;
+  
+  &:hover{
+    color:#fff;
+    text-decoration:underline;
+  }
 }

@@ -4,8 +4,7 @@
       <legend>
         Profile Information
       </legend>
-      <img class="img-polaroid pull-left" src="/assets/company-logo.gif"/>
-
+      <img class="img-polaroid pull-left" width="175" height="95" src="/assets/company-logo.gif"/>
       <div class="pull-left">
         <div>
           <button class="btn btn-yellow w100 pull-left" type="submit">
@@ -40,44 +39,24 @@
         <% end -%>
       </div>
 
-      <label>Phone</label>
-      <%= f.text_field :phone -%>
-
-      <button class="btn btn-yellow btn-add" type="submit">
-        <i class="icon-plus"></i>
-      </button>
-
       <label>Address</label>
-      <%= f.text_field :address -%>
-      <button class="btn btn-yellow btn-add" type="submit">
-        <i class="icon-plus"></i>
-      </button>
+      <%= f.text_area :address -%>
     </div>
     <div class="span4">
       <label>Email Address</label>
       <%= f.text_field :email -%>
-      <button class="btn btn-yellow btn-add" type="submit">
-        <i class="icon-plus"></i>
-      </button>
+
+      <label>Phone</label>
+      <%= f.text_field :phone -%>
 
       <label>Twitter Handle</label>
       <%= f.text_field :twitter_handle -%>
-      <button class="btn btn-yellow btn-add" type="submit">
-        <i class="icon-plus"></i>
-      </button>
 
       <label>Facebook Website Address</label>
       <%= f.text_field :facebook_url -%>
 
-      <button class="btn btn-yellow btn-add" type="submit">
-        <i class="icon-plus"></i>
-      </button>
-
       <label>Pinterest</label>
       <%= f.text_field :pinterest_handle -%>
-      <button class="btn btn-yellow btn-add" type="submit">
-        <i class="icon-plus"></i>
-      </button>
     </div>
   </div>
 
