@@ -8,8 +8,17 @@
       <%= image_tag(business_form_logo_url_helper(business), class: "img-polaroid pull-left", width: 160, height: 80) -%>
 
       <%= f.file_field :logo, style: "display: none" -%>
-      <%= f.hidden_field :logo_url %>
       <%= f.hidden_field :retained_logo %>
+
+      <div id="business_logo_url_wrapper" class="hide">
+        <h4> Paste a URL for Web Image here </h4>
+        <hr></hr>
+        URL:
+        <%= f.text_field :logo_url %>
+        <button class="btn btn-yellow w100 save-url" type="button">Upload</button>
+      </div>
+
+
       <div class="pull-left">
         <div>
           <button id="logo-url-button" class="btn btn-yellow w100 pull-left" type="button">

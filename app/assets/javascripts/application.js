@@ -17,7 +17,7 @@
 //= require prettify
 //= require jquery.form
 //= require jquery.remotipart
-//= require jquery.facebox
 //= require jquery-fileupload/jquery.fileupload
+//= require jquery.facebox
 //= require mightbuy
 //= require_tree .
