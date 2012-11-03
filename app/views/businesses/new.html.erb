@@ -15,12 +15,17 @@
       <div class="row-fluid">
         <div class="span6 b-right-dark">
           <div class="c-holder-left">
-            <a href="#"> <span class="normal-font">Password recovery</span> <span class="tiny-font">You forgot your password?</span> </a>
+            <%= link_to(new_business_staff_password_path) do -%>
+              <span class="normal-font">Password recovery</span>
+              <span class="tiny-font">You forgot your password?</span>
+            <% end -%>
           </div>
         </div>
         <div class="span6 b-right-light">
           <div class="c-holder-right">
-            <a href="#"> <span class="normal-font">Sign In</span> <span class="tiny-font">Already a member, login here!</span> </a>
+            <%= link_to(new_business_staff_session_path) do -%>
+              <span class="normal-font">Sign In</span> <span class="tiny-font">Already a member, login here!</span>
+            <% end -%>
           </div>
         </div>
       </div>
