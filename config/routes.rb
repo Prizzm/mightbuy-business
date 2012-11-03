@@ -5,6 +5,7 @@ MightbuyBusiness::Application.routes.draw do
     collection do
       get :complete_profile
       get :profile
+      put :update_profile
     end
   end
 

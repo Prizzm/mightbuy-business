@@ -1,7 +1,7 @@
 class BusinessesController < ApplicationController
   skip_before_filter :authenticate_business_staff!, only: [:new, :create, :foo]
 
-  before_filter :find_business, only: [:show, :complete_profile, :update, :profile]
+  before_filter :find_business, only: [:show, :complete_profile, :update, :profile, :update_profile]
 
   layout :choose_layout
 
@@ -35,6 +35,15 @@ class BusinessesController < ApplicationController
     end
     @business.reload
     render action: "complete_profile"
+  end
+
+  def update_profile
+    if @business.update_attributes(params[:business])
+      flash[:notice] = "Profile update"
+    else
+      flash[:error] = "Error updating profile"
+    end
+    redirect_to profile_business_path
   end
 
   def complete_profile
