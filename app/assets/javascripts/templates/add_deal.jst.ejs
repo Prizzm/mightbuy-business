@@ -1,0 +1,58 @@
+<tr id="add-deal-form-wrapper-<%= productId %>" >
+  <td colspan="5" class="add-deal">
+    <form class="form-horizontal" method="post" action="/products/<%= productId %>/deals" accept-charset="UTF-8" data-remote="true">
+      <legend>
+        <span class="remove-bold">Add a Deal for </span><%= productName %>
+      </legend>
+      <div class="row">
+        <div class="span8">
+          <div class="control-group">
+            <label class="control-label">Price:</label>
+            <div class="controls">
+              <input id="deal_value" class="span1" type="text" name="deal[value]"/>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">% Discount:</label>
+            <div class="controls">
+              <input id="deal_discount" class="span1" type="text" name="deal[discount]"/>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Collect payment from:</label>
+            <div class="controls">
+              <label class="radio inline">
+                <input id="deal_payment_type_MightBuy" name="deal[payment_type]" type="radio" id="inlineCheckbox1" value="MightBuy">
+                MightBuy </label>
+              <label class="radio inline">
+                <input id="deal_payment_type_URL" name="deal[payment_type]" type="radio" id="inlineCheckbox1" value="URL">
+                URL </label>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">URL:</label>
+            <div class="controls">
+              <input id="deal_url" class="span3" type="text" name="deal[url]"/>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Offer</label>
+            <div class="controls">
+              <textarea id="deal_description" class="m-top5 span3" rows="2" name="deal[description"]></textarea>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="controls m-top5">
+              <button class="btn btn-danger">
+                Authorize deal
+              </button>
+              <button class="btn btn-danger m-left5">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </td>
+</tr>
