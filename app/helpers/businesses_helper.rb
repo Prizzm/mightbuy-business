@@ -14,4 +14,12 @@ module BusinessesHelper
       "btn btn-red w230 m-auto"
     end
   end
+
+  def business_form_logo_url_helper(business)
+    if business.logo
+      business.logo.thumb('160x80!').url
+    else
+      "/assets/company-logo.gif"
+    end
+  end
 end

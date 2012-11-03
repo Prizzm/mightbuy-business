@@ -1,44 +1,25 @@
-<div class="row">
-  <div class="span8">
-    <legend>
-      Profile Information
-    </legend>
-    <img class="img-polaroid pull-left" width="175" height="95" src="/assets/company-logo.gif"/>
-
-    <div class="pull-left">
-      <div>
-        <button class="btn btn-yellow w100 pull-left" type="submit">
-          Use Image
-          <br/>
-          From Web
-        </button>
-      </div>
-      <div>
-        <button class="btn btn-yellow w100 pull-left clear-left" type="submit">
-          Upload
-        </button>
-      </div>
-    </div>
-  </div>
+<div id="business-logo-form-wrapper">
+  <%= render partial: "business_logo_form", locals: { business: @business } -%>
 </div>
-<div class="row">
-  <div class="span4">
-    <label>Business Name</label>
-    <%= f.text_field :name -%>
 
-    <label>Website Address</label>
+<%= form_for(@business, :url => action_url) do |f| -%>
+  <div class="row">
+    <div class="span4">
+      <label>Business Name</label>
+      <%= f.text_field :name -%>
 
-    <div class='business-urls'>
-      <%= f.fields_for :business_urls do |business_url| -%>
-        <div>
-          <%= business_url.text_field :domain -%>
+      <label>Website Address</label>
+      <div class='business-urls'>
+        <%= f.fields_for :business_urls do |business_url| -%>
+          <div>
+            <%= business_url.text_field :domain -%>
 
-          <a href="javascript:void(0);" class="btn btn-yellow btn-add more-url">
-            <i class="icon-plus"></i>
-          </a>
-        </div>
-      <% end -%>
-    </div>
+            <a href="javascript:void(0);" class="btn btn-yellow btn-add more-url">
+              <i class="icon-plus"></i>
+            </a>
+          </div>
+        <% end -%>
+      </div>
 
     <label>Address</label>
     <%= f.text_area :address -%>
@@ -64,3 +45,5 @@
 <button class="<%= save_profile_button_class -%>" type="submit">
   Save Profile Information
 </button>
+
+<% end -%>
