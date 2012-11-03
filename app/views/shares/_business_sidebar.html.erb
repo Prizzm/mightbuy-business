@@ -27,9 +27,10 @@
       <% end -%>
     </li>
     <li class="<%= active_tab_class('leads') -%>">
-      <a href="#">Customers Leads
+      <%= link_to(leads_path) do -%>
+        Customers Leads
         <div class="arrow-left"></div>
-      </a>
+      <% end -%>
     </li>
   </ul>
   <div class="clear"></div>
