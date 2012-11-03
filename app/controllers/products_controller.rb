@@ -17,4 +17,15 @@ class ProductsController < ApplicationController
     end
     redirect_to products_path
   end
+
+  def destroy
+    @product = @business.products.find_by_id(params[:id])
+    if @product && @product.destroy
+      flash[:notice] = "Product deleted"
+    else
+      flash[:error] = "You can not remove products linked with users"
+    end
+    redirect_to products_path
+  end
 end
+

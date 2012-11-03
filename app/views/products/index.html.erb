@@ -42,9 +42,9 @@
             <button class="btn btn-mini">
               <i class="icon-pencil"></i>
             </button>
-            <button class="btn btn-mini btn-danger">
+            <%= link_to(product_path(product), method: :delete, class: 'btn btn-mini btn-danger') do-%>
               <i class="icon-remove icon-white"></i>
-            </button>
+            <% end -%>
           </td>
         </tr>
       <% end -%>
