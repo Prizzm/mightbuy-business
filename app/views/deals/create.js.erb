@@ -1,0 +1,8 @@
+$("#flash-notifications").html("<%= escape_javascript(render partial: 'shares/notifications') -%>");
+<%- flash.clear -%>
+
+<%- if @deal.persisted? -%>
+  $("#add-deal-form-wrapper-<%= @product.id -%>").remove();
+  $("#product-<%= @product.id -%> .product-deals-count").html("<%= @product.bargins.count -%>");
+<% else -%>
+<% end -%>

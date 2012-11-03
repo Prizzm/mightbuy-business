@@ -13,3 +13,28 @@ $(document).ready ->
 
 $(window).resize ->
   $("div.unevenheights").setAllToMaxHeight()
+
+
+class @Mightbuy.ProductsList
+  constructor: ->
+    @bindAddDeals()
+
+  bindAddDeals: ->
+    $(".add-deal-button").click (e) ->
+      el = $(e.currentTarget)
+
+      productId = el.attr("data-product-id")
+      dealForm  = $("#add-deal-form-wrapper-#{productId}")
+      if dealForm.length < 1
+        productRow  = $("#product-#{productId}")
+        productName = productRow.find(".product-name").text()
+        template = JST["templates/add_deal"]
+          productId:   productId
+          productName: productName
+        productRow.after $(template)
+
+      e.preventDefault()
+
+
+jQuery ->
+  Mightbuy.productsList = new Mightbuy.ProductsList()

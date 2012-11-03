@@ -3,3 +3,8 @@
 
 en:
   hello: "Hello world"
+
+  deals:
+    create:
+      success: "Deal Created Successfully"
+      failure: "Failed to Create a Deal"
