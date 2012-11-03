@@ -6,12 +6,13 @@
       <div class="login-form">
         <h2 class="logo">MightBuy.<span>for business</span></h2>
         <hr/>
-        <form action="">
+        <%= form_for(@business_staff,url: new_business_staff_session_path) do |f| -%>
           <fieldset>
             <label>Username</label>
-            <input type="text" />
+            <%= f.text_field :email -%>
             <label>Password</label>
-            <input type="password"/>
+            <%= f.password_field :password -%>
+
             <div class="clearfix">
               <button class="btn btn-yellow w80 pull-right" type="submit">
                 Login
@@ -19,7 +20,7 @@
             </div>
             <hr class="m-bot0"/>
           </fieldset>
-        </form>
+        <% end -%>
       </div>
     </div>
     <div class="footer">
