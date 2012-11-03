@@ -188,6 +188,9 @@ table th, table td, .table label, .table input, .table select, .table textarea, 
 .table tbody td a, .table td a, .table-footer a{
   color:#900;
 }
+.table tbody td a.btn, .table td a.btn, .table-footer a.btn{
+  color:#fff;
+}
 .table-container{
   padding: 10px 30px 15px 30px;
 }
