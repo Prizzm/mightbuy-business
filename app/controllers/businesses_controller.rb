@@ -1,7 +1,7 @@
 class BusinessesController < ApplicationController
   skip_before_filter :authenticate_business_staff!, only: [:new, :create, :foo]
 
-  before_filter :find_business, only: [:show, :complete_profile, :update]
+  before_filter :find_business, only: [:show, :complete_profile, :update, :profile]
 
   layout :choose_layout
 
@@ -41,6 +41,10 @@ class BusinessesController < ApplicationController
     if @business.business_urls.empty?
       @business.business_urls.build()
     end
+  end
+
+  def profile
+    render layout: 'business_with_sidebar'
   end
 
   private

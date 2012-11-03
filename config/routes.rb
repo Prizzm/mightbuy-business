@@ -4,6 +4,7 @@ MightbuyBusiness::Application.routes.draw do
   resource :business do
     collection do
       get :complete_profile
+      get :profile
     end
   end
 
