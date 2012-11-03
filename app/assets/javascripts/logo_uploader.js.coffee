@@ -29,3 +29,9 @@ class @Mightbuy.LogoUploader
 
 jQuery ->
   Mightbuy.logoUploader = new Mightbuy.LogoUploader()
+  $("#ajax-loading").
+    ajaxStart( ->
+      $(this).fadeIn('slow')
+    ).ajaxStop( ->
+      $(this).fadeOut('slow')
+    )
