@@ -163,6 +163,14 @@ a.logout{
     font-weight:bold;
     color:#bcbcbc;
   }
+  a{
+    color:#fff;
+    
+    &:hover{
+      color:#ff0;
+      text-decoration:underline;
+    }
+  }
 }
 table.table{
   margin:0;
