@@ -1,4 +1,4 @@
-<tr id="edit-product-<%= @product.id -%>">
+<tr id="edit-product-<%= @product.id -%>" class="edit-product-row">
   <td colspan="5" class="add-deal">
     <%= form_for(@product, remote: true,html: {class: "form-horizontal"}) do |f| -%>
       <legend>
@@ -30,9 +30,7 @@
           <div class="control-group">
             <div class="controls m-top5">
               <%= f.submit("Save Product", class: "btn btn-danger") -%>
-              <button class="btn btn-danger m-left5">
-                Cancel
-              </button>
+              <a href="javascript:void(0)" class="btn btn-danger m-left5 product-edit-cancel"> Cancel </a>
             </div>
           </div>
         </div>

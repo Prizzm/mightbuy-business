@@ -9,6 +9,7 @@ class @Mightbuy.Business
 
     $(".add-product-btn").live('click',@showAddProduct)
     $(".product-create-cancel").live('click', -> $(".add-product-row").hide())
+    $(".product-edit-cancel").live('click', -> $(".edit-product-row").remove())
 
   addMoreURL: ->
     next_counter = $(".business-urls input[type='text']").length
