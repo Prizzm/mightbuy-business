@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121103024054) do
+ActiveRecord::Schema.define(:version => 20121103062500) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -296,6 +296,7 @@ ActiveRecord::Schema.define(:version => 20121103024054) do
     t.integer  "business_id"
     t.boolean  "accept_payments"
     t.float    "price"
+    t.string   "domain_name"
   end
 
   create_table "responses", :force => true do |t|
