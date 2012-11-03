@@ -5,6 +5,9 @@ require "pry"
 require 'rspec/rails'
 require 'rspec/autorun'
 
+FactoryGirl.definition_file_paths << File.join(File.dirname(__FILE__),"..","vendor/mightbuy-models/spec/factories")
+FactoryGirl.find_definitions
+
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}

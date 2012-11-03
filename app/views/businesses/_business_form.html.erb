@@ -29,12 +29,14 @@
 
       <label>Website Address</label>
       <div class='business-urls'>
-        <%= fields_for :business_urls do |business_url| -%>
-          <%= business_url.text_field :domain -%>
+        <%= f.fields_for :business_urls do |business_url| -%>
+          <div>
+            <%= business_url.text_field :domain -%>
 
-          <a href="javascript:void(0);" class="btn btn-yellow btn-add more-url">
-            <i class="icon-plus"></i>
-          </a>
+            <a href="javascript:void(0);" class="btn btn-yellow btn-add more-url">
+              <i class="icon-plus"></i>
+            </a>
+          </div>
         <% end -%>
       </div>
 

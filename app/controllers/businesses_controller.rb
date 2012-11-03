@@ -36,6 +36,9 @@ class BusinessesController < ApplicationController
   end
 
   def complete_profile
+    if @business.business_urls.empty?
+      @business.business_urls.build()
+    end
   end
 
   private

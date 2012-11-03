@@ -8,7 +8,8 @@ class @Mightbuy.Business
       $(".more-url").click @addMoreURL
 
   addMoreURL: ->
-    $(".business-urls").append($(JST["templates/add_url"]({})))
+    next_counter = $(".business-urls input[type='text']").length
+    $(".business-urls").append($(JST["templates/add_url"]({counter: next_counter})))
     $(".less-url").click ->
       $(this).parent("div").remove()
 
