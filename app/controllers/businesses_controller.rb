@@ -15,7 +15,7 @@ class BusinessesController < ApplicationController
       sign_in @business_user.business_staff, bypass: true
       redirect_to root_path
     else
-      flash[:error] = @business_user.errors.full_messages
+      flash[:error] = @business_user.errors.full_messages.join(" ")
       render :action => "new"
     end
   end
@@ -43,7 +43,7 @@ class BusinessesController < ApplicationController
 
   private
   def choose_layout
-    if action_name == 'new'
+    if ['new','create'].include?(action_name)
       'application'
     else
       'business'

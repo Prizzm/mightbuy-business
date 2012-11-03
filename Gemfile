@@ -37,6 +37,7 @@ gem 'simple_form'
 gem 'grape'
 gem 'ejs'
 gem 'ministry_of_state', git: "git://github.com/code-mancers/ministry_of_state.git"
+gem "thin"
 
 gem "timeline_fu", git: "git://github.com/styx/timeline_fu.git"
 
