@@ -15,5 +15,9 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require prettify
+//= require jquery.form
+//= require jquery.remotipart
+//= require jquery.facebox
+//= require jquery-fileupload/jquery.fileupload
 //= require mightbuy
 //= require_tree .

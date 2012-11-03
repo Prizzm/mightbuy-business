@@ -1,0 +1,29 @@
+<%= form_for(business, url: business_path, html: { id: "business_logo_form", multipart: true }, remote: true) do |f| -%>
+  <div class="row">
+    <div class="span8">
+      <legend>
+        Profile Information
+      </legend>
+
+      <%= image_tag(business_form_logo_url_helper(business), class: "img-polaroid pull-left", width: 160, height: 80) -%>
+
+      <%= f.file_field :logo, style: "display: none" -%>
+      <%= f.hidden_field :logo_url %>
+      <%= f.hidden_field :retained_logo %>
+      <div class="pull-left">
+        <div>
+          <button id="logo-url-button" class="btn btn-yellow w100 pull-left" type="button">
+            Use Image
+            <br/>
+            From Web
+          </button>
+        </div>
+        <div>
+          <button id="logo-upload-button" class="btn btn-yellow w100 pull-left clear-left" type="submit">
+            Upload
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end -%>
