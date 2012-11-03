@@ -17,7 +17,7 @@ module BusinessesHelper
 
   def business_form_logo_url_helper(business)
     if business.logo
-      business.logo.thumb('160x80').url
+      business.logo.thumb('160x80!').url
     else
       "/assets/company-logo.gif"
     end
