@@ -26,7 +26,7 @@ class @Mightbuy.ProductsList
       productId = el.attr("data-product-id")
       dealForm  = $("#add-deal-form-wrapper-#{productId}")
       if dealForm.length < 1
-        productRow  = $("#product-entry-#{productId}")
+        productRow  = $("#product-#{productId}")
         productName = productRow.find(".product-name").text()
         template = JST["templates/add_deal"]
           productId:   productId
