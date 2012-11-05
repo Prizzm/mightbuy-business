@@ -32,6 +32,12 @@
         <div class="arrow-left"></div>
       <% end -%>
     </li>
+    <li class="<%= active_tab_class('lead_config') -%>">
+      <%= link_to(@business.lead_config ? edit_lead_config_path : new_lead_config_path) do -%>
+        Customer Lead Config
+        <div class="arrow-left"></div>
+      <% end -%>
+    </li>
   </ul>
   <div class="clear"></div>
   <%= link_to("Accounts", profile_business_path, class: "other-menus") -%>

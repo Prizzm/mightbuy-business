@@ -1,0 +1,2 @@
+module LeadConfigsHelper
+end
