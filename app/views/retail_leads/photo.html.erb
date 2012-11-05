@@ -33,12 +33,16 @@
       </div>
     </div>
   </div>
-  <div class="row-fluid">
-    <div class="span12">
-      <%= f.label :product_id, 'Select a Product' -%>
-      <%= f.select :product_id, product_list_helper(@business) -%>
+
+  <%- if @business.lead_config.include_product_select? -%>
+    <div class="row-fluid">
+      <div class="span12">
+        <%= f.label :product_id, 'Select a Product' -%>
+        <%= f.select :product_id, product_list_helper(@business) -%>
+      </div>
     </div>
-  </div>
+  <% end -%>
+
   <br/>
   <div class="row-fluid">
     <div class="span12">
