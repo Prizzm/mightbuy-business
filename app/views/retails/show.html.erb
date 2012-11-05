@@ -1,0 +1,47 @@
+<div class="container silhouette-bg">
+  <div class="trapezoid-bg hidden-phone"></div>
+  <div class="content">
+    <div class="top-gradient"></div>
+    <div class="row">
+      <div class="login-form">
+        <h2 class="logo">MightBuy.<span>for business</span></h2>
+        <hr/>
+        <%= form_for(@business_staff, url: business_staff_session_path) do |f| -%>
+          <fieldset>
+            <label>Username</label>
+            <%= f.text_field :email -%>
+            <label>Password</label>
+            <%= f.password_field :password -%>
+
+            <div class="clearfix">
+              <button class="btn btn-yellow w80 pull-right" type="submit">
+                Login
+              </button>
+            </div>
+            <hr class="m-bot0"/>
+          </fieldset>
+        <% end -%>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="row-fluid">
+        <div class="span6 b-right-dark">
+          <div class="c-holder-left">
+            <%= link_to(new_business_staff_password_path) do -%>
+              <span class="normal-font">Password recovery</span>
+              <span class="tiny-font">You forgot your password?</span>
+            <% end -%>
+          </div>
+        </div>
+        <div class="span6 b-right-light">
+          <div class="c-holder-right">
+            <%= link_to(new_business_path) do -%>
+              <span class="normal-font">Register account</span>
+              <span class="tiny-font">Register a new account here!</span>
+            <% end -%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

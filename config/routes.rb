@@ -16,5 +16,8 @@ MightbuyBusiness::Application.routes.draw do
   resources :customers
   resources :leads
 
+  resource  :retail
+  resources :retail_leads
+
   root :to => "welcome#index"
 end
