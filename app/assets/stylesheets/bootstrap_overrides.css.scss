@@ -35,6 +35,9 @@ $margin:5px;
 .m-right20{
   margin-right:$margin * 4;
 }
+.m-right25{
+  margin-right:$margin * 5;
+}
 .m-top5{
   margin-top:$margin;
 }
@@ -684,14 +687,71 @@ input[type="submit"].btn-yellow, .btn-yellow{
     margin-top:0;
   }
 }
-/*
-#facebox{
-  .content{
-    background-color: #2A2A2A;
-  
-    h4{
-      color:#fff;
-      font:bold 20px/100% "Trebuchet MS", Arial, Helvetica, sans-serif;
+
+.app-config{
+    form{
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-top: 20px;
     }
+
+  .form-horizontal{
+    .control-group {
+      margin-bottom: 15px;
+    }
+    .control-label {
+      width: 200px;
+    }
+    .controls {
+      margin-left: 220px;
+    }
+    textarea {
+      width:95%;
+      height:150px;
+    }  
   }
-}*/
+}
+.release-liability{
+  text-shadow:none;
+  padding:50px;
+
+  h1{
+    color:#fff;
+    line-height:100%;
+    margin-top:0;
+    font-weight:normal;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+  h3{
+    line-height:100%;
+    margin:0 0 20px 0;
+  }
+  small{
+    color:#ccc;
+  }
+  hr{
+    border-top: 1px solid rgba(255,255,255,0.25);
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+  }
+  .overflow{
+    overflow-y: scroll;
+    height:350px
+  }
+  .well{
+    margin-top:20px;
+  }
+  input[type="text"], input[type="email"] {
+    margin-bottom:25px;
+    width:97.5%
+  }
+  select{
+    margin-bottom:25px;
+    width:100%
+  }
+  .picture{
+    background:#eee image-url('no-image-small.gif') center center no-repeat;
+    border:1px solid #ccc;
+    margin-bottom:15px;
+    height:350px;
+  }
+}

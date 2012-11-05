@@ -1,24 +1,72 @@
-<%= form_for @lead, url: retail_leads_path do |f| -%>
-  <div id="business-liability">
-    I have voluntarily agreed to test ride a bicycle and/ or
-    participate in an event organized or sponsored by PUBLIC Bikes,
-    Inc. I am aware that my participation in bicycle riding and/or
-    any event offered by PUBLIC Bikes involves numerous risks of
-    injury, including, but not limited to, falls, loss of control,
-    collisions with other bikers, cars and other natural and
-    man-made objects and I Freely Assume Those Risks.
+<div class="release-liability">
+  <%= form_for @lead, url: retail_leads_path do |f| -%>
+  <div class="row-fluid">
+    <div class="span12">
+      <img class="img-polaroid pull-left m-right25" src="/assets/company-logo.gif" />
+      <h1>Acme Industries Pvt. Ltd.</h1>
+    </div>
   </div>
-
-  <%= f.label :name, 'Name' -%>
-  <%= f.text_field  :name -%>
-
-  <%= f.label :phone_number, 'Phone Number' -%>
-  <%= f.text_field  :phone_number -%>
-
-  <%= f.label :email, 'Email' -%>
-  <%= f.email_field :email -%>
-
-  <%= f.check_box   :join_list -%>
-
-  <%= f.submit -%>
-<% end -%>
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="well">
+        <div class="overflow">
+          <h3>Release and Waiver of Liability, Assumption of Risk, and Indemnity Agreement</h3>
+          <p>
+            I have voluntarily agreed to test ride a bicycle and/ or participate in an event organized or sponsored by PUBLIC Bikes, Inc.  I am aware that my participation in bicycle riding and/or any event offered by PUBLIC Bikes involves numerous risks of injury, including, but not limited to, falls, loss of control, collisions with other bikers, cars and other natural and man-made objects and I Freely Assume Those Risks.
+          </p>
+          <p>
+            As lawful consideration for being permitted to test ride a PUBLIC Bikes bicycle, I for myself, my personal representatives, assigns, heirs, and next of kin Agree to Release From Any Legal Liability and Agree Not to Sue PUBLIC Bikes, Inc., their owners, officers, directors, members, agents and employees, for any and all injuries caused by or resulting from any participation in the test ride and/or the bicycling event organized or sponsored by PUBLIC bikes.
+          </p>
+          <p>
+            If, despite this RELEASE AND WAIVER OF LIABILITY, ASSUMPTION OF RISK, AND INDEMNITY AGREEMENT I, or anyone on my behalf, makes a claim against PUBLIC Bikes, Inc., its owners, officers, directors, members, agents or employees, I WILL INDEMNIFY, SAVE, AND HOLD HARMLESS PUBLIC Bikes, Inc. and each of the above mentioned individuals from any litigation expenses, attorney fees, loss, liability, damage, or cost which any may incur as the result of such claim.
+          </p>
+          <p>
+            I FURTHER AGREE that the foregoing RELEASE, WAIVER AND INDEMNITY AGREEMENT IS INTENDED TO BE A COMPLETE AND UNCONDITIONAL RELEASE OF ALL LIABILITY TO THE GREATEST EXTENT PERMITTED BY LAW and that if any portion thereof is held invalid, it is agreed that the balance shall, notwithstanding, continue in full legal force and effect.
+          </p>
+          <br/>
+          <h5>Customer Liability for Damage or Theft</h5>
+          <p>
+            In lawful consideration of test riding the bicycle, I agree to assume full responsibility for theft or damage to the bicycle.  I agree to return the bicycle in its original condition.  Furthermore, I agree not to leave the bicycle unattended.
+          </p>
+          <p>
+            PUBLIC Bikes will hold participant&rsquo;s or signatory&rsquo;s valid Driver&rsquo;s License or Credit Card while participant has possession of a PUBLIC Bikes bicycle.
+          </p>
+          <p>
+            I read it. I&rsquo;m ready!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span12">
+      <label>I am aware this contract is legally binding and that I am releasing my legal rights by signing it.</label>
+      <br/>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span12">
+      <div id="business-liability"></div>
+      <%= f.label :name, 'Full Name of participant or Parent/Guardian, if participant is a minor.' -%>
+      <%= f.text_field  :name -%>
+      <%= f.label :phone_number, 'Phone Number' -%>
+      <%= f.text_field  :phone_number -%>
+      <%= f.label :email, 'Email' -%>
+      <%= f.email_field :email -%>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span12">
+      <label class="checkbox"> <%= f.check_box  :join_list -%> Join Mail List </label>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span12">
+      <%= f.submit 'Create Customer Lead', :class => 'btn btn-large btn-danger' %>
+    </div>
+  </div>
+  <% end -%>
+  <br/>
+  <hr/>
+  <small>powered by mightbuy.it</small>
+</div>
