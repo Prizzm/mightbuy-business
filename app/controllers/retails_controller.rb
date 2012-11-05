@@ -3,11 +3,15 @@ class RetailsController < ApplicationController
   before_filter :set_retail_information_in_session, only: :show
 
   def show
-    @business_staff = BusinessStaff.new()
+    if signed_in?
+      redirect_to new_retail_lead_path
+    else
+      @business_staff = BusinessStaff.new()
+    end
   end
 
   private
   def set_retail_information_in_session
-    session[:retail_login] = true
+    session[:retail_login] = true unless signed_in?
   end
 end
