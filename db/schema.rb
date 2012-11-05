@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121103140056) do
+ActiveRecord::Schema.define(:version => 20121105140520) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -187,8 +187,12 @@ ActiveRecord::Schema.define(:version => 20121103140056) do
     t.string   "name"
     t.string   "status"
     t.integer  "product_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.integer  "business_id",                     :null => false
+    t.string   "phone_number"
+    t.boolean  "join_list",    :default => false
+    t.string   "photo_uid"
   end
 
   create_table "deal_deals", :force => true do |t|
@@ -240,6 +244,17 @@ ActiveRecord::Schema.define(:version => 20121103140056) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "lead_configs", :force => true do |t|
+    t.integer  "business_id"
+    t.boolean  "include_liability",      :default => true
+    t.text     "liability",              :default => ""
+    t.boolean  "ask_for_name",           :default => true
+    t.boolean  "ask_to_join_list",       :default => true
+    t.boolean  "include_product_select", :default => true
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
   end
 
   create_table "orders", :force => true do |t|

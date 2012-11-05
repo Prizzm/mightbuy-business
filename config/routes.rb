@@ -16,5 +16,11 @@ MightbuyBusiness::Application.routes.draw do
   resources :customers
   resources :leads
 
+  resource  :retail
+  resources :retail_leads do
+    get 'photo', on: :member
+  end
+  resource  :lead_config, only: [:edit, :update]
+
   root :to => "welcome#index"
 end
