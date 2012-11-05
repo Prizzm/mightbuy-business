@@ -1,0 +1,24 @@
+<%= form_for @lead, url: retail_leads_path do |f| -%>
+  <div id="business-liability">
+    I have voluntarily agreed to test ride a bicycle and/ or
+    participate in an event organized or sponsored by PUBLIC Bikes,
+    Inc. I am aware that my participation in bicycle riding and/or
+    any event offered by PUBLIC Bikes involves numerous risks of
+    injury, including, but not limited to, falls, loss of control,
+    collisions with other bikers, cars and other natural and
+    man-made objects and I Freely Assume Those Risks.
+  </div>
+
+  <%= f.label :name, 'Name' -%>
+  <%= f.text_field  :name -%>
+
+  <%= f.label :phone_number, 'Phone Number' -%>
+  <%= f.text_field  :phone_number -%>
+
+  <%= f.label :email, 'Email' -%>
+  <%= f.email_field :email -%>
+
+  <%= f.check_box   :join_list -%>
+
+  <%= f.submit -%>
+<% end -%>

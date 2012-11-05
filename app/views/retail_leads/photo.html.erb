@@ -1,0 +1,9 @@
+<%= form_for @lead, url: retail_lead_path(@lead), method: :put, html: { multipart: true } do |f| -%>
+  <%= f.file_field :photo %>
+  <%= f.hidden_field :retained_photo %>
+
+  <%= f.label :product_id, 'Select a Product' -%>
+  <%= f.select :product_id, product_list_helper(@business) -%>
+
+  <%= f.submit -%>
+<% end -%>

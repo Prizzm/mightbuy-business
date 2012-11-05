@@ -5,7 +5,9 @@ class ApplicationController < ActionController::Base
 
   private
   def find_business
-    @business = current_business_staff.business
+    unless @business = current_business_staff.business
+      redirect_to root_path
+    end
   end
 
   def authenticate_business_login!
@@ -21,7 +23,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(staff)
     if session.delete(:retail_login)
       session[:retail_session] = true
-      retail_leads_path
+      new_retail_lead_path
     else
       super(staff)
     end
