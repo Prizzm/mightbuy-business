@@ -689,18 +689,19 @@ input[type="submit"].btn-yellow, .btn-yellow{
 }
 
 .app-config{
-    form{
-      margin-left: 5%;
-      margin-right: 5%;
-      margin-top: 20px;
-    }
 
-  .form-horizontal{
+  .edit_lead_config{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+    
     .control-group {
       margin-bottom: 15px;
     }
     .control-label {
       width: 200px;
+      float:left;
+      margin-top:5px;
     }
     .controls {
       margin-left: 220px;
@@ -710,6 +711,13 @@ input[type="submit"].btn-yellow, .btn-yellow{
       height:150px;
     }  
   }
+}
+.form-veri .lbl{
+  margin-top:20px;  
+}
+.btn-preview{
+  float:right;
+  margin-right:6px;
 }
 .release-liability{
   text-shadow:none;

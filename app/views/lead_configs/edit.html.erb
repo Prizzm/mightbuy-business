@@ -1,23 +1,62 @@
-<%= form_for @lead_config, url: lead_config_path, method: :put do |f| -%>
-  <%= f.label :include_liability, "Include Release of Liability?" -%>
-  <%= f.radio_button :include_liability, true  -%>
-  <%= f.radio_button :include_liability, false -%>
-
-  <%= f.label :liability, "Release of Liability Text" -%>
-  <%= f.text_area :liability, rows: 15 -%>
-
-  <%= f.label :ask_for_name, "Ask for Name?" -%>
-  <%= f.radio_button :ask_for_name, true  -%>
-  <%= f.radio_button :ask_for_name, false -%>
-
-  <%= f.label :ask_to_join_list, "Ask to join mailing list?" -%>
-  <%= f.radio_button :ask_to_join_list, true  -%>
-  <%= f.radio_button :ask_to_join_list, false -%>
-
-  <%= f.label :include_product_select, "Include product select?" -%>
-  <%= f.radio_button :include_product_select, true  -%>
-  <%= f.radio_button :include_product_select, false -%>
-
-  <%= f.submit "Save" -%>
-<% end -%>
-
+<div class="span9 bg-dark unevenheights app-config">
+  <h3 class="page-title align-right"> Configure Mightbuy Retail App </h3>
+  <%= form_for @lead_config, url: lead_config_path, method: :put, :class=>"form-horizontal" do |f| -%>
+  <legend>
+    App Config
+  </legend>
+  <div class="span8">
+    <div class="control-group">
+      <%= f.label :include_liability, "Include Release of Liability?", :class=>"control-label" -%>
+      <div class="controls">
+        <label class="radio inline"> <%= f.radio_button :include_liability, true  -%>
+          Yes </label>
+        <label class="radio inline"> <%= f.radio_button :include_liability, false -%>
+          No </label>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :liability, "Release of Liability Text", :class=>"control-label" -%>
+      <div class="controls">
+        <%= f.text_area :liability, rows: 15 -%>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :ask_for_name, "Ask for Name?", :class=>"control-label" -%>
+      <div class="controls">
+        <label class="radio inline"> <%= f.radio_button :ask_for_name, true  -%>
+          Yes </label>
+        <label class="radio inline"> <%= f.radio_button :ask_for_name, false -%>
+          No </label>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :ask_to_join_list, "Ask to join mailing list?", :class=>"control-label" -%>
+      <div class="controls">
+        <label class="radio inline"> <%= f.radio_button :ask_to_join_list, true  -%>
+          Yes </label>
+        <label class="radio inline"> <%= f.radio_button :ask_to_join_list, false -%>
+          No </label>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :include_product_select, "Include product select?", :class=>"control-label" -%>
+      <div class="controls">
+        <label class="radio inline"> <%= f.radio_button :include_product_select, true  -%>
+          Yes </label>
+        <label class="radio inline">
+          <input type="radio" name="include-release-liability">
+          No </label>
+      </div>
+    </div>
+    <hr/>
+    <div class="control-group">
+      <div class="controls m-top5">
+        <%= f.submit "Save", :class=>"btn btn-large btn-danger" -%>
+        <button class="btn btn-large btn-danger btn-preview m-left10">
+          Preview
+        </button>
+      </div>
+    </div>
+  </div>
+  <% end -%>
+</div>
