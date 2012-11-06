@@ -18,6 +18,7 @@
 //= require jquery.form
 //= require jquery.remotipart
 //= require jquery-fileupload/jquery.fileupload
+//= require jquery-fileupload/vendor/load-image
 //= require jquery.facebox
 //= require mightbuy
 //= require_tree .
