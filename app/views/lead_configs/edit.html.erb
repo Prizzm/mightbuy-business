@@ -21,15 +21,6 @@
       </div>
     </div>
     <div class="control-group">
-      <%= f.label :ask_for_name, "Ask for Number?", :class=>"control-label" -%>
-      <div class="controls">
-        <label class="radio inline"> <%= f.radio_button :ask_for_phonenumber, true  -%>
-          Yes </label>
-        <label class="radio inline"> <%= f.radio_button :ask_for_phonenumber, false -%>
-          No </label>
-      </div>
-    </div>
-    <div class="control-group">
       <%= f.label :ask_for_name, "Ask for Name?", :class=>"control-label" -%>
       <div class="controls">
         <label class="radio inline"> <%= f.radio_button :ask_for_name, true  -%>
@@ -53,7 +44,7 @@
         <label class="radio inline"> <%= f.radio_button :include_product_select, true  -%>
           Yes </label>
         <label class="radio inline">
-          <label class="radio inline"> <%= f.radio_button :include_product_select, false  -%>
+          <input type="radio" name="include-release-liability">
           No </label>
       </div>
     </div>
