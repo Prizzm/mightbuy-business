@@ -1,10 +1,12 @@
-<a href="/" class="logout-btn">Logout</a>
 <div class="release-liability">
   <%= form_for @lead, url: retail_leads_path do |f| -%>
   <div class="row-fluid">
-    <div class="span12">
+    <div class="span11">
       <%= image_tag(business_form_logo_url_helper(@business), width: 160, height: 80, class: "img-polaroid pull-left m-right25") -%>
       <h1><%= @business.name -%></h1>
+    </div>
+    <div class="span1">
+      <%= link_to("Logout", destroy_business_staff_session_path, method: :delete, class: 'btn btn-danger') -%>
     </div>
   </div>
 

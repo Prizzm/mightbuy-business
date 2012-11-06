@@ -2,7 +2,7 @@ class RetailLeadsController < ApplicationController
   skip_before_filter :authenticate_business_login!
   before_filter :find_business
   before_filter :find_customer_lead!, only: [:show, :photo, :update]
-  layout 'business'
+  layout 'retail'
 
   def show
     render_wizard
