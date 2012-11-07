@@ -1,8 +1,8 @@
 <tr id="lead-entry-#{lead.id}">
-  <td><i class="icon-remove"></i></td>
-  <td><%= mail_to lead.email -%></td>
+  <td><%= lead.created_at.to_date -%></td>
   <td><%= lead.name || "-" -%></td>
-  <td><%= link_to("view", lead.product ? product_path(lead.product) : "#") -%></td>
+  <td><%= lead.email -%></td>
+  <td><%= lead.product.try(:name) -%></td>
   <td>Sent</td>
   <td>
     <button class="btn btn-mini">

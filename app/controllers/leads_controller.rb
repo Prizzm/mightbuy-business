@@ -4,7 +4,8 @@ class LeadsController < ApplicationController
   layout 'business_with_sidebar'
 
   def index
-    @leads = @business.customer_leads.page(params[:page]).per(10)
+    @leads = @business.customer_leads.order("created_at DESC").
+      page(params[:page]).per(10)
   end
 
   def destroy
