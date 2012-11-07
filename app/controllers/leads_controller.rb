@@ -17,7 +17,6 @@ class LeadsController < ApplicationController
     if @lead.update_attributes(params[:customer_lead])
       flash[:notice] = "Updated Lead Successfully"
     else
-      p @lead.errors
       flash[:error]  = "Failed to Update Lead"
     end
 

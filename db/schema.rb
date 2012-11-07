@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121107054230) do
+ActiveRecord::Schema.define(:version => 20121107055120) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -185,11 +185,11 @@ ActiveRecord::Schema.define(:version => 20121107054230) do
   create_table "customer_leads", :force => true do |t|
     t.string   "email"
     t.string   "name"
-    t.string   "status",                                     :default => "Not Sent"
+    t.string   "status",                                     :default => "notsent"
     t.integer  "product_id"
-    t.datetime "created_at",                                                         :null => false
-    t.datetime "updated_at",                                                         :null => false
-    t.integer  "business_id",                                                        :null => false
+    t.datetime "created_at",                                                        :null => false
+    t.datetime "updated_at",                                                        :null => false
+    t.integer  "business_id",                                                       :null => false
     t.string   "phone_number"
     t.boolean  "join_list",                                  :default => false
     t.string   "photo_uid"
@@ -257,6 +257,7 @@ ActiveRecord::Schema.define(:version => 20121107054230) do
     t.boolean  "include_product_select", :default => true
     t.datetime "created_at",                               :null => false
     t.datetime "updated_at",                               :null => false
+    t.boolean  "ask_for_phonenumber"
   end
 
   create_table "orders", :force => true do |t|
