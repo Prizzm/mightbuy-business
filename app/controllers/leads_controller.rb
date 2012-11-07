@@ -1,11 +1,27 @@
 class LeadsController < ApplicationController
   before_filter :find_business
-  before_filter :find_lead!, only: :destroy
+  before_filter :find_lead!, only: [:edit, :update, :destroy]
   layout 'business_with_sidebar'
+  respond_to :html, :js
 
   def index
     @leads = @business.customer_leads.order("created_at DESC").
       page(params[:page]).per(10)
+  end
+
+  def edit
+    respond_with(@lead)
+  end
+
+  def update
+    if @lead.update_attributes(params[:customer_lead])
+      flash[:notice] = "Updated Lead Successfully"
+    else
+      p @lead.errors
+      flash[:error]  = "Failed to Update Lead"
+    end
+
+    respond_with(@lead)
   end
 
   def destroy

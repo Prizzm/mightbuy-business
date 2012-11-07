@@ -1,18 +1,19 @@
-<tr id="lead-entry-#{lead.id}">
-  <td><%= lead.created_at.to_date -%></td>
-  <td><%= lead.name || "-" -%></td>
-  <td><%= lead.email -%></td>
-  <td><%= lead.product.try(:name) -%></td>
-  <td>Sent</td>
-  <td>
+<td><%= lead.created_at.to_date -%></td>
+<td><%= lead.name || "-" -%></td>
+<td><%= lead.email -%></td>
+<td><%= lead.product.try(:name) -%></td>
+<td>Sent</td>
+<td>
+  <%= link_to edit_lead_path(lead), remote: true do -%>
     <button class="btn btn-mini">
       <i class="icon-pencil"></i>
     </button>
-    <%= link_to lead_path(lead), method: :delete, remote: true,
-        confirm: "Do you want to delete this lead?" do -%>
-      <button class="btn btn-mini btn-danger">
-        <i class="icon-remove icon-white"></i>
-      </button>
-    <% end -%>
-  </td>
-</tr>
+  <% end -%>
+
+  <%= link_to lead_path(lead), method: :delete, remote: true,
+      confirm: "Do you want to delete this lead?" do -%>
+    <button class="btn btn-mini btn-danger">
+      <i class="icon-remove icon-white"></i>
+    </button>
+  <% end -%>
+</td>

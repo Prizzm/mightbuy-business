@@ -1,0 +1,4 @@
+if( $("#edit-lead-entry-<%= @lead.id -%>").length < 1 ) {
+  $("#lead-entry-<%= @lead.id -%>").after(
+    "<%= escape_javascript(render partial: 'edit_lead_entry', locals: { lead: @lead }) -%>");
+}

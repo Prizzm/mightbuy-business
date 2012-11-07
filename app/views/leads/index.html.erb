@@ -28,7 +28,9 @@
         <th>Edit/Delete</th>
       </tr>
       <%- @leads.each do |lead| -%>
-        <%= render partial: "lead_entry", locals: { lead: lead } -%>
+        <tr id="lead-entry-<%= lead.id -%>">
+          <%= render partial: "lead_entry", locals: { lead: lead } -%>
+        </tr>
       <% end -%>
     </table>
     <div class="table-footer clearfix">
