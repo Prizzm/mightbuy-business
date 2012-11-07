@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121105140520) do
+ActiveRecord::Schema.define(:version => 20121107055120) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -255,6 +255,7 @@ ActiveRecord::Schema.define(:version => 20121105140520) do
     t.boolean  "include_product_select", :default => true
     t.datetime "created_at",                               :null => false
     t.datetime "updated_at",                               :null => false
+    t.boolean  "ask_for_phonenumber"
   end
 
   create_table "orders", :force => true do |t|
