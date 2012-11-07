@@ -1,0 +1,8 @@
+$("#flash-notifications").html("<%= escape_javascript(render partial: 'shares/notifications') -%>");
+<%- flash.clear -%>
+
+<%- if @lead.errors.empty? -%>
+  $("#edit-lead-entry-<%= @lead.id -%>").remove();
+  $("#lead-entry-<%= @lead.id -%>").html(
+    "<%= escape_javascript(render partial: 'lead_entry', locals: { lead: @lead }) -%>");
+<% end -%>

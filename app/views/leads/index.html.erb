@@ -20,149 +20,25 @@
     </div>
     <table class="table">
       <tr>
-        <th>Accepted</th>
-        <th>Email</th>
+        <th>Registered On</th>
         <th>Name</th>
+        <th>Email</th>
         <th>Product</th>
         <th>Status</th>
         <th>Edit/Delete</th>
       </tr>
-      <tr>
-        <td><i class="icon-ok m-right5"></i><a href="#">view</a></td>
-        <td><a href="#">ryanloper@gmail.com</a></td>
-        <td>Ryan Loper</td>
-        <td><a href="#">view</a></td>
-        <td>Accepted</td>
-        <td>
-          <button class="btn btn-mini">
-            <i class="icon-pencil"></i>
-          </button>
-          <button class="btn btn-mini btn-danger">
-            <i class="icon-remove icon-white"></i>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td><i class="icon-remove"></i></td>
-        <td><a href="#">ryanloper@gmail.com</a></td>
-        <td>Ryan Loper</td>
-        <td><a href="#">view</a></td>
-        <td>Sent</td>
-        <td>
-          <button class="btn btn-mini">
-            <i class="icon-pencil"></i>
-          </button>
-          <button class="btn btn-mini btn-danger">
-            <i class="icon-remove icon-white"></i>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="6" class="add-deal">
-          <form class="form-horizontal clearfix">
-            <div class="pull-left m-top10">
-              <img class="m-right20" src="/assets/no-image.gif"/>
-            </div>
-            <div class="pull-left">
-              <h4><span class="remove-bold">Mike Kelly</span></h4>
-              <a href="#">View Profile</a>
-
-              <div class="clearfix m-top10">
-                <label class="label-mini">Product:</label>
-
-                <div class="pull-left mLeft10">
-                  Ipad
-                </div>
-                <br clear="all"/>
-                <label class="label-mini">Price:</label>
-
-                <div class="pull-left mLeft10">
-                  $499
-                </div>
-                <br clear="all"/>
-                <label class="label-mini">URL:</label>
-                <input class="span3" type="text">
-                <br clear="all"/>
-                <label class="label-mini">&nbsp</label>
-
-                <div class="pull-left m-top10">
-                  <button class="btn btn-danger">
-                    Resend
-                  </button>
-                  <button class="btn btn-danger m-left5">
-                    Cancel
-                  </button>
-                </div>
-              </div>
-            </div>
-          </form>
-        </td>
-      </tr>
-      <tr>
-        <td><i class="icon-remove"></i></td>
-        <td><a href="#">ryanloper@gmail.com</a></td>
-        <td>Ryan Loper</td>
-        <td><a href="#">view</a></td>
-        <td>Open</td>
-        <td>
-          <button class="btn btn-mini">
-            <i class="icon-pencil"></i>
-          </button>
-          <button class="btn btn-mini btn-danger">
-            <i class="icon-remove icon-white"></i>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td><i class="icon-remove"></i></td>
-        <td><a href="#">ryanloper@gmail.com</a></td>
-        <td>Ryan Loper</td>
-        <td><a href="#">view</a></td>
-        <td><b>Unsent</b></td>
-        <td>
-          <button class="btn btn-mini">
-            <i class="icon-pencil"></i>
-          </button>
-          <button class="btn btn-mini btn-danger">
-            <i class="icon-remove icon-white"></i>
-          </button>
-        </td>
-      </tr>
+      <%- @leads.each do |lead| -%>
+        <tr id="lead-entry-<%= lead.id -%>">
+          <%= render partial: "lead_entry", locals: { lead: lead } -%>
+        </tr>
+      <% end -%>
     </table>
     <div class="table-footer clearfix">
       <div class="pull-left m-left5 m-top5">
         Download: <a href="#">CSV</a>
       </div>
       <div class="pagination pagination-right">
-        <ul>
-          <li class="disabled no-style">
-            <a href="#">&laquo; First</a>
-          </li>
-          <li class="disabled no-style">
-            <a href="#">&laquo; Prevoius</a>
-          </li>
-          <li class="active">
-            <a href="#">1</a>
-          </li>
-          <li>
-            <a href="#">2</a>
-          </li>
-          <li>
-            <a href="#">3</a>
-          </li>
-          <li>
-            <a href="#">4</a>
-          </li>
-          <li>
-            <a href="#">5</a>
-          </li>
-          <li class=" no-style">
-            <a href="#">Next &raquo;</a>
-          </li>
-          <li class=" no-style">
-            <a href="#">Last &raquo;</a>
-          </li>
-        </ul>
+        <%= paginate @leads, :theme => 'mightbuy_theme' -%>
       </div>
     </div>
   </div>
