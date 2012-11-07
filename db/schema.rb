@@ -185,11 +185,11 @@ ActiveRecord::Schema.define(:version => 20121108092138) do
   create_table "customer_leads", :force => true do |t|
     t.string   "email"
     t.string   "name"
-    t.string   "status",                                     :default => "notsent"
+    t.string   "status",                                     :default => "Not Sent"
     t.integer  "product_id"
-    t.datetime "created_at",                                                        :null => false
-    t.datetime "updated_at",                                                        :null => false
-    t.integer  "business_id",                                                       :null => false
+    t.datetime "created_at",                                                         :null => false
+    t.datetime "updated_at",                                                         :null => false
+    t.integer  "business_id",                                                        :null => false
     t.string   "phone_number"
     t.boolean  "join_list",                                  :default => false
     t.string   "photo_uid"
