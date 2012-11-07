@@ -1,4 +1,5 @@
 /* Large desktop */
+@import 'mixin';
 @media (min-width: 1200px) {
   .user-info {
     padding-right:0;
@@ -167,5 +168,80 @@
       clear:both;
       margin-top:25px;
     }
+  }
+}
+/* Portrait phones */
+@media (max-width: 320px) {  /* ------------- */
+  body {
+    padding: 0;
+  }
+  h2.logo {
+    font-size: 60px;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  h2.logo.signup span {
+    left: 102px;
+  }
+  .container > .content {
+    padding:0;
+    width:320px;
+    margin:0 auto;
+    border:none;
+    @include border-radius(0);
+    @include box-shadow(none);
+  }
+  .container > .content.signup {
+    width: 320px;
+    margin: 0;
+  }
+  .signup input[type="text"], .signup input[type="password"], .signup input[type="email"] {
+    width: 260px;
+  }
+  .container > .content::after {
+    display:none;
+  }
+  .container.silhouette-bg{
+    background:#650304;
+    min-height:auto;
+  }
+  .login-form {
+    padding: 15px 23px 0 23px;
+  }
+  .c-holder-left, .c-holder-right{
+    min-height:15px;
+    height: 15px;
+  }
+  .c-holder-left{
+    padding-left: 0;
+  }
+  a .tiny-font{
+    display:none;
+  }
+  form{
+    margin-bottom:10px;
+  }
+  .btn-yellow.w80 {
+    float: none;
+  }
+  .row-fluid .span6{
+    width:auto;
+  }
+  .top-gradient{
+    width: 150%;
+    position:absolute;
+    top:0;
+    left: -25%;
+    right: 0;
+    height: 150px;
+    background: -webkit-gradient(radial, top center, 0px, center center, 100%, color-stop(0%,#c79191), color-stop(60%,#650304)); 
+    /*background:-webkit-gradient(radial, 50% 0%, 0, 50% 0%, 150, from(white), color-stop(1, #650304));*/
+    background: -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 182, from(white), from(rgba(255, 255, 255, 0.498039)), color-stop(0.95, #650304));
+    background: -webkit-radial-gradient(top, ellipse cover,  #C79191 0%,#650304 60%);
+    background-repeat: no-repeat;
+    background-position: top center;    
+  }
+  .row-fluid .span6.b-right-dark, .row-fluid .span6.b-right-light{
+    width: 48.93617021276595%;
   }
 }

@@ -26,7 +26,6 @@
       left: -25%;
       right: 0;
       height: 150px;
-      @include border-radius(6px 6px 0 0);
       background: #650304;/* Old browsers */
       background: -moz-radial-gradient(top, ellipse cover,  #c79191 0%, #650304 60%); /* FF3.6+ */
       background: -webkit-gradient(radial, top center, 0px, center center, 100%, color-stop(0%,#c79191), color-stop(60%,#650304)); /* Chrome,Safari4+ */
