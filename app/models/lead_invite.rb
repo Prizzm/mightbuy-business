@@ -42,6 +42,10 @@ class LeadInvite
   delegate :name, :email, :to => :lead
 
   def lead_url
-    "#{MB.config.invite_url}?token=#{user.invite_token}"
+    if user.invite_token
+      "#{MB.config.invite_url}?token=#{user.invite_token}&topic_id=#{topic.to_param}"
+    else
+      "#{MB.config.app_url}/topics/#{topic.to_param}"
+    end
   end
 end

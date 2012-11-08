@@ -25,5 +25,17 @@ describe CustomerLead do
       mailer.should deliver_to(customer_lead.email)
     end
   end
+
+
+  context "If user already exists in the system" do
+    before do
+      @user = FactoryGirl.create(:user, email: "hemant+test@example.com")
+    end
+    it "should not redirect user to invite url" do
+      customer_lead = FactoryGirl.create(:customer_lead, email: "hemant+test@example.com")
+      lead_invite = customer_lead.create_topic_customer
+      lead_invite.lead_url.should match(/topics\//)
+    end
+  end
 end
 

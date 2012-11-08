@@ -15,6 +15,8 @@ class LeadsController < ApplicationController
 
   def update
     if @lead.update_attributes(params[:customer_lead])
+      lead_invite = @lead.create_topic_customer
+      lead_invite.email_customer
       flash[:notice] = "Updated Lead Successfully"
     else
       flash[:error]  = @lead.errors.full_messages.first
