@@ -11,25 +11,24 @@
   <div class="row-fluid">
     <div class="span12">
       <div class="well">
-        <div id="lead-photo-preview" class="picture">
-          &nbsp;
-        </div>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td id="lead-photo-preview" valign="center" class="picture">
+              &nbsp;
+            </td>
+          </tr>
+        </table>
+        <br/>
         <div class="clearfix">
           <div class="row-fluid">
-            <div class="span4">
-              <button class="btn btn-danger" type="button">
-                Take snap
-              </button>
-            </div>
-            <div class="span4">
+            <div class="span3 hidden-phone">&nbsp;</div>
+            <div class="span6 photo-upload">
+              <input id="filename" type="text" class="input disabled pull-left visible-desktop" name="filename" readonly>
+              <a id="fileselectbutton" class="btn btn-danger pull-left">Take Pic</a>
               <%= f.file_field :photo %>
               <%= f.hidden_field :retained_photo %>
             </div>
-            <div class="span4">
-              <button class="btn btn-danger pull-right" type="button">
-                Retake snap
-              </button>
-            </div>
+            <div class="span3 hidden-phone">&nbsp;</div>
           </div>
         </div>
       </div>

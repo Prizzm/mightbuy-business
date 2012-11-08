@@ -761,6 +761,8 @@ input[type="submit"].btn-yellow, .btn-yellow{
     border:1px solid #ccc;
     margin-bottom:15px;
     height:350px;
+    width:100%;
+    text-align: center; 
   }
 }
 .logo-small{
@@ -769,4 +771,15 @@ input[type="submit"].btn-yellow, .btn-yellow{
   height:27px;
   float:left;
   margin-left:5px;
+}
+.photo-upload{
+  text-align:center;
+  
+  input[type="file"]{
+    width:1px;height:1px;opacity: 0;
+  }
+  #filename{
+    width: 60%;
+    margin:0 5px 0 0
+  }
 }

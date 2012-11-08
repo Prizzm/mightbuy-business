@@ -1,3 +1,12 @@
+$(document).ready ->
+  $("#fileselectbutton").click (e) ->
+    $(".photo-upload input[type='file']").trigger "click"
+
+  $(".photo-upload input[type='file']").change (e) ->
+    val = $(this).val()
+    file = val.split(/[\\/]/)
+    $("#filename").val file[file.length - 1]
+
 class @Mightbuy.LeadPhotoPreview
   constructor: ->
     @photo_preview = $("#lead-photo-preview")
@@ -18,14 +27,10 @@ class @Mightbuy.LeadPhotoPreview
             imageHeight   = @image.attr("height")
 
             if  imageWidth > previewWidth
-              @image.attr("width", previewWidth).css("width", "#{previewWidth}px")
-            else
-              @image.css("margin-left", (previewWidth - imageWidth)/2)
+              @image.css({'width' : '800px', 'height' : 'auto'})
 
             if imageHeight > previewHeight
-              @image.attr("height", previewHeight).css("height", "#{previewHeight}px")
-            else
-              @image.css("margin-top", (previewHeight - imageHeight)/2)
+              @image.css({'width' : 'auto', 'height' : '350px'})
 
             @photo_preview.html @image
         true

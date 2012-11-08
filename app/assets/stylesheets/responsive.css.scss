@@ -101,7 +101,11 @@
 }
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------ */
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+
+  .photo-upload #fileselectbutton{
+      float:none;
+  }
 } 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------ */
 /* Landscape phones and down */
@@ -169,6 +173,9 @@
       clear:both;
       margin-top:25px;
     }
+  } 
+  .row-fluid .span6.photo-upload{
+    width:100%;
   }
 }
 /* Portrait phones */
