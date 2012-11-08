@@ -28,6 +28,13 @@
 // example: @include box-shadow-2values(0 2px rgba(0, 0, 0, 0.05), 0 -2px rgba(0, 0, 0, 0.05) inset);
 }
 
+@mixin box-shadow-4values ($w , $x, $y, $z){
+  -webkit-box-shadow: $w , $x, $y, $z;
+     -moz-box-shadow: $w , $x, $y, $z;
+          box-shadow: $w , $x, $y, $z;
+// example: @include box-shadow-4values(0 2px #fff, 0 -2px #900 inset, inset 0 2px #ff0, 0 -2px #009);
+}
+
 @mixin border-radius($radius: 0px){  
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;

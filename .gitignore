@@ -18,3 +18,4 @@
 .project
 public/system/
 .DS_Store
+.settings/org.eclipse.core.resources.prefs
