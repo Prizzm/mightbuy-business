@@ -783,3 +783,125 @@ input[type="submit"].btn-yellow, .btn-yellow{
     margin:0 5px 0 0
   }
 }
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Dashboard CSS */
+.dashboard-container{
+  padding:30px;  
+}
+.dash-count {
+  height: 150px;
+  @include box-shadow-2values(0 1px 0 0 rgba(255, 255, 255, 0.10), inset 0 0 5px 1px rgba(0, 0, 0, 0.5));
+  @include border-radius(10px);
+  background-color: rgba(0, 0, 0, 0.15);
+  text-align: center;
+  margin-bottom: 15px;
+}
+.dash-num {
+  color: white;
+  padding-top: 20px;
+  font:normal 75px/100% 'Museo300', sans-serif;
+  @include text-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+  
+  small {
+    color: #999;
+    padding: 8px 0 0 0;
+    font:bold 20px/100% 'Museo300', sans-serif;
+    display: block;
+  }
+}
+.dash-caption{
+  font-size: 10px;
+  line-height: 150%;
+  display: block;
+  margin: 0 0 10px 0;
+  text-align: center;
+  font-family: Verdana, Geneva, sans-serif;
+  color: #fff;
+}
+.more-link{
+  margin-bottom: 40px;
+  text-align: center;
+}
+.value{
+  color: #fff;
+  text-align: center;
+  padding:20px 0;
+  @include border-radius(10px);
+  font:normal 35px/100% 'Museo500', sans-serif;
+  border:1px solid rgba(255,255,255,0.10);
+  @include text-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+  @include box-shadow-4values(1px 0 0 rgba(0, 0, 0, 0.25), inset 1px 0 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(0, 0, 0, 0.25), inset 0 1px  0 rgba(0, 0, 0, 0.25));
+  
+  hr{
+    border-top-color:rgba(0,0,0,0.25);
+    border-bottom-color:rgba(255,255,255,0.10);
+  }
+  .text-success{
+    color: green;
+  }
+  small {
+    color: #999;
+    padding: 8px 0 0 0;
+    font:bold 20px/100% 'Museo300', sans-serif;
+    display: block;
+    
+    i{
+      background-color: #999;
+      color: #333;
+      display: inline-block;
+      width: 20px;
+      @include border-radius(5px);
+      font-style: normal;
+      font-size: 16px;
+      padding: 3px 0 2px 0;
+      font-family: sans-serif;
+      @include text-shadow(none);
+    }
+  }
+}
+.min-height-val{
+  min-height:70px;
+}
+.changes {
+  height: 150px;
+  position:relative;
+  margin: 50px auto 0 auto;
+  width: 200px;
+  
+  span {
+    display: block;
+    float: left;
+    color:#fff;
+  }
+  span.num {
+    font:normal 50px/100% 'Museo300', sans-serif;
+    margin-right: 5px;
+  }
+  b.percent {
+    font-size: 18px;
+  }
+  span.text {
+    width: 90px;
+    font-size:18px;
+    margin-top: 8px;
+  }
+  small {
+    font-size:12px;
+    display: block;
+  }
+  .arrow-up, .arrow-down{
+    font:normal 50px/100% Helvetica, Arial;
+    float: left;
+  }
+  .arrow-up.hide, .arrow-down.hide{
+    display: none
+  }
+  .arrow-up{
+    color:green;
+  }
+  .arrow-down{
+    color:red;
+  }
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
