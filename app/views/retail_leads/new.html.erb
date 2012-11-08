@@ -31,7 +31,7 @@
 
       <%- if @business.lead_config.ask_for_phonenumber? %> 		
         <%= f.label :phone_number, 'Phone Number' %>
-        <%= f.text_field  :phone_number %>
+        <%= f.phone_field  :phone_number %>
       <% end %>
 
       <%= f.label :email, 'Email' -%>
