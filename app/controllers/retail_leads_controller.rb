@@ -21,6 +21,7 @@ class RetailLeadsController < ApplicationController
     if @lead.persisted?
       redirect_to photo_retail_lead_path(@lead)
     else
+      flash[:error] = @lead.errors.full_messages.first
       render action: :new
     end
   end
@@ -30,7 +31,7 @@ class RetailLeadsController < ApplicationController
       flash[:notice] = "Updated Customer Lead Successfully"
       redirect_to new_retail_lead_path
     else
-      flash[:notice] = "Failed to Save Customer Lead"
+      flash[:notice] = @lead.errors.full_messages.first
       rendre action: :photo
     end
   end

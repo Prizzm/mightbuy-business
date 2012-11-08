@@ -4,6 +4,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require "pry"
 require 'rspec/rails'
 require 'rspec/autorun'
+require "email_spec"
 
 FactoryGirl.definition_file_paths << File.join(File.dirname(__FILE__),"..","vendor/mightbuy-models/spec/factories")
 FactoryGirl.find_definitions
@@ -20,6 +21,8 @@ RSpec.configure do |config|
   # config.mock_with :mocha
   # config.mock_with :flexmock
   # config.mock_with :rr
+  config.include(EmailSpec::Helpers)
+  config.include(EmailSpec::Matchers)
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

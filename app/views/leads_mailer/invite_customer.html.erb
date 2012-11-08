@@ -1,9 +1,9 @@
-<h2>Hi <%= @lead.name -%>,</h2>
+<h2>Hi <%= @lead_invite.name -%>,</h2>
 
 <p>
-  Recently you have visited <%= @lead.business.name -%> for buying products.
-  You can register at <%= link_to "Mightbuy.it", "Mightbuy.it" -%>, and
-  manage your purchase wishlist.
+  Recently you have visited <%= @lead_invite.business_name -%> for buying products.
+  You can track the item you wished to purchase on,
+  <%= link_to("Mightbuy.it",@lead_invite.lead_url) -%>.
 </p>
 
 <p>

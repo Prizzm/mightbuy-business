@@ -2,6 +2,7 @@ development: &local
   email:
     sender: noreply@mightbuy.it
   app_url: "http://localhost:3000"
+  invite_url: "http://localhost:3100/invite"
 
 test:
   <<: *local
@@ -11,3 +12,5 @@ production:
   email:
     sender: noreply@mightbuy.it
   app_url: "https://www.mightbuy.it"
+  invite_url: "http://www.mightbuy.it/invite"
+  
