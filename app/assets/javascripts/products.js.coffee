@@ -24,7 +24,8 @@ class @Mightbuy.ProductsList
       el = $(e.currentTarget)
 
       productId = el.attr("data-product-id")
-      dealForm  = $("#add-deal-form-wrapper-#{productId}")
+      dealId    = "#add-deal-form-wrapper-#{productId}"
+      dealForm  = $(dealId)
       if dealForm.length < 1
         productRow  = $("#product-#{productId}")
         productName = productRow.find(".product-name").text()
@@ -32,6 +33,10 @@ class @Mightbuy.ProductsList
           productId:   productId
           productName: productName
         productRow.after $(template)
+
+        $(dealId).find(".cancel-deal").click (evt)->
+          $(dealId).remove()
+          evt.preventDefault()
 
       e.preventDefault()
 
