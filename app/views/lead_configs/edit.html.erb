@@ -60,9 +60,7 @@
     <div class="control-group">
       <div class="controls m-top5">
         <%= f.submit "Save", :class=>"btn btn-large btn-danger" -%>
-        <button class="btn btn-large btn-danger btn-preview m-left10">
-          Preview
-        </button>
+        <%= link_to "Preview", new_retail_lead_path, target: "_blank", class: "btn btn-large btn-danger btn-preview m-left10" -%>
       </div>
     </div>
   </div>
