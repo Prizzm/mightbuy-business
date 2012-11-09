@@ -98,6 +98,42 @@
   input[type="email"] {
     width:260px;
   }
+  .dash-num {
+    padding-top: 30px;
+    font-size: 55px;
+  }
+  .value{
+    font-size: 25px;
+    
+    small {
+      font-size: 14px;
+    }
+  }
+  .changes {
+    width: auto;
+    
+    span.num {
+      margin-right: 5px;
+      font-size: 35px;
+    }
+    b.percent {
+      font-size: 14px;
+    }
+    span.text {
+      width: 75px;
+      line-height: 100%;
+      margin-top: 5px;
+      font-size:14px;
+      text-align:left;
+    }
+    small {
+      font-size:10px;
+    }
+    .arrow-up, .arrow-down{
+      font-size: 35px;
+      width: 30px;
+    }
+  }
 }
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------ */
 /* Landscape phone to portrait tablet */
@@ -105,6 +141,9 @@
 
   .photo-upload #fileselectbutton{
       float:none;
+  }
+  .min-height-val{
+    min-height:52px;
   }
 } 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------ */
@@ -253,5 +292,8 @@
   }
   .row-fluid .span6.b-right-dark, .row-fluid .span6.b-right-light{
     width: 48.93617021276595%;
+  }
+  .value {
+    height: auto !important
   }
 }

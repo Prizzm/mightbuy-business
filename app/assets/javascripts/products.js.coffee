@@ -9,10 +9,14 @@ $.fn.setAllToMaxHeight = ->
 
 $(document).ready ->
   $("div.unevenheights").setAllToMaxHeight()
+  $('div.unevenheights-caption').setAllToMaxHeight()
+  $('div.uneven-val').setAllToMaxHeight()
   $('.account-profile .btn.btn-red.w230').removeClass("disabled")
 
 $(window).resize ->
   $("div.unevenheights").setAllToMaxHeight()
+  $('div.unevenheights-caption').setAllToMaxHeight()
+  $('div.uneven-val').setAllToMaxHeight()
 
 
 class @Mightbuy.ProductsList
