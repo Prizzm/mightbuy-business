@@ -1,4 +1,4 @@
-<tr id="edit-lead-entry-<%= lead.id -%>">
+<tr id="edit-lead-entry-<%= lead.id -%>" class="edit-lead-entry">
   <td colspan="6" class="add-deal">
     <%= form_for lead, url: lead_path(lead), remote: true, html: { class: "form-horizontal clearfix" } do |f| -%>
       <div class="pull-left m-top10">
@@ -21,9 +21,7 @@
             <button class="btn btn-danger" type="submit">
               Resend
             </button>
-            <button class="btn btn-danger m-left5">
-              Cancel
-            </button>
+            <%= link_to 'Cancel', "#", class: "btn btn-danger m-left5 edit-cancel", "data-edit-lead-entry-id" => "edit-lead-entry-#{lead.id}" -%>
           </div>
         </div>
       </div>
