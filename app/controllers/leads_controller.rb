@@ -2,11 +2,17 @@ class LeadsController < ApplicationController
   before_filter :find_business
   before_filter :find_lead!, only: [:edit, :update, :destroy]
   layout 'business_with_sidebar'
-  respond_to :html, :js
+  respond_to :html, :js, :csv
 
   def index
-    @leads = @business.customer_leads.order("created_at DESC").
-      page(params[:page]).per(10)
+    all_leads = @business.customer_leads.order("created_at DESC").includes(:product)
+    @leads = all_leads.page(params[:page]).per(10)
+
+    respond_with(@leads) do |format|
+      format.html
+      format.js
+      format.csv { send_data all_leads.to_csv }
+    end
   end
 
   def edit

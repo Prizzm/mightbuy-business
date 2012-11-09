@@ -24,7 +24,7 @@
     </table>
     <div class="table-footer clearfix">
       <div class="pull-left m-left5 m-top5">
-        Download: <a href="#">CSV</a>
+        Download: <%= link_to 'CSV', leads_path(format: :csv)-%>
       </div>
       <div class="pagination pagination-right">
         <%= paginate @leads, :theme => 'mightbuy_theme' -%>
