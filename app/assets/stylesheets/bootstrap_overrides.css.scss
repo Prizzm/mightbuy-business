@@ -904,4 +904,74 @@ input[type="submit"].btn-yellow, .btn-yellow{
     color:red;
   }
 }
+/* ---Topic Communication / Potential Customers--------------------------------------------------------------------------------------------------------------------------------------------- */
+.form-column{
+  width:280px;
+  float:left;
+  text-align:left;
+  font-weight:bold;
+
+  
+  textarea{
+    width:100%;
+    height:125px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+.form-horizontal .form-column .control-label{
+  width: 80px;
+  font-weight:normal;
+}
+.form-horizontal .form-column .control-label.ptop0{
+  padding-top: 0;
+}
+.form-horizontal .form-column .controls{
+  word-break: break-all;
+  margin-left: 90px;
+}
+.font-normal{
+  font-weight:normal;
+  color:#666;
+  font-size:11px;
+}
+.table td.view-details{
+  text-align:left;
+  padding:0;
+  background:transparent;
+}
+.view-details{
+  form{
+    margin:0 15px;
+    padding:10px 20px;
+    background:#fff;
+  }
+  h6{
+    font-style:italic;
+    margin-bottom:0;
+    color:#666
+  }
+  h5{
+    border-bottom:1px solid #ccc;
+    padding-top:10px;
+    line-height:1
+  }
+  textarea.comment{
+    width:100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height:75px;
+    margin-bottom:15px;
+  }
+}
+.clear{
+  clear:both
+}
+.comment-view{
+  padding:0 0 10px 0 ;
+  border-bottom:1px solid #ddd;
+  margin-bottom:10px;
+}
 /* ------------------------------------------------------------------------------------------------------------------------------------------------ */

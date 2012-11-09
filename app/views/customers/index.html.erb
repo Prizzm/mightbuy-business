@@ -1,6 +1,5 @@
 <div class="span9 bg-dark unevenheights">
   <h3 class="page-title align-right">People connected to your business through MightBuy</h3>
-
   <div class="table-container">
     <div class="table-header clearfix">
       <div class="title">
@@ -14,21 +13,77 @@
         <th>Total Products</th>
         <th>Details</th>
       </tr>
+      <!-- Remove this Dummy extra row from here-->
+      <tr>
+        <td><a href="#">Ryan Loper</a></td>
+        <td><a href="#">2</a></td>
+        <td><a href="#">15</a></td>
+        <td><a href="#">view details</a></td>
+      </tr>
+      <!-- till here-->
+      <tr>
+        <td colspan="5" class="view-details">
+        <form class="form-horizontal">
+          <div class="form-column">
+            <div class="control-group">
+              <label class="control-label ptop0">Topic Name:</label>
+              <div class="controls">
+                Public Bikes PB001
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label ptop0">URL:</label>
+              <div class="controls">
+                <a href="http://wwww.apple.com" target="_blank">http://www.roozt.com/Khunu/product_info....</a>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label ptop0">Votes:</label>
+              <div class="controls">
+                30 <span style="margin-left:10px">(<span style="color:green">50% &ndash; yes</span> | <span style="color:red">50% &ndash; no</span>)</span>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label ptop0">Shared:</label>
+              <div class="controls">
+                facebook
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label ptop0">Trafic:</label>
+              <div class="controls">
+                37 <span class="font-normal">Views</span> &nbsp;&nbsp; 14 <span class="font-normal">Referals</span>
+              </div>
+            </div>
+          </div>
+          <div class="form-column">
+            <div class="control-group">
+              <label class="control-label ptop0">Note:</label>
+              <div class="controls">
+                <textarea rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+          <br class="clear"/>
+          <h5>Comments</h5>
+          <div class="comment-view">
+            <h6>Commented by</h6>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+          </div>
+          <textarea class="comment"></textarea>
+          <button class="btn pull-right btn-danger btn-small">
+            <i class="icon-plus icon-white"></i> Add comment
+          </button>
+          <div class="clear"></div>
+        </form></td>
+      </tr>
       <% @customers.each do |customer| -%>
-        <tr>
-          <td>
-            <a href="#">
-            <%= customer.name -%>
-            </a>
-          </td>
-          <td>
-            <%= customer.company_products(@business).size -%>
-          </td>
-          <td>
-            <%= customer.topics.size -%>
-          </td>
-          <td><a href="#">view details</a></td>
-        </tr>
+      <tr>
+        <td><a href="#"> <%= customer.name -%> </a></td>
+        <td> <%= customer.company_products(@business).size -%> </td>
+        <td> <%= customer.topics.size -%> </td>
+        <td><a href="#">view details</a></td>
+      </tr>
       <% end -%>
     </table>
     <div class="table-footer clearfix">
