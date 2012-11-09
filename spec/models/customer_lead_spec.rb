@@ -58,5 +58,41 @@ describe CustomerLead do
       lead_invite.lead_url.should match(/topics\//)
     end
   end
-end
 
+  describe ".to_csv" do
+    let(:business) { FactoryGirl.create(:business) }
+    let(:csv_content)  { CustomerLead.to_csv }
+    let(:csv_headers)  { ["Id", "Registered On", "Name", "Email", "Product", "Status"].join(",") }
+    let(:csv_data)     { csv_content.gsub(csv_headers, "") }
+
+    context "when no entries" do
+      it "has specific headers" do
+        csv_content.strip.should == csv_headers
+      end
+
+      it "has no data" do
+        csv_data.strip.should be_blank
+      end
+    end
+
+    context "with entries" do
+      let(:ipad)  { FactoryGirl.create(:customer_lead, name: "Steve Jobs", phone_number:"1234567890") }
+      let(:ipod)  { FactoryGirl.create(:customer_lead, name: "Tim Cook",   phone_number:"9876543210") }
+      before(:each) { [ipad, ipod] }
+
+      it "has specific headers" do
+        csv_content.strip.should match(csv_headers)
+      end
+
+      it "has leads data" do
+        [ipad, ipod].each do |lead|
+          csv_data.should match(lead.id.to_s)
+          csv_data.should match(lead.name)
+          csv_data.should match(lead.email)
+          csv_data.should match(lead.product.name)
+          csv_data.should match(lead.humanized_status)
+        end
+      end
+    end
+  end
+end
