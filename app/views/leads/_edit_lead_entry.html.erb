@@ -14,14 +14,7 @@
             <%= f.select :product_id, product_list_helper(lead.business) -%>
           </div>
           <br clear="all"/>
-          <label class="label-mini">Price:</label>
 
-          <div class="pull-left mLeft10">
-            <%= f.text_field :price -%>
-          </div>
-          <br clear="all"/>
-
-          <br clear="all"/>
           <label class="label-mini">&nbsp</label>
 
           <div class="pull-left m-top10">
@@ -33,6 +26,12 @@
             </button>
           </div>
         </div>
+      </div>
+
+      <div class="pull-left m-left25 m-top10">
+        <label class="label-mini">Message:</label>
+        <%= f.text_area :message, rows: 3, cols: 10 -%>
+        <br clear="all"/>
       </div>
     <% end -%>
   </td>
