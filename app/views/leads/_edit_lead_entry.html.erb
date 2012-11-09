@@ -1,4 +1,4 @@
-<tr id="edit-lead-entry-<%= lead.id -%>">
+<tr id="edit-lead-entry-<%= lead.id -%>" class="edit-lead-entry">
   <td colspan="6" class="add-deal">
     <%= form_for lead, url: lead_path(lead), remote: true, html: { class: "form-horizontal clearfix" } do |f| -%>
       <div class="pull-left m-top10">
@@ -14,25 +14,22 @@
             <%= f.select :product_id, product_list_helper(lead.business) -%>
           </div>
           <br clear="all"/>
-          <label class="label-mini">Price:</label>
 
-          <div class="pull-left mLeft10">
-            <%= f.text_field :price -%>
-          </div>
-          <br clear="all"/>
-
-          <br clear="all"/>
           <label class="label-mini">&nbsp</label>
 
           <div class="pull-left m-top10">
             <button class="btn btn-danger" type="submit">
               Resend
             </button>
-            <button class="btn btn-danger m-left5">
-              Cancel
-            </button>
+            <%= link_to 'Cancel', "#", class: "btn btn-danger m-left5 edit-cancel", "data-edit-lead-entry-id" => "edit-lead-entry-#{lead.id}" -%>
           </div>
         </div>
+      </div>
+
+      <div class="pull-left m-left25 m-top10">
+        <label class="label-mini">Message:</label>
+        <%= f.text_area :message, rows: 3, cols: 10 -%>
+        <br clear="all"/>
       </div>
     <% end -%>
   </td>
