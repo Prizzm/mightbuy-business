@@ -3,11 +3,18 @@
 
   <div class="table-container">
     <div class="table-header clearfix">
+      <button class="btn btn-small btn-danger pull-right add-staff-button">
+        Add new Staff
+      </button>
       <div class="title">
-        Business Staffs
+        Business Staff
       </div>
     </div>
+
     <table class="table">
+      <tr class="add-staff-row hide">
+        <%= render :partial => "add_new_staff" -%>
+      </tr>
       <tr>
         <th>Name</th>
         <th> Email </th>
@@ -23,6 +30,9 @@
         </tr>
       <% end -%>
     </table>
+    <div class="table-footer clearfix">
+      <%= paginate @business_staffs, :theme => 'mightbuy_theme' -%>
+    </div>
   </div>
 </div>
 
