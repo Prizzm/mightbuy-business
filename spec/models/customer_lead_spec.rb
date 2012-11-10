@@ -60,6 +60,18 @@ describe CustomerLead do
     end
   end
 
+  context "If customer lead has no name" do
+    before do
+      @customer_lead = FactoryGirl.create(:customer_lead, name: nil)
+    end
+
+    it "should regex email and create a customer with that name" do
+      lead_invite = @customer_lead.create_topic_customer
+      lead_invite.user.should_not be_nil
+      lead_invite.user.name.should match(/lead\d+/)
+    end
+  end
+
   describe ".to_csv" do
     let(:business) { FactoryGirl.create(:business) }
     let(:csv_content)  { CustomerLead.to_csv }
