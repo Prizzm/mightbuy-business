@@ -29,10 +29,8 @@ class RetailLeadsController < ApplicationController
   def update
     if @lead.update_attributes(params[:customer_lead])
       flash[:notice] = "Updated Customer Lead Successfully"
-      redirect_to new_retail_lead_path
     else
       flash[:notice] = @lead.errors.full_messages.first
-      rendre action: :photo
     end
   end
 

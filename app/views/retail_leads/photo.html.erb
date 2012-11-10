@@ -1,61 +1,65 @@
 <div class="release-liability">
-  <%= form_for @lead, url: retail_lead_path(@lead), method: :put, html: { multipart: true } do |f| -%>
-  <div class="row-fluid">
-    <div class="span12">
-      <%= link_to("Logout", destroy_business_staff_session_path, method: :delete, class: 'btn btn-danger pull-right') -%>
-      <%= image_tag(business_form_logo_url_helper(@business), width: 160, height: 80, class: "img-polaroid pull-left m-right25") -%>
-      <h1><%= @business.name -%></h1>
+  <%= form_for @lead, url: retail_lead_path(@lead), remote: true, method: :put, html: {multipart: true} do |f| -%>
+    <div class="row-fluid">
+      <div class="span12">
+        <%= link_to("Logout", destroy_business_staff_session_path, method: :delete, class: 'btn btn-danger pull-right') -%>
+        <%= image_tag(business_form_logo_url_helper(@business), width: 160, height: 80, class: "img-polaroid pull-left m-right25") -%>
+        <h1><%= @business.name -%></h1>
+      </div>
     </div>
-  </div>
-  
-  <div class="row-fluid">
-    <div class="span12">
-      <div class="well">
-        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-          <tr>
-            <td id="lead-photo-preview" valign="center" class="picture">
-              &nbsp;
-            </td>
-          </tr>
-        </table>
-        <br/>
-        <div class="clearfix">
-          <div class="row-fluid">
-            <div class="span3 hidden-phone">&nbsp;</div>
-            <div class="span6 photo-upload">
-              <input id="filename" type="text" class="input disabled pull-left visible-desktop" name="filename" readonly>
-              <a id="fileselectbutton" class="btn btn-danger pull-left">Take Pic</a>
-              <%= f.file_field :photo %>
-              <%= f.hidden_field :retained_photo %>
+
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="well">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td id="lead-photo-preview" valign="center" class="picture">
+                &nbsp;
+              </td>
+            </tr>
+          </table>
+          <br/>
+
+          <div class="clearfix">
+            <div class="row-fluid">
+              <div class="span3 hidden-phone">&nbsp;</div>
+              <div class="span6 photo-upload">
+                <input id="filename" type="text" class="input disabled pull-left visible-desktop" name="filename" readonly>
+                <a id="fileselectbutton" class="btn btn-danger pull-left">Take Pic</a>
+                <%= f.file_field :photo %>
+                <%= f.hidden_field :retained_photo %>
+              </div>
+              <div class="span3 hidden-phone">&nbsp;</div>
             </div>
-            <div class="span3 hidden-phone">&nbsp;</div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <%- if @business.lead_config.include_product_select? -%>
+    <%- if @business.lead_config.include_product_select? -%>
+      <div class="row-fluid">
+        <div class="span12">
+          <%= f.label :product_id, 'Select a Product' -%>
+          <%= f.select :product_id, product_list_helper(@business) -%>
+        </div>
+      </div>
+    <% end -%>
+
+    <br/>
+
     <div class="row-fluid">
       <div class="span12">
-        <%= f.label :product_id, 'Select a Product' -%>
-        <%= f.select :product_id, product_list_helper(@business) -%>
+        <%= f.submit 'Save', :class => 'btn btn-large btn-danger' %>
+        <button class="btn btn-large btn-danger pull-right" type="button">
+          Send Now
+        </button>
       </div>
     </div>
-  <% end -%>
-
-  <br/>
-  <div class="row-fluid">
-    <div class="span12">
-      <%= f.submit 'Save', :class => 'btn btn-large btn-danger' %>
-      <button class="btn btn-large btn-danger pull-right" type="button">
-        Send Now
-      </button>
-    </div>
-  </div>
   <% end -%>
   <br/>
   <hr/>
   <small class="pull-left">powered by</small>
   <%= link_to("", "http://www.mightbuy.it", class: 'logo-small', target: '_blank') -%>
 </div>
+
+<%= render :partial => "modal_confirmaiton" -%>
