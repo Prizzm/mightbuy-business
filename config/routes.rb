@@ -7,6 +7,7 @@ MightbuyBusiness::Application.routes.draw do
       get :profile
       put :update_profile
     end
+    resources :business_staffs, module: "business"
   end
 
   resources :products do

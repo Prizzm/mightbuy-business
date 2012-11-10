@@ -1,0 +1,28 @@
+<div class="span9 bg-dark unevenheights">
+  <h3 class="page-title align-right"> Business Staffs</h3>
+
+  <div class="table-container">
+    <div class="table-header clearfix">
+      <div class="title">
+        Business Staffs
+      </div>
+    </div>
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th> Email </th>
+      </tr>
+      <% @business_staffs.each do |business_staff| -%>
+        <tr>
+          <td>
+            <%= business_staff.name -%>
+          </td>
+          <td>
+            <%= business_staff.email -%>
+          </td>
+        </tr>
+      <% end -%>
+    </table>
+  </div>
+</div>
+
