@@ -10,7 +10,7 @@ MightbuyBusiness::Application.routes.draw do
   end
 
   resources :products do
-    resources :deals, only: :create
+    resource :deal
   end
 
   resources :customers

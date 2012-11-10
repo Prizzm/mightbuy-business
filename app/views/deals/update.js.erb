@@ -1,0 +1,7 @@
+$("#flash-notifications").html("<%= escape_javascript(render partial: 'shares/notifications') -%>");
+<%- flash.clear -%>
+
+<%- if @deal.persisted? -%>
+  $("#edit-deal-form-wrapper-<%= @product.id -%>").remove()
+<% else -%>
+<% end -%>

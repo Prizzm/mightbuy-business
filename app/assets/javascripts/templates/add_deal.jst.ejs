@@ -1,6 +1,6 @@
 <tr id="add-deal-form-wrapper-<%= productId %>" >
   <td colspan="5" class="add-deal">
-    <form class="form-horizontal" method="post" action="/products/<%= productId %>/deals" accept-charset="UTF-8" data-remote="true">
+    <form class="form-horizontal" method="post" action="/products/<%= productId %>/deal" accept-charset="UTF-8" data-remote="true">
       <legend>
         <span class="remove-bold">Add a Deal for </span><%= productName %>
       </legend>
@@ -46,7 +46,7 @@
               <button class="btn btn-danger">
                 Authorize deal
               </button>
-              <button class="btn btn-danger m-left5 cancel-deal">
+              <button class="btn btn-danger m-left5 cancel-deal" data-form-wrapper-id="#add-deal-form-wrapper-<%= productId %>">
                 Cancel
               </button>
             </div>

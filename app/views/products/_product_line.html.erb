@@ -8,10 +8,13 @@
   <%= product.topics.count -%>
 </td>
 <td class="product-deals">
-  <%= link_to product.bargins.count, "#", class: "product-deals-count" -%>
-  <button class="btn btn-danger btn-mini m-left10 add-deal-button" data-product-id="<%= product.id -%>">
-    Add Deal
-  </button>
+  <%- if product.bargin -%>
+    <%= link_to 'Edit Deal', edit_product_deal_path(product), remote: true, class: "btn btn-danger btn-mini m-left10 add-deal-button" -%>
+  <% else -%>
+    <button class="btn btn-danger btn-mini m-left10 add-deal-button" data-product-id="<%= product.id -%>">
+      Add Deal
+    </button>
+  <% end -%>
 </td>
 <td>
   <%= link_to(edit_product_path(product), class: "btn btn-mini", remote: true) do -%>
