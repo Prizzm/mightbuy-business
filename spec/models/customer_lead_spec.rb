@@ -44,6 +44,7 @@ describe CustomerLead do
       mailer = @lead_invite.email_customer
       customer_lead.sent?.should be_true
       mailer.should deliver_to(customer_lead.email)
+      mailer.should have_body_text(@lead_invite.message)
     end
   end
 

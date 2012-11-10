@@ -1,7 +1,10 @@
 <h2>Hi <%= @lead_invite.name -%>,</h2>
 
 <p>
-  Recently you have visited <%= @lead_invite.business_name -%> for buying products.
+  <%= @lead_invite.message -%>
+</p>
+
+<p>
   You can track the item you wished to purchase on,
   <%= link_to("Mightbuy.it",@lead_invite.lead_url) -%>.
 </p>

@@ -40,7 +40,7 @@ class LeadInvite
     lead.business.name.capitalize
   end
 
-  delegate :name, :email, :to => :lead
+  delegate :name, :email, :message, :to => :lead
 
   def lead_url
     if lead.invite_token
