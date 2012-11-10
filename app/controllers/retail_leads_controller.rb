@@ -27,7 +27,18 @@ class RetailLeadsController < ApplicationController
   end
 
   def update
-    if @lead.update_attributes(params[:customer_lead])
+    @lead.update_attributes(params[:customer_lead])
+
+    if @lead.errors.empty? && params[:send_email] == '1'
+      lead_invite = @lead.create_topic_customer
+      if lead_invite.success?
+        lead_invite.email_customer
+      else
+        @lead.errors.add(:base,lead_invite.message)
+      end
+    end
+
+    if @lead.errors.empty?
       flash[:notice] = "Updated Customer Lead Successfully"
     else
       flash[:notice] = @lead.errors.full_messages.first

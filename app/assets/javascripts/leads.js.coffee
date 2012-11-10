@@ -7,7 +7,6 @@ class @Mightbuy.LeadsList
     @liveBindEditLeadCancel()
 
   liveBindEditLeadCancel: ->
-    console.info "binding"
     $(".edit-lead-entry .edit-cancel").live 'click', (e) ->
       el = $(e.currentTarget)
       editLeadEntryId = "#" + el.attr("data-edit-lead-entry-id")
