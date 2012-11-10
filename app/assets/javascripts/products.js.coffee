@@ -22,6 +22,7 @@ $(window).resize ->
 class @Mightbuy.ProductsList
   constructor: ->
     @bindAddDeals()
+    @bindCancelDeals()
 
   bindAddDeals: ->
     $(".add-deal-button").click (e) ->
@@ -38,11 +39,14 @@ class @Mightbuy.ProductsList
           productName: productName
         productRow.after $(template)
 
-        $(dealId).find(".cancel-deal").click (evt)->
-          $(dealId).remove()
-          evt.preventDefault()
-
       e.preventDefault()
+
+  bindCancelDeals: ->
+    $(".cancel-deal").live 'click', (evt)->
+      el = $(evt.currentTarget)
+      dealFormWrapperId = el.attr("data-form-wrapper-id")
+      $(dealFormWrapperId).remove()
+      evt.preventDefault()
 
 
 jQuery ->

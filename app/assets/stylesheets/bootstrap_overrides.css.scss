@@ -249,11 +249,11 @@ table th, table td, .table label, .table input, .table select, .table textarea, 
   margin: 0;
   float: right;
 }
-.table td.add-deal{
+.table td.add-deal, .table td.edit-deal{
   padding: 0;
   background:none;
 }
-.table td.add-deal form{
+.table td.add-deal form, .table td.edit-deal form{
   background:#fff;
   margin:0 15px;
   padding: 10px 20px;
