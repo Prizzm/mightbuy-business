@@ -28,11 +28,16 @@ class RetailLeadsController < ApplicationController
 
   def update
     if @lead.update_attributes(params[:customer_lead])
+      if params[:commit] == "Send Now"
+        lead_invite = @lead.create_topic_customer
+        lead_invite.email_customer
+      end
+
       flash[:notice] = "Updated Customer Lead Successfully"
       redirect_to new_retail_lead_path
     else
       flash[:notice] = @lead.errors.full_messages.first
-      rendre action: :photo
+      render action: :photo
     end
   end
 
