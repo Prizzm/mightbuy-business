@@ -8,3 +8,6 @@ en:
     create:
       success: "Deal Created Successfully"
       failure: "Failed to Create a Deal"
+    update:
+      success: "Deal Updated Successfully"
+      failure: "Failed to Update a Deal"
