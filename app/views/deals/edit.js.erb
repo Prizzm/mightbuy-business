@@ -1,0 +1,4 @@
+if ( $("#edit-deal-form-wrapper-<%= @product.id -%>").length < 1 ) {
+  $("#product-<%= @product.id -%>").after(
+    "<%= escape_javascript(render partial: 'deals/edit_form', locals: {product: @product}) -%>");
+}
