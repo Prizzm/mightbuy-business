@@ -41,5 +41,13 @@
   </ul>
   <div class="clear"></div>
   <%= link_to("Accounts", profile_business_path, class: "other-menus") -%>
+  <ul class="nav nav-list">
+    <li class="<%= active_tab_class('products') -%>">
+      <%= link_to(products_path) do -%>
+        Business Staffs
+        <div class="arrow-left"></div>
+      <% end -%>
+    </li>
+  </ul>
   <a class="other-menus" href="#">Help</a>
 </div>
