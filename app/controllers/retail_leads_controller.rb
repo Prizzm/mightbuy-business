@@ -10,6 +10,12 @@ class RetailLeadsController < ApplicationController
 
   def new
     @lead = @business.customer_leads.build
+
+    if @business.lead_config.include_liability?
+      render template: 'retail_leads/new'
+    else
+      render template: 'retail_leads/new_with_photo'
+    end
   end
 
   def photo
@@ -19,7 +25,11 @@ class RetailLeadsController < ApplicationController
     @lead = @business.customer_leads.create(params[:customer_lead])
 
     if @lead.persisted?
-      redirect_to photo_retail_lead_path(@lead)
+      if @business.lead_config.include_liability?
+        redirect_to photo_retail_lead_path(@lead)
+      else
+        send_lead_invite if params[:send_email] == '1'
+      end
     else
       flash[:error] = @lead.errors.full_messages.first
       render action: :new
@@ -30,12 +40,7 @@ class RetailLeadsController < ApplicationController
     @lead.update_attributes(params[:customer_lead])
 
     if @lead.errors.empty? && params[:send_email] == '1'
-      lead_invite = @lead.create_topic_customer
-      if lead_invite.success?
-        lead_invite.email_customer
-      else
-        @lead.errors.add(:base,lead_invite.message)
-      end
+      send_lead_invite
     end
 
     if @lead.errors.empty?
@@ -49,6 +54,15 @@ class RetailLeadsController < ApplicationController
   def find_customer_lead!
     unless @lead = @business.customer_leads.find_by_id(params[:id])
       redirect_to new_retail_leads_path
+    end
+  end
+
+  def send_lead_invite
+    lead_invite = @lead.create_topic_customer
+    if lead_invite.success?
+      lead_invite.email_customer
+    else
+      @lead.errors.add(:base,lead_invite.message)
     end
   end
 end
