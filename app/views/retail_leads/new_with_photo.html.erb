@@ -48,6 +48,7 @@
         <%= f.label :phone_number, 'Phone Number' %>
         <%= f.phone_field  :phone_number %>
         <% end %>
+	
 
         <%= f.label :email, 'Email' -%>
         <%= f.email_field :email -%>
@@ -67,7 +68,16 @@
         <div class="span12">
           <%= f.label :product_id, 'Select a Product' -%>
           <%= f.select :product_id, product_list_helper(@business) -%>
-        </div>
+        
+		  <%- if @business.lead_config.ask_for_description? %> 		
+		    <%= f.label :message, 'Description' %>
+		    <%= f.text_area  :message %>
+		  <% end %>
+		
+		</div>
+		
+
+	
       </div>
     <% end -%>
 
