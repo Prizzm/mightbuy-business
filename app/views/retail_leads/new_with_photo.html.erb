@@ -67,7 +67,7 @@
       <div class="row-fluid">
         <div class="span12">
           <%= f.label :product_id, 'Select a Product' -%>
-          <%= f.select :product_id, product_list_helper(@business) -%>
+          <%= f.select :product_id, product_list_helper(@business), {:include_blank => true} -%>
         
 		  <%- if @business.lead_config.ask_for_description? %> 		
 		    <%= f.label :message, 'Description' %>
