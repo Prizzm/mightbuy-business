@@ -145,7 +145,7 @@
   .min-height-val{
     min-height:52px;
   }
-} 
+}
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------ */
 /* Landscape phones and down */
 @media (max-width: 480px) {
@@ -215,6 +215,31 @@
   } 
   .row-fluid .span6.photo-upload{
     width:100%;
+  }
+  .lead-capture{
+    h1 {
+      font-size: 20px;
+      margin: 30px 0;
+    }
+    .modal-footer{
+      padding: 7px;
+
+      .btn{
+        padding: 4px 15px;
+      }
+    }
+  }
+  .modal.fade.in {
+    top: 25%;
+  }
+  .modal {
+    left: 5%;
+    width: 90%;
+    margin-left: 0;
+    width: 90%;
+  }
+  .release-liability {
+    padding: 20px;
   }
 }
 /* Portrait phones */
