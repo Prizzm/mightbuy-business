@@ -64,14 +64,28 @@ body > .silhouette-bg {
   position: relative;
   @include text-shadow(0 1px 0 rgba(0,0,0,0.35));
 }
-.header{
+.header-gradient{
+  position:absolute;
+  width:100%;
+  z-index:0;
+}
+.header, .header-gradient{
   @include gradient-variables(#af6566, 0%, #610303, 35%);
   height:100px;
+  
+}
+.header{  
+  .navbar{
+    margin:0
+  }
 }
 .container.silhouette-bg {
   @include gradient-image('silhouette-bg.png', #4d4b4c, #333);
   background-position:center bottom;
   background-repeat:no-repeat;
+}
+.brand{
+  float:left;
 }
 h2.logo{
   font-family: "Museo500", Arial, Helvetica, sans-serif;
@@ -841,7 +855,7 @@ input[type="submit"].btn-yellow, .btn-yellow{
     border-bottom-color:rgba(255,255,255,0.10);
   }
   .text-success{
-    color: green;
+    color: lime;
   }
   small {
     color: #999;
@@ -901,7 +915,7 @@ input[type="submit"].btn-yellow, .btn-yellow{
     display: none
   }
   .arrow-up{
-    color:green;
+    color:lime;
   }
   .arrow-down{
     color:red;

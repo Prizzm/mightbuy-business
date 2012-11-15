@@ -52,7 +52,7 @@
     </div>
     <div class="control-group">
       <%= f.label :join_list_description, "Join List Incentive", :class=>"control-label" -%>
-      <div class="controls">
+      <div class="controls m-left0">
         <%= f.text_field :join_list_description -%>
       </div>
     </div>
@@ -68,7 +68,7 @@
     </div>
     <div class="control-group">
       <%= f.label :liability, "Release of Liability Text", :class=>"control-label" -%>
-      <div class="controls">
+      <div class="controls m-left0">
         <%= f.text_area :liability, rows: 15 -%>
       </div>
     </div>
@@ -92,7 +92,7 @@
     </div>
     <hr/>
     <div class="control-group">
-      <div class="controls m-top5">
+      <div class="controls m-left0 m-top5">
         <%= f.submit "Save", :class=>"btn btn-large btn-danger" -%>
         <%= link_to "Preview", new_retail_lead_path, target: "_blank", class: "btn btn-large btn-danger btn-preview m-left10" -%>
       </div>
