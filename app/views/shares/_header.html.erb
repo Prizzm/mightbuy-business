@@ -13,6 +13,18 @@
       </button>
       <div class="nav-collapse collapse visible-phone">
         <div class="hr"></div>
+        <div class="user-info">
+          <div class="customer-brand">
+            <%= @business.name -%>
+          </div>
+          <div class="customer-name">
+            <div>
+              Hello <span><%= current_business_staff.name -%></span>
+            </div>
+            <%= link_to("logout",destroy_business_staff_session_path, method: :delete) -%>
+          </div>
+        </div>
+        <div class="hr"></div>
         <ul class="nav">
           <li class="<%= active_tab_class('products') -%>">
             <%= link_to(products_path) do -%>
