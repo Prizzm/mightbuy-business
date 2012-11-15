@@ -32,6 +32,15 @@
           No </label>
       </div>
     </div>
+	<div class="control-group">
+	      <%= f.label :include_product_select, "Include product select?", :class=>"control-label" -%>
+	      <div class="controls">
+	        <label class="radio inline"> <%= f.radio_button :include_product_select, true  -%>
+	          Yes </label>
+	        <label class="radio inline"> <%= f.radio_button :include_product_select, false  -%>
+	          No </label>
+	      </div>
+	    </div>
     <div class="control-group">
       <%= f.label :ask_to_join_list, "Ask to join mailing list?", :class=>"control-label" -%>
       <div class="controls">
