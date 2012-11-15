@@ -32,6 +32,11 @@
         <%= f.phone_field  :phone_number %>
       <% end %>
 
+      <%- if @business.lead_config.ask_for_emergency_number? %> 		
+        <%= f.label :emergency_phone_number, 'Emergency contact phone number *' %>
+        <%= f.phone_field  :emergency_phone_number %>
+      <% end %>
+
       <%= f.label :email, 'Email' -%>
       <%= f.email_field :email -%>
 

@@ -44,7 +44,7 @@
         
 		  <%- if @business.lead_config.ask_for_description? %> 		
 		    <%= f.label :message, 'Description' %>
-		    <%= f.text_area  :message %>
+		    <%= f.text_area  :message, :rows=>5 %>
 		  <% end %>
 		</div>
       </div>

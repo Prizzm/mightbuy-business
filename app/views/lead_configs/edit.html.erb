@@ -30,6 +30,15 @@
       </div>
     </div>
     <div class="control-group">
+      <%= f.label :ask_for_emergency_number, "Ask for Emergency Number?", :class=>"control-label" -%>
+      <div class="controls">
+        <label class="radio inline"> <%= f.radio_button :ask_for_emergency_number, true  -%>
+          Yes </label>
+        <label class="radio inline"> <%= f.radio_button :ask_for_emergency_number, false -%>
+          No </label>
+      </div>
+    </div>
+    <div class="control-group">
       <%= f.label :ask_for_name, "Ask for Name?", :class=>"control-label" -%>
       <div class="controls">
         <label class="radio inline"> <%= f.radio_button :ask_for_name, true  -%>
