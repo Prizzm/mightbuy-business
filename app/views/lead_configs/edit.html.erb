@@ -57,12 +57,9 @@
       </div>
     </div>
     <div class="control-group">
-      <%= f.label :include_product_select, "Include product select?", :class=>"control-label" -%>
+      <%= f.label :join_list_description, "Join List Incentive", :class=>"control-label" -%>
       <div class="controls">
-        <label class="radio inline"> <%= f.radio_button :include_product_select, true  -%>
-          Yes </label>
-        <label class="radio inline"> <%= f.radio_button :include_product_select, false  -%>
-          No </label>
+        <%= f.text_field :join_list_description -%>
       </div>
     </div>
     <div class="control-group">
