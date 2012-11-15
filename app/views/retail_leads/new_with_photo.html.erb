@@ -40,7 +40,7 @@
     <div class="row-fluid">
       <div class="span12">
         <%- if @business.lead_config.ask_for_name? -%>
-        <%= f.label :name, 'Full Name of participant or Parent/Guardian, if participant is a minor.' -%>
+        <%= f.label :name, 'Name' -%>
         <%= f.text_field  :name -%>
         <% end -%>
 
