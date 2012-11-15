@@ -149,8 +149,21 @@
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------ */
 /* Landscape phones and down */
 @media (max-width: 480px) {
+  .header {
+    background:#222;
+    min-height: 100px;
+    height: auto;
+    position:relative;
+  }
+  .z-index1{
+    z-index:1;
+    position:relative;
+  }
   .header h2.logo {
-    margin-left: 85px;
+    margin-left: 0px;
+  }
+  h2.logo-business{
+    margin-left: 20px;
   }
   h2.logo {
     text-align: center;
@@ -158,6 +171,19 @@
     &.signup span {
       left: 124px;
     }
+  }
+  .nav-collapse .hr{
+    margin-top:15px;
+  }
+  .nav-collapse .nav{
+    padding:10px 10px 0 10px;
+  }
+  .nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a{
+    color:#999
+  }
+  .navbar .btn-navbar{
+    margin-right:15px;
+    margin-top:15px;
   }
   .profile-form {
     display:block;
@@ -241,11 +267,35 @@
   .release-liability {
     padding: 20px;
   }
+  .value {
+    height: auto !important
+  }
+  .account-profile form {
+    margin-left: 5%;
+  }
+  .users-info{
+    .form-horizontal .controls {
+      margin-left: 0;
+    }
+    input[type="text"], input[type="email"]{
+      width:310px;
+    }
+    input[type="password"]{
+      width:296px;
+    }
+  }
 }
 /* Portrait phones */
 @media (max-width: 320px) {  /* ------------- */
   body {
     padding: 0;
+  }
+  .header {
+    min-height: 85px;
+    height: auto;
+  }
+  .header-gradient {
+    height: 85px;
   }
   h2.logo {
     font-size: 60px;
@@ -318,7 +368,32 @@
   .row-fluid .span6.b-right-dark, .row-fluid .span6.b-right-light{
     width: 48.93617021276595%;
   }
-  .value {
-    height: auto !important
+  .table-container {
+    padding: 10px 10px 15px 10px;
+  }
+  .app-config .edit_lead_config .controls {
+    margin-left: 190px;
+  }
+  .controls .radio:first-child{
+    padding-left:0
+  }
+  .app-config .edit_lead_config .controls.m-left0{
+    margin-left:0
+  }
+  h2.logo-business{
+    font-size: 45px;
+  }
+  h2.logo-business span, h2.logo span {
+    font-size: 18px;
+    top: 26px;
+    left: 77px;
+  }
+  .users-info{
+    input[type="text"], input[type="email"]{
+      width:220px;
+    }
+    input[type="password"]{
+      width:205px;
+    }
   }
 }

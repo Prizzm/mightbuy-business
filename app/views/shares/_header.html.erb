@@ -1,13 +1,51 @@
 <div class="header">
-  <div class="row">
-    <div class="span6">
-      <a href="/">
-        <h2 class="logo-business">MightBuy.<span>for business</span></h2>
-      </a>
+  <div class="header-gradient visible-phone"></div>
+  <div class="z-index1">
+    <div class="sale-text hidden-phone">
+      sales
     </div>
-    <div class="span6 hidden-phone">
-      <div class="sale-text">
-        sales
+    <a href="/" class="brand"> <h2 class="logo-business">MightBuy.<span>for business</span></h2> </a>
+    <div class="navbar navbar-inverse">
+      <button type="button" class="btn btn-navbar visible-phone" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="nav-collapse collapse visible-phone">
+        <div class="hr"></div>
+        <ul class="nav">
+          <li class="<%= active_tab_class('products') -%>">
+            <%= link_to(products_path) do -%>
+            Products <div class="arrow-left"></div>
+            <% end -%>
+          </li>
+          <li class="<%= active_tab_class('customers') -%>">
+            <%= link_to(customers_path) do -%>
+            Potential Customers <div class="arrow-left"></div>
+            <% end -%>
+          </li>
+          <li class="<%= active_tab_class('leads') -%>">
+            <%= link_to(leads_path) do -%>
+            Customers Leads <div class="arrow-left"></div>
+            <% end -%>
+          </li>
+          <li class="<%= active_tab_class('lead_configs') -%>">
+            <%= link_to(@business.lead_config ? edit_lead_config_path : new_lead_config_path) do -%>
+            Lead Capture <div class="arrow-left"></div>
+            <% end -%>
+          </li>
+          <li>
+            <%= link_to("Accounts", profile_business_path) -%>
+          </li>
+          <li class="<%= active_tab_class('business_staffs') -%>">
+            <%= link_to(business_business_staffs_path) do -%>
+            Users <div class="arrow-left"></div>
+            <% end -%>
+          </li>
+          <li>
+            <a href="#">Help</a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
