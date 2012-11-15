@@ -6,18 +6,12 @@
   </legend>
   <div class="span8">
     <div class="control-group">
-      <%= f.label :include_liability, "Include Release of Liability?", :class=>"control-label" -%>
+      <%= f.label :ask_for_name, "Ask for Name?", :class=>"control-label" -%>
       <div class="controls">
-        <label class="radio inline"> <%= f.radio_button :include_liability, true  -%>
+        <label class="radio inline"> <%= f.radio_button :ask_for_name, true  -%>
           Yes </label>
-        <label class="radio inline"> <%= f.radio_button :include_liability, false -%>
+        <label class="radio inline"> <%= f.radio_button :ask_for_name, false -%>
           No </label>
-      </div>
-    </div>
-    <div class="control-group">
-      <%= f.label :liability, "Release of Liability Text", :class=>"control-label" -%>
-      <div class="controls">
-        <%= f.text_area :liability, rows: 15 -%>
       </div>
     </div>
     <div class="control-group">
@@ -30,20 +24,11 @@
       </div>
     </div>
     <div class="control-group">
-      <%= f.label :ask_for_emergency_number, "Ask for Emergency Number?", :class=>"control-label" -%>
+      <%= f.label :ask_for_description, "Include Description?", :class=>"control-label" -%>
       <div class="controls">
-        <label class="radio inline"> <%= f.radio_button :ask_for_emergency_number, true  -%>
+        <label class="radio inline"> <%= f.radio_button :ask_for_description, true  -%>
           Yes </label>
-        <label class="radio inline"> <%= f.radio_button :ask_for_emergency_number, false -%>
-          No </label>
-      </div>
-    </div>
-    <div class="control-group">
-      <%= f.label :ask_for_name, "Ask for Name?", :class=>"control-label" -%>
-      <div class="controls">
-        <label class="radio inline"> <%= f.radio_button :ask_for_name, true  -%>
-          Yes </label>
-        <label class="radio inline"> <%= f.radio_button :ask_for_name, false -%>
+        <label class="radio inline"> <%= f.radio_button :ask_for_description, false  -%>
           No </label>
       </div>
     </div>
@@ -62,12 +47,37 @@
         <%= f.text_field :join_list_description -%>
       </div>
     </div>
+
     <div class="control-group">
-      <%= f.label :ask_for_description, "Include Description?", :class=>"control-label" -%>
+      <%= f.label :include_liability, "Include Release of Liability?", :class=>"control-label" -%>
       <div class="controls">
-        <label class="radio inline"> <%= f.radio_button :ask_for_description, true  -%>
+        <label class="radio inline"> <%= f.radio_button :include_liability, true  -%>
           Yes </label>
-        <label class="radio inline"> <%= f.radio_button :ask_for_description, false  -%>
+        <label class="radio inline"> <%= f.radio_button :include_liability, false -%>
+          No </label>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :liability, "Release of Liability Text", :class=>"control-label" -%>
+      <div class="controls">
+        <%= f.text_area :liability, rows: 15 -%>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :ask_for_emergency_number, "Ask for Emergency Number?", :class=>"control-label" -%>
+      <div class="controls">
+        <label class="radio inline"> <%= f.radio_button :ask_for_emergency_number, true  -%>
+          Yes </label>
+        <label class="radio inline"> <%= f.radio_button :ask_for_emergency_number, false -%>
+          No </label>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :ask_for_helmet_waiver, "Ask for Helmet Waiver?", :class=>"control-label" -%>
+      <div class="controls">
+        <label class="radio inline"> <%= f.radio_button :ask_for_helmet_waiver, true  -%>
+          Yes </label>
+        <label class="radio inline"> <%= f.radio_button :ask_for_helmet_waiver, false -%>
           No </label>
       </div>
     </div>

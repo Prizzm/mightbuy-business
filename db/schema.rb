@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121115045212) do
+ActiveRecord::Schema.define(:version => 20121115060548) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -199,6 +199,7 @@ ActiveRecord::Schema.define(:version => 20121115045212) do
     t.integer  "user_id"
     t.text     "message",                                              :default => ""
     t.string   "emergency_phone_number"
+    t.string   "helmet_waiver"
   end
 
   create_table "deal_deals", :force => true do |t|
@@ -265,6 +266,7 @@ ActiveRecord::Schema.define(:version => 20121115045212) do
     t.boolean  "ask_for_description",      :default => false
     t.boolean  "ask_for_emergency_number", :default => false
     t.string   "join_list_description"
+    t.boolean  "ask_for_helmet_waiver",    :default => false
   end
 
   create_table "orders", :force => true do |t|

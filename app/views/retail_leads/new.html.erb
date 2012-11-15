@@ -37,6 +37,11 @@
         <%= f.phone_field  :emergency_phone_number %>
       <% end %>
 
+      <%- if @business.lead_config.ask_for_helmet_waiver? %> 		
+        <%= f.label :ask_for_helmet_waiver, 'I have been encouraged to use a bicycle helmet, and I decline using the helmet during this ride.*' %>
+        <%= f.phone_field  :helmet_waiver %>
+      <% end %>
+
       <%= f.label :email, 'Email' -%>
       <%= f.email_field :email -%>
 
