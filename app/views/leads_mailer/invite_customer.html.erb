@@ -1,14 +1,82 @@
-<h2>Hi <%= @lead_invite.name -%>,</h2>
-
-<p>
-  <%= @lead_invite.message -%>
-</p>
-
-<p>
-  You can track the item you wished to purchase on,
-  <%= link_to("Mightbuy.it",@lead_invite.lead_url) -%>.
-</p>
-
-<p>
-  Happy Buying - Mightbuy Team
-</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+      @font-face {
+        font-family: Museo500;
+        src: url(http://mightbuy.it/assets/Museo500-Regular.otf);
+      }
+      @font-face {
+        font-family: Museo700;
+        src: url(http://mightbuy.it/assets/Museo700-Regular.otf);
+      }
+    </style>
+  </head>
+  <body style="background-color:#e6d6c7">
+    <table cellpadding="0" cellspacing="0" border="0" align="center" width="600">
+      <tr>
+        <td colspan="2" height="50">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="font-family: Arial, Helvetica, sans-serif">
+          <a href="http://mightbuy.it" target="_blank">
+            <img alt="Mightbuy-logo" src="http://mightbuy.it/assets/mightbuy-logo.png"/>
+          </a>
+          <p style="margin: 0 0 20px 0;font-size: 24px;font-family: Museo700, Arial, Helvetica, sans-serif;font-weight: 300;color: #4E3227;text-shadow: 1px 2px 0px #FCF8F5;">
+            Track stuff you might buy
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="background-color:#fff; border:5px solid #D3C9C1; padding:20px 35px;word-break: break-all;">
+          <h3 style="color: #333;font-family: Museo500, Arial, Helvetica, sans-serif;font-size: 18px;">
+            Hi <%= @lead_invite.name -%>,
+          </h3>
+          <p style="font-family: Museo500, Arial, Helvetica, sans-serif;color: #4E3227;font-size: 16px;">
+            <%= @lead_invite.message -%>
+          </p>
+          <h5 style="font-family: Museo500, Arial, Helvetica, sans-serif;color: #4E3227;font-size: 16px;margin-bottom: 10px;">
+            Features
+          </h5>
+          <ul style="font-family: Museo500, Arial, Helvetica, sans-serif;color: #4E3227;font-size: 14px;line-height:150%;margin-top: 0;margin-bottom: 30px;padding-top: 0;">
+            <li>
+              Download pic
+            </li>
+            <li>
+              Save to your wishlist, share.
+            </li>
+            <li>
+              Comment, ask questions
+            </li>
+            <li>
+              Buy online! and
+            </li>
+            <li>
+              You can track the item you wished to purchase on, <%= link_to("Mightbuy.it",@lead_invite.lead_url) -%>.
+            </li>
+          </ul>
+          <p style="font-family: Museo500, Arial, Helvetica, sans-serif;color: #4E3227;font-size: 14px;">
+            Happy Buying
+            <br/>
+            <span style="font-family:inherit ;font-size: 12px;">
+              Mightbuy Team
+            </span>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td height="50" style="font-family: Museo500, Arial, Helvetica, sans-serif;font-size: 12px;color: #4E3227;">
+          Powered by
+          <img align="bottom" src="http://www.mightbuy.it/assets/logo-small.png" alt="Mightbuy-logo" style="vertical-align: middle;"/>
+        </td>
+        <td align="right" height="50" style="font-family: Museo500, Arial, Helvetica, sans-serif;font-size: 12px;color: #4E3227;">
+          &copy; 2012 Prizzm, Inc.
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" height="30">&nbsp;</td>
+      </tr>
+    </table>
+  </body>
+</html>
