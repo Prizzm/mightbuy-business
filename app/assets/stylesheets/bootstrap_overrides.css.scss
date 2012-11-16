@@ -941,3 +941,25 @@ input[type="submit"].btn-yellow, .btn-yellow{
     background:#ccc;
   }
 }
+.silhouette-bg.uneven-bg{
+  position:relative
+}
+/*
+.modal-loady{
+  position: fixed;
+}
+*/
+.saving-loader{
+  display:none;
+  z-index: 1000;
+  position: fixed;
+  width: 100px;
+  height: auto;
+  background: image-url('loader.gif') no-repeat 50% 35% white;
+  @include border-radius(10px);
+  padding: 70px 0 10px 0;
+  text-align: center;
+  @include box-shadow(0 0 20px 0 #000);
+  top: 42%;
+  left: 45%;
+}
