@@ -6,7 +6,7 @@ module RetailLeadsHelper
   end
   
   def product_list_default(business)
-      #change this to filter by a default value for products.. 
+      #change this to filter by a default value for products.. default value will be a product with the company url 
       @business.all_products.collect.first.id
   end
 end
