@@ -6,6 +6,8 @@ class LeadsMailer < ActionMailer::Base
 
     from    = "#{@lead_invite.business_name} <no-reply@mightbuy.it>"
     subject = "[MB] You are invited to join 'MightBuy'"
+    attachments.inline['storephoto'] = @lead_invite.lead.normalized_photo.url
     mail to: @lead_invite.email, bcc: BCC_ADDRESS, from: from, subject: subject
+    
   end
 end
