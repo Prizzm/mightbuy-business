@@ -65,6 +65,8 @@ MightbuyBusiness::Application.configure do
   config.action_mailer.default_url_options = {
     :host => 'www.mightbuy.it'
   }
+  
+  config.action_mailer.asset_host = 'http://business.mightbuy.it'
 
   # Enable threaded mode
   # config.threadsafe!
