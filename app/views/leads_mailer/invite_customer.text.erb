@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+      @font-face {
+        font-family: Museo300;
+        src: url(http://business.mightbuy.it/assets/Museo300-Regular.otf);
+      }
+      @font-face {
+        font-family: Museo500;
+        src: url(http://business.mightbuy.it/assets/Museo500-Regular.otf);
+      }
+      @font-face {
+        font-family: Museo700;
+        src: url(http://business.mightbuy.it/assets/Museo700-Regular.otf);
+      }
+    </style>
+  </head>
+  <body style="background-color: #2A2A2A;margin: 0" alink="yellow">
+    <table cellpadding="0" cellspacing="0" border="0" align="center" width="800">
+      <tr>
+        <td colspan="2" height="30"> &nbsp; </td>
+      </tr>
+      <tr>
+        <td colspan="2" height="100">
+          <div style="float:right">
+            <a href="#" style="margin-right: 10px"><img src="http://cdn1.iconfinder.com/data/icons/socialnetworking/32/facebook.png" alt="facebook, social media icon" /></a>
+            <a href="#"><img id="detail-icon-img" src="http://cdn1.iconfinder.com/data/icons/socialnetworking/32/twitter.png" alt="twitter icon"></a>
+          </div>
+          <a href="http://business.mightbuy.it" style="text-decoration: none" target="_blank">
+          <span style="font-family: Arial, Helvetica, sans-serif;font-size: 40px;font-weight: normal;color: white;position: relative;line-height: 100%;">
+           <%= @lead_invite.lead.business.name %>
+          </span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="background: #FDF4B9;background: -moz-linear-gradient(top, #FDF4B9 0%, #C9B76B 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FDF4B9), color-stop(100%, #C9B76B));background: -webkit-linear-gradient(top, #FDF4B9 0%, #C9B76B 100%);background: -o-linear-gradient(top, #FDF4B9 0%, #C9B76B 100%);background: -ms-linear-gradient(top, #FDF4B9 0%, #C9B76B 100%);background: linear-gradient(to bottom, #FDF4B9 0%, #C9B76B 100%);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$a', endColorstr='$b',GradientType=0 );height: 10px;"></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="background: #333;padding:20px 35px;">
+          <div style="width:300px;height:300px;background:url(<%=image_path attachments['storephoto'].url %>) center center no-repeat #fff;float:right;margin:15px 0 0 20px"></div>
+          <h3 style="color: #fff;font-family: Arial, Helvetica, sans-serif;font-size: 18px;">
+            Hi <%= @lead_invite.name -%>,
+          </h3>
+          <p style="font-family:Arial, Helvetica, sans-serif;color: #fff;font-size: 16px;">
+            <%= @lead_invite.message -%>
+          </p>
+          <h5 style="font-family:Arial, Helvetica, sans-serif;color: #fff;font-size: 16px;margin-bottom: 10px;"> Click On Your Image To: </h5>
+          <ul style="font-family: Arial, Helvetica, sans-serif;color: #fff;font-size: 14px;line-height:150%;margin-top: 0;margin-bottom: 30px;padding-top: 0;padding-left: 17px;">
+            <li>
+              Share it on your social media network!
+            </li>
+            <li>
+              Access Exclusive Special Offers From this Retailer
+            </li>
+            <li>
+              Get Feedback/Opinions from...
+            </li>
+            <li>
+              Build and share your wishlist of items from all over the web!
+            </li>
+          </ul>
+          <p style="font-family: Arial, Helvetica, sans-serif;color: #fff;font-size: 14px;">
+            Thanks for joining and have a great day!<br><b>Mightbuy Team</b>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="background: #FDF4B9;background: -moz-linear-gradient(top, #FDF4B9 0%, #C9B76B 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FDF4B9), color-stop(100%, #C9B76B));background: -webkit-linear-gradient(top, #FDF4B9 0%, #C9B76B 100%);background: -o-linear-gradient(top, #FDF4B9 0%, #C9B76B 100%);background: -ms-linear-gradient(top, #FDF4B9 0%, #C9B76B 100%);background: linear-gradient(to bottom, #FDF4B9 0%, #C9B76B 100%);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$a', endColorstr='$b',GradientType=0 );height: 5px;"></td>
+      </tr>
+      <tr>
+        <td height="50" style="font-family: Museo500, Arial, Helvetica, sans-serif;font-size: 12px;color: #fff;"> Powered by <img align="bottom" src="http://www.mightbuy.it/assets/logo-small.png" alt="" style="vertical-align: middle;"/></td>
+        <td align="right" height="50" style="font-family: Museo500, Arial, Helvetica, sans-serif;font-size: 12px;color: #fff;"> &copy; 2012 Prizzm, Inc. </td>
+      </tr>
+      <tr>
+        <td colspan="2" height="30"> &nbsp; </td>
+      </tr>
+    </table>
+  </body>
+</html>
