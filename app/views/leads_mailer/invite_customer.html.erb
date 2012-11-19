@@ -18,8 +18,7 @@
       <tr>
         <td colspan="2" height="100">
           <div style="float:right">
-            <a href="#" style="margin-right: 10px;width: 30px;height: 30px;float:left"><div style="background: url(http://mightbuy.it/assets/details-page-buttons.png) no-repeat -77px -1px;width: 30px;height: 30px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px"></div></a>
-            <a href="#" style="width: 30px;height: 30px;float:left"><div style="background: url(http://mightbuy.it/assets/details-page-buttons.png) no-repeat -39px -1px;width: 30px;height: 30px;float:left;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px"></div></a>
+            <%= render partial: "/shares/social_plugin" %>
           </div>
           <a href="http://business.mightbuy.it" style="text-decoration: none" target="_blank">
             <span style="font-family:Museo700, Arial, Helvetica, sans-serif;font-size: 40px;font-weight: normal;color: #4E3227;position: relative;line-height: 100%;">
@@ -39,15 +38,16 @@
           <br/>
           <p style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 14px;color:#333">
             You can view this item on Mightbuy:<br/>
-            <a href="#" style="color: #00e" target="_blank">https://mightbuy.it/topics/34cy36-public-c7-2012</a> 
+            <%= link_to(@lead_invite.lead_url,@lead_invite.lead_url, style: "color: #00e", target: "_blank") %>
           </p>
           <br/>
           <p style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 14px;color:#333">
             Thanks for joining and have a great day!<br><b>Mightbuy Team</b>
           </p>
           <p style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 14px;color:#333">
-            <span style="color:#000">Phone:</span> 415577 3411<br/>
-            <span style="color:#000">E-mail:</span> <a href="mailto:contact@publicbikes.com">contact@publicbikes.com</a>
+            <span style="color:#000">Phone:</span> <%= @lead_invite.business_phone %> <br/>
+            <span style="color:#000">E-mail:</span> 
+            <%= link_to(@lead_invite.business_email, @lead_invite.business_email) %>
           </p>
         </td>
          <td style="background: #fff;padding:41px 35px 20px 35px;border-right:5px solid #eee4d9;border-top:5px solid #eee4d9;border-bottom:5px solid #eee4d9;width:250px;">
@@ -68,10 +68,12 @@
               buy online
             </li>
           </ul>
-          <h5 style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 15px;margin-bottom: 10px;color:#333"> Discount available: </h5>
-          <p style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 14px;color:#333">
-            <b style="font-size: 16px;color:#090">15% off</b> atleast <b>2</b> friends vote "yes", you should buy it.
-          </p>
+          <% if @lead_invite.offer_text %>
+            <h5 style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 15px;margin-bottom: 10px;color:#333"> Discount available: </h5>
+            <p style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 14px;color:#333">
+              <%= @lead_invite.offer_text %>
+            </p>
+          <% end %>
           <p style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 14px;color:#333">
             Join <a href="http://www.mightbuy.it">MightBuy</a>
           </p>

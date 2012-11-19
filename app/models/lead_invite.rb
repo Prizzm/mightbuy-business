@@ -41,6 +41,27 @@ class LeadInvite
   end
 
   delegate :name, :email, :message, :to => :lead
+  delegate :email, :phone, to: :business, prefix: true
+
+  def business
+    lead.business
+  end
+
+  def title_topic
+    topic.subject
+  end
+
+  def topic_url
+    "#{MB.config.app_url}/topics/#{topic.to_param}"
+  end
+
+  def offer_text
+    if topic.product && topic.product.bargin
+      topic.product.bargin.name
+    else
+      nil
+    end
+  end
 
   def lead_url
     if lead.invite_token
