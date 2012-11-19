@@ -66,12 +66,7 @@
           No </label>
       </div>
     </div>
-    <div class="control-group">
-      <%= f.label :liability, "Release of Liability Text", :class=>"control-label" -%>
-      <div class="controls m-left0">
-        <%= f.text_area :liability, rows: 15 -%>
-      </div>
-    </div>
+    
     <div class="control-group">
       <%= f.label :ask_for_emergency_number, "Ask for Emergency Number?", :class=>"control-label" -%>
       <div class="controls">
@@ -90,6 +85,16 @@
           No </label>
       </div>
     </div>
+    <div>
+      <p>
+        <%= f.label :liability, "Release of Liability Text" -%>
+      </p>
+      <br />
+      <p>
+        <%= f.text_area :liability, rows: 15 -%>
+      </p>
+    </div>
+
     <hr/>
     <div class="control-group">
       <div class="controls m-left0 m-top5">
