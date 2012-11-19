@@ -30,7 +30,7 @@ class DealsController < ApplicationController
 
   private
   def find_product!
-    unless @product = @business.products.find_by_id(params[:product_id])
+    unless @product = @business.find_and_update_product(params[:product_id])
       redirect_to root_path
     end
   end
