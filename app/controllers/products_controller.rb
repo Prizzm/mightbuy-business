@@ -19,14 +19,14 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = @business.all_products.detect {|product| product.id == params[:id].to_i }
+    @product = @business.find_and_update_product(params[:id])
     unless @product
       render nothing: true
     end
   end
 
   def update
-    @product = @business.all_products.detect { |product| product.id == params[:id].to_i }
+    @product = @business.find_and_update_product(params[:id])
   end
 
   def destroy
