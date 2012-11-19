@@ -42,6 +42,8 @@ gem "kaminari"
 gem "fog"
 
 gem "timeline_fu", git: "git://github.com/styx/timeline_fu.git"
+gem 'markitup-rails'
+gem 'redcarpet'
 
 gem "mightbuy_models", :path => "vendor/mightbuy-models"
 

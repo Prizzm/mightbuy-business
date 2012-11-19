@@ -20,5 +20,7 @@
 //= require jquery-fileupload/jquery.fileupload
 //= require jquery-fileupload/vendor/load-image
 //= require jquery.facebox
+//= require markitup
+//= require markitup-markdown
 //= require mightbuy
 //= require_tree .
