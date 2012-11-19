@@ -4,7 +4,7 @@ class LeadsMailer < ActionMailer::Base
   def invite_customer(lead_invite)
     @lead_invite = lead_invite
     from    = "#{@lead_invite.business_name} <no-reply@mightbuy.it>"
-    subject = "[MB] You are invited to join 'MightBuy'"
+    subject = "[MB] Your image from #{@lead_invite.business_name}"
     #attachments.inline['storephoto'] = @lead_invite.lead.photo.jpg.url
 
     mail(to: @lead_invite.email,
