@@ -4,10 +4,6 @@
     <meta charset="utf-8">
     <style type="text/css">
       @font-face {
-        font-family: Museo300;
-        src: url(http://business.mightbuy.it/assets/Museo300-Regular.otf);
-      }
-      @font-face {
         font-family: Museo500;
         src: url(http://business.mightbuy.it/assets/Museo500-Regular.otf);
       }
@@ -17,60 +13,74 @@
       }
     </style>
   </head>
-  <body style="background-color: #2A2A2A;margin: 0" alink="yellow">
+  <body style="background-color:#e6d6c7;margin: 0">
     <table cellpadding="0" cellspacing="0" border="0" align="center" width="800">
       <tr>
-        <td colspan="2" height="30"> &nbsp; </td>
-      </tr>
-      <tr>
-        <td colspan="2" height="100" style="padding: 0 25px">
-          <div style="float:right;">
-            <a href="#" style="margin-right: 10px"><img src="http://cdn1.iconfinder.com/data/icons/socialnetworking/32/facebook.png" alt="facebook, social media icon" /></a>
-            <a href="#"><img id="detail-icon-img" src="http://cdn1.iconfinder.com/data/icons/socialnetworking/32/twitter.png" alt="twitter icon"></a>
+        <td colspan="2" height="100">
+          <div style="float:right">
+            <a href="#" style="margin-right: 10px;width: 30px;height: 30px;float:left"><div style="background: url(http://mightbuy.it/assets/details-page-buttons.png) no-repeat -77px -1px;width: 30px;height: 30px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px"></div></a>
+            <a href="#" style="width: 30px;height: 30px;float:left"><div style="background: url(http://mightbuy.it/assets/details-page-buttons.png) no-repeat -39px -1px;width: 30px;height: 30px;float:left;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px"></div></a>
           </div>
-            <span style="font-family: Arial, Helvetica, sans-serif;font-size: 40px;font-weight: normal;color: white;position: relative; line-height: 100%">
-           <%= @lead_invite.lead.business.name %>
-          </span>
+          <a href="http://business.mightbuy.it" style="text-decoration: none" target="_blank">
+            <span style="font-family:Museo700, Arial, Helvetica, sans-serif;font-size: 40px;font-weight: normal;color: #4E3227;position: relative;line-height: 100%;">
+              <%= @lead_invite.lead.business.name %>
+            </span>
+          </a>
         </td>
       </tr>
       <tr>
-        <td colspan="2" style="background: #FDF4B9;background: -moz-linear-gradient(top, #FDF4B9 0%, #C9B76B 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FDF4B9), color-stop(100%, #C9B76B));background: -webkit-linear-gradient(top, #FDF4B9 0%, #C9B76B 100%);background: -o-linear-gradient(top, #FDF4B9 0%, #C9B76B 100%);background: -ms-linear-gradient(top, #FDF4B9 0%, #C9B76B 100%);background: linear-gradient(to bottom, #FDF4B9 0%, #C9B76B 100%);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$a', endColorstr='$b',GradientType=0 );height: 10px;"></td>
-      </tr>
-      <tr>
-        <td colspan="2" style="background: #333;padding:20px 35px;">
-          <div style="width:300px;height:300px;background:url(<%= image_path @lead_invite.lead.photo.remote_url %>) center center no-repeat #fff;float:right;margin:15px 0 0 20px"></div>
-          <h3 style="color: #fff;font-family: Arial, Helvetica, sans-serif;font-size: 18px;">	
+        <td style="background: #fff;padding:20px 0 20px 35px;border-left:5px solid #eee4d9;border-top:5px solid #eee4d9;border-bottom:5px solid #eee4d9;" valign="top">
+          <h3 style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 18px;color:#333">
             Hi <%= @lead_invite.name -%>,
           </h3>
-          <p style="font-family:Arial, Helvetica, sans-serif;color: #fff;font-size: 16px;">
+          <p style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 16px;color:#333">
             <%= @lead_invite.message -%>
           </p>
-          <h5 style="font-family:Arial, Helvetica, sans-serif;color: #fff;font-size: 16px;margin-bottom: 10px;"> View your image on MightBuy </h5>
-          <ul style="font-family: Arial, Helvetica, sans-serif;color: #fff;font-size: 14px;line-height:150%;margin-top: 0;margin-bottom: 30px;padding-top: 0;padding-left: 17px;">
-            <li>
-              <a href="<%= @lead_invite.lead_url %>" style="color:#9cf;">Ask questions on Mightbuy here</a>
-            </li>
-            <li>
-              Access Exclusive Special Offers From this Retailer
-            </li>
-            <li>
-              Get Feedback/Opinions from...
-            </li>
-            <li>
-              Build and share your wishlist of items from all over the web!
-            </li>
-          </ul>
-          <p style="font-family: Arial, Helvetica, sans-serif;color: #fff;font-size: 14px;">
+          <br/>
+          <p style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 14px;color:#333">
+            You can view this item on Mightbuy:<br/>
+            <a href="#" style="color: #00e" target="_blank">https://mightbuy.it/topics/34cy36-public-c7-2012</a> 
+          </p>
+          <br/>
+          <p style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 14px;color:#333">
             Thanks for joining and have a great day!<br><b>Mightbuy Team</b>
           </p>
+          <p style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 14px;color:#333">
+            <span style="color:#000">Phone:</span> 415577 3411<br/>
+            <span style="color:#000">E-mail:</span> <a href="mailto:contact@publicbikes.com">contact@publicbikes.com</a>
+          </p>
+        </td>
+         <td style="background: #fff;padding:41px 35px 20px 35px;border-right:5px solid #eee4d9;border-top:5px solid #eee4d9;border-bottom:5px solid #eee4d9;width:250px;">
+          <div style="display:table-cell; vertical-align:middle; text-align:center;width:250px;height:275px;border:1px solid #ccc;background:url(<%= image_path @lead_invite.lead.photo.remote_url %>) center center no-repeat #fff">
+          </div>
+          <h5 style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 15px;margin-bottom: 10px;color:#333"> See your picture on MightBuy: </h5>
+          <ul style="font-family:Museo500,  Arial, Helvetica, sans-serif;font-size: 14px;line-height:150%;margin-top: 0;margin-bottom: 30px;padding-top: 0;padding-left: 17px;color:#333">
+            <li>
+              access the full size image.
+            </li>
+            <li>
+              get more product information
+            </li>
+            <li>
+              ask your friends opinion
+            </li>
+            <li>
+              buy online
+            </li>
+          </ul>
+          <h5 style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 15px;margin-bottom: 10px;color:#333"> Discount available: </h5>
+          <p style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 14px;color:#333">
+            <b style="font-size: 16px;color:#090">15% off</b> atleast <b>2</b> friends vote "yes", you should buy it.
+          </p>
+          <p style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 14px;color:#333">
+            Join <a href="http://www.mightbuy.it">MightBuy</a>
+          </p>
+          
         </td>
       </tr>
       <tr>
-        <td colspan="2" style="background: #FDF4B9;background: -moz-linear-gradient(top, #FDF4B9 0%, #C9B76B 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FDF4B9), color-stop(100%, #C9B76B));background: -webkit-linear-gradient(top, #FDF4B9 0%, #C9B76B 100%);background: -o-linear-gradient(top, #FDF4B9 0%, #C9B76B 100%);background: -ms-linear-gradient(top, #FDF4B9 0%, #C9B76B 100%);background: linear-gradient(to bottom, #FDF4B9 0%, #C9B76B 100%);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$a', endColorstr='$b',GradientType=0 );height: 5px;"></td>
-      </tr>
-      <tr>
-        <td height="50" style="font-family: Museo500, Arial, Helvetica, sans-serif;font-size: 12px;color: #fff; padding: 0 0 0 25px;"> Powered by <img align="bottom" src="http://www.mightbuy.it/assets/logo-small.png" alt="" style="vertical-align: middle;"/></td>
-        <td align="right" height="50" style="font-family: Museo500, Arial, Helvetica, sans-serif;font-size: 12px;color: #fff; padding: 0 25px 0 0;"> &copy; 2012 Prizzm, Inc. </td>
+        <td height="50" style="font-family: Museo500, Arial, Helvetica, sans-serif;font-size: 12px;color: #333;"> Powered by <img align="bottom" src="http://www.mightbuy.it/assets/logo-small.png" alt="" style="vertical-align: middle;"/></td>
+        <td align="right" height="50" style="font-family: Museo500, Arial, Helvetica, sans-serif;font-size: 12px;color: #333;"> &copy; 2012 Prizzm, Inc. </td>
       </tr>
       <tr>
         <td colspan="2" height="30"> &nbsp; </td>
