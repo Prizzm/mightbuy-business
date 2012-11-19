@@ -23,13 +23,12 @@
         <td colspan="2" height="30"> &nbsp; </td>
       </tr>
       <tr>
-        <td colspan="2" height="100">
-          <div style="float:right">
+        <td colspan="2" height="100" style="padding: 0 25px">
+          <div style="float:right;">
             <a href="#" style="margin-right: 10px"><img src="http://cdn1.iconfinder.com/data/icons/socialnetworking/32/facebook.png" alt="facebook, social media icon" /></a>
             <a href="#"><img id="detail-icon-img" src="http://cdn1.iconfinder.com/data/icons/socialnetworking/32/twitter.png" alt="twitter icon"></a>
           </div>
-          <a href="http://business.mightbuy.it" style="text-decoration: none" target="_blank">
-          <span style="font-family: Arial, Helvetica, sans-serif;font-size: 40px;font-weight: normal;color: white;position: relative;line-height: 100%;">
+            <span style="font-family: Arial, Helvetica, sans-serif;font-size: 40px;font-weight: normal;color: white;position: relative; line-height: 100%">
            <%= @lead_invite.lead.business.name %>
           </span>
           </a>
@@ -47,10 +46,10 @@
           <p style="font-family:Arial, Helvetica, sans-serif;color: #fff;font-size: 16px;">
             <%= @lead_invite.message -%>
           </p>
-          <h5 style="font-family:Arial, Helvetica, sans-serif;color: #fff;font-size: 16px;margin-bottom: 10px;"> Click On Your Image To: </h5>
+          <h5 style="font-family:Arial, Helvetica, sans-serif;color: #fff;font-size: 16px;margin-bottom: 10px;"> View your image on MightBuy </h5>
           <ul style="font-family: Arial, Helvetica, sans-serif;color: #fff;font-size: 14px;line-height:150%;margin-top: 0;margin-bottom: 30px;padding-top: 0;padding-left: 17px;">
             <li>
-              Share it on your social media network!
+              <a href="<%= @lead_invite.lead_url %>" style="color:#9cf;">Ask questions on Mightbuy here</a>
             </li>
             <li>
               Access Exclusive Special Offers From this Retailer
@@ -71,8 +70,8 @@
         <td colspan="2" style="background: #FDF4B9;background: -moz-linear-gradient(top, #FDF4B9 0%, #C9B76B 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FDF4B9), color-stop(100%, #C9B76B));background: -webkit-linear-gradient(top, #FDF4B9 0%, #C9B76B 100%);background: -o-linear-gradient(top, #FDF4B9 0%, #C9B76B 100%);background: -ms-linear-gradient(top, #FDF4B9 0%, #C9B76B 100%);background: linear-gradient(to bottom, #FDF4B9 0%, #C9B76B 100%);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$a', endColorstr='$b',GradientType=0 );height: 5px;"></td>
       </tr>
       <tr>
-        <td height="50" style="font-family: Museo500, Arial, Helvetica, sans-serif;font-size: 12px;color: #fff;"> Powered by <img align="bottom" src="http://www.mightbuy.it/assets/logo-small.png" alt="" style="vertical-align: middle;"/></td>
-        <td align="right" height="50" style="font-family: Museo500, Arial, Helvetica, sans-serif;font-size: 12px;color: #fff;"> &copy; 2012 Prizzm, Inc. </td>
+        <td height="50" style="font-family: Museo500, Arial, Helvetica, sans-serif;font-size: 12px;color: #fff; padding: 0 0 0 25px;"> Powered by <img align="bottom" src="http://www.mightbuy.it/assets/logo-small.png" alt="" style="vertical-align: middle;"/></td>
+        <td align="right" height="50" style="font-family: Museo500, Arial, Helvetica, sans-serif;font-size: 12px;color: #fff; padding: 0 25px 0 0;"> &copy; 2012 Prizzm, Inc. </td>
       </tr>
       <tr>
         <td colspan="2" height="30"> &nbsp; </td>
