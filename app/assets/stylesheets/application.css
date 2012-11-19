@@ -12,5 +12,7 @@
  *= require jquery.ui.all
  *= require prettify.css
  *= require jquery.facebox
+ *= require markitup
+ *= require markitup-markdown
  *= require_tree .
  */
