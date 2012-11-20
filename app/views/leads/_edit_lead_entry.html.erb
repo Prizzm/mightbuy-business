@@ -11,7 +11,7 @@
           <label class="label-mini">Product:</label>
 
           <div class="pull-left mLeft10">
-            <%= f.select :product_id, product_list_helper(lead.business), {:include_blank => true} -%>
+            <%= f.select :product_id, product_list_helper(lead.business) -%>
           </div>
           <br clear="all"/>
 
