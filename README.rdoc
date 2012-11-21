@@ -3,10 +3,16 @@ Mightbuy Business shares a datamodule with a submodule.
 To get started:
 
 git clone git@github.com:Prizzm/mightbuy-business.git
+
 cd <mightbuy-business>
+
 git submodule init 
+
 git submodule update --init
+
 bundle install
+
 move database.yml into <path>/config/database.yml
+
 rake db:migrate
 
