@@ -19,6 +19,8 @@
 //= require jquery.remotipart
 //= require jquery-fileupload/jquery.fileupload
 //= require jquery-fileupload/vendor/load-image
+//= require jquery-fileupload/vendor/canvas-to-blob
+//= require jquery-fileupload/jquery.fileupload-fp
 //= require jquery.facebox
 //= require markitup
 //= require markitup-markdown

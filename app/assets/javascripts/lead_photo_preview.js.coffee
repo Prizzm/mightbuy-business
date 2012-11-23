@@ -16,6 +16,23 @@ class @Mightbuy.LeadPhotoPreview
   bindPhotoPreviewer: ->
     $("#customer_lead_photo").fileupload
       replaceFileInput: false,
+      process: [
+        {
+          action: 'load',
+          fileTypes: /^image\/(gif|jpeg|png)$/,
+          maxFileSize: 20000000
+        },
+        {
+          action: 'resize',
+          maxWidth: 800,
+          maxHeight: 350,
+          minWidth: 100,
+          minHeight: 100
+        },
+        {
+          action: 'save'
+        }
+      ]
       add: (e, data) =>
         window.loadImage data.files[0], (imgOrError) =>
           if imgOrError.type != "error"
@@ -33,6 +50,11 @@ class @Mightbuy.LeadPhotoPreview
               @image.css({'width' : 'auto', 'height' : '350px'})
 
             @photo_preview.html @image
+        $("#customer_lead_photo").fileupload('process', data).done ->
+          $("#photo-form").one "submit", (e) =>
+            data.submit()
+            e.preventDefault()
+            e.stopPropagation() # to avoid rails UJS taking over over and submitting form again
         true
 
 jQuery ->
