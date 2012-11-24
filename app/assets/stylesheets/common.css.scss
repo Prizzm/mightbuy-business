@@ -159,6 +159,10 @@ a{
   @extend .c-holder-left;
   padding-left: 20px;
 }
+.c-holder-center {
+  padding-top: 5px;	
+  text-align:center;
+}
 .footer{
   padding: 0 13px 20px 20px
 }
