@@ -1,0 +1,31 @@
+Hi <%= @lead_invite.name -%>,
+
+<%= @lead_invite.message -%>
+
+
+================================================================================
+
+See your picture on MightBuy:
+
+- Access the full size image.
+- Get more product information
+- Ask your friends opinion
+- Buy online!
+
+View on MightBuy.it
+<%= @lead_invite.lead_url %>
+
+================================================================================
+
+
+Thanks you so much for stopping by our store! You can email, call or use
+MightBuy.it to get in touch. Hope to hear from you soon,
+
+<%= @lead_invite.lead.business.name -%>
+
+Phone: <%= @lead_invite.business_phone -%>
+E-mail: <%= @lead_invite.business_email -%>
+
+================================================================================
+
+Powered by MightBuy.it

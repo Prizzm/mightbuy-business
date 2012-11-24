@@ -1,102 +1,242 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <style type="text/css">
-      @font-face {
-        font-family: Museo500;
-        src: url(http://business.mightbuy.it/assets/Museo500-Regular.otf);
-      }
-      @font-face {
-        font-family: Museo700;
-        src: url(http://business.mightbuy.it/assets/Museo700-Regular.otf);
-      }
-    </style>
-  </head>
-  <body style="background-color:#e6d6c7;margin: 0">
-    <table cellpadding="0" cellspacing="0" border="0" align="center" width="800">
-      <tr>
-        <td colspan="2" height="100">
-          <div style="float:right">
-			<a href= <%= @lead_invite.lead.business.facebook_url.blank? ? "http://www.facebook.com" : @lead_invite.lead.business.facebook_url %> style="margin-right: 10px;width: 30px;height: 30px;float:left"><div style="background: url(http://mightbuy.it/assets/details-page-buttons.png) no-repeat -77px -1px;width: 30px;height: 30px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px"></div></a>
+    <head>
+        <style type="text/css">
+        @media only screen and (max-device-width: 280px) {
+            table[class=table-resize] {
+                width:320px !important;
+            }
+        }
 
-			<a href= <%= "http://www.twitter.com/#{@lead_invite.lead.business.twitter_handle}" %> style="width: 30px;height: 30px;float:left"><div style="background: url(http://mightbuy.it/assets/details-page-buttons.png) no-repeat -39px -1px;width: 30px;height: 30px;float:left;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px"></div></a>
-          </div>
+        body {
+            background-color: #e6d6c7;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-			
-            <span style="font-family:Museo700, Arial, Helvetica, sans-serif;font-size: 40px;font-weight: normal;color: #4E3227;position: relative;line-height: 100%;">
-              <%= @lead_invite.lead.business.name %>
-            </span>
-        </td>
-      </tr>
-      <tr>
-        <td style="background: #fff;padding:20px 0 20px 35px;border-left:5px solid #eee4d9;border-top:5px solid #eee4d9;border-bottom:5px solid #eee4d9;" valign="top">
-          <h3 style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 18px;color:#333">
-            Hi <%= @lead_invite.name -%>,
-          </h3>
-          <p style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 16px;color:#333">
-            <%= @lead_invite.message -%>
-          </p>
-          <br/>
-          <br/>
-          <p style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 14px;color:#333">
-            Thanks you so much for stopping by our store!<br> 
-		 	<br>
-			You can email, call or use the 
-			<%= link_to("MightBuy.it link",@lead_invite.lead_url, style: "color: #00e", target: "_blank") %>
-         	to get in touch.
- 			<br>
-			<br>
-			Hope to hear from you soon,
-			<br>
-			<%= @lead_invite.lead.business.name %>
-          </p>
-          </p>
-          <p style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 14px;color:#333">
-            <span style="color:#000">Phone:</span> <%= @lead_invite.business_phone %> <br/>
-            <span style="color:#000">E-mail:</span> 
-            <%= link_to(@lead_invite.business_email, @lead_invite.business_email) %>
-          </p>
-        </td>
-         <td style="background: #fff;padding:41px 35px 20px 35px;border-right:5px solid #eee4d9;border-top:5px solid #eee4d9;border-bottom:5px solid #eee4d9;width:250px;">
+        a[href^=tel]{
+            color:inherit;
+            text-decoration:none;
+        }
+        </style>
 
-			<a href= <%=@lead_invite.lead_url %> border="0">
-			    <img src="<%= image_path @lead_invite.lead.photo.thumb('100x100!').url %>" height="100" width="100" />
-			</a>
-          <h5 style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 15px;margin-bottom: 10px;color:#333"> See your picture on MightBuy: </h5>
-          <ul style="font-family:Museo500,  Arial, Helvetica, sans-serif;font-size: 14px;line-height:150%;margin-top: 0;margin-bottom: 30px;padding-top: 0;padding-left: 17px;color:#333">
-            <li>
-              Access the full size image.
-            </li>
-            <li>
-              Get more product information
-            </li>
-            <li>
-              Ask your friends opinion
-            </li>
-            <li>
-              Buy online!
-            </li>
-          </ul>
-          <% if @lead_invite.offer_text %>
-            <h5 style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 15px;margin-bottom: 10px;color:#333"> Discount available: </h5>
-            <p style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 14px;color:#333">
-              <%= @lead_invite.offer_text %>
-            </p>
-          <% end %>
-          <p style="font-family:Museo500, Arial, Helvetica, sans-serif;font-size: 14px;color:#333">
-            View on <%= link_to("MightBuy.it",@lead_invite.lead_url, style: "color: #00e", target: "_blank") %>
-          </p>
-          
-        </td>
-      </tr>
-      <tr>
-        <td height="50" style="font-family: Museo500, Arial, Helvetica, sans-serif;font-size: 12px;color: #333;"> Powered by <img align="bottom" src="http://www.mightbuy.it/assets/logo-small.png" alt="" style="vertical-align: middle;"/></td>
-        <td align="right" height="50" style="font-family: Museo500, Arial, Helvetica, sans-serif;font-size: 12px;color: #333;"> &copy; 2012 Prizzm, Inc. </td>
-      </tr>
-      <tr>
-        <td colspan="2" height="30"> &nbsp; </td>
-      </tr>
-    </table>
-  </body>
+        <title>MightBuy.it</title>
+    </head>
+    <body bgcolor="#e6d6c7">
+        <table align="center" valign="middle" cellspacing="0" cellpadding="0" width="800">
+            <tr>
+                <td colspan="3" height="15"></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <table cellspacing="0" cellpadding="0" width="100%">
+                        <tr>
+                            <td align="left" width="50%">
+                                <span style="color: #4e3227; font-family: Arial, Helvetica, sans-serif; font-size: 40px; font-weight: normal;">
+                                    <%= @lead_invite.lead.business.name %>
+                                </span>
+                            </td>
+                            <td align="right" width="50%">
+                                <table cellspacing="0" cellpadding="0" width="70">
+                                    <tr>
+                                        <td width="30">
+                                            <% if not @lead_invite.lead.business.twitter_handle.blank? -%>
+                                                <a href="<%= @lead_invite.lead.business.twitter_handle %>" style="text-decoration: none;">
+                                                    <img alt="Twitter" border="0" height="31" src="<%= image_path('email/twitter.png') %>" width="30" />
+                                                </a>
+                                            <% end %>
+                                        </td>
+                                        <td width="10"></td>
+                                        <td width="30">
+                                            <% if not @lead_invite.lead.business.facebook_url.blank? -%>
+                                                <a href="<%= @lead_invite.lead.business.facebook_url %>" style="text-decoration: none;">
+                                                    <img alt="Facebook" border="0" height="31" src="<%= image_path('email/facebook.png') %>" width="30" />
+                                                </a>
+                                            <% end %>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" height="20"></td>
+            </tr>
+            <tr>
+                <td bgcolor="#eee4d9" colspan="3" height="5"></td>
+            </tr>
+            <tr>
+                <td bgcolor="#eee4d9" width="5"></td>
+                <td bgcolor="#ffffff">
+                    <table bgcolor="#ffffff" class="table-resize" cellspacing="0" cellpadding="0" width="790">
+                        <tr>
+                            <td valign="top" width="100%">
+                                <table align="left" bgcolor="#ffffff" cellspacing="0" cellpadding="25" width="60%">
+                                    <tr>
+                                        <td valign="top">
+                                            <table cellspacing="0" cellpadding="0" width="100%">
+                                                <tr>
+                                                    <td>
+                                                        <span style="color: #000000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold;">Hi <%= @lead_invite.name -%>,</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="10"></td>
+                                                </tr>
+                                                <% if not @lead_invite.message.empty? %>
+                                                <tr>
+                                                    <td>
+                                                        <span style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #000000;">
+                                                            <%= @lead_invite.message %>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="40"></td>
+                                                </tr>
+                                                <% end %>
+                                                <tr>
+                                                    <td>
+                                                        <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;">
+                                                            Thanks you so much for stopping by our store!
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="10"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;">
+                                                            You can email, call or use the <a href="<%= @lead_invite.lead_url %>" style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #d54937;" target="_blank">MightBuy.it</a> link to get in touch.
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="10"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;">
+                                                            Hope to hear from you soon
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="10"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;">
+                                                            <%= @lead_invite.lead.business.name %>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="20"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;">
+                                                            Phone: <a href="tel:<%= @lead_invite.business_phone -%>" style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #d54937;"><%= @lead_invite.business_phone -%></a>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;">
+                                                            Email: <a href="mailto:<%= @lead_invite.business_email -%>" style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #d54937;"><%= @lead_invite.business_email -%></a>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <table cellspacing="0" bgcolor="#ffffff" cellpadding="25" width="40%">
+                                    <tr>
+                                        <td>
+                                            <table cellspacing="0" cellpadding="0" width="100%">
+                                                <tr>
+                                                    <td align="left" colspan="2">
+                                                        <a href="<%=@lead_invite.lead_url %>">
+                                                            <img alt="Product" border="0" src="<%= image_path @lead_invite.lead.photo.thumb('200x').url %>" width="200">
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" height="15"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold;">
+                                                            See your picture on MightBuy:
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" height="5"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <ul style="font-family: Arial, Helvetica, sans-serif; font-size: 14px;">
+                                                            <li>Access the full size image</li>
+                                                            <li>Get more product information</li>
+                                                            <li>Ask your friends opinion</li>
+                                                            <li>Buy online!</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" height="15"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <a href="<%= @lead_invite.lead_url %>" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #d54937">
+                                                            View on MightBuy.it!
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td bgcolor="#eee4d9" width="5"></td>
+            </tr>
+            <tr>
+                <td bgcolor="#eee4d9" colspan="3" height="5"></td>
+            </tr>
+            <tr>
+                <td colspan="3" height="15"></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <table cellspacing="0" cellpadding="0" width="100%">
+                        <tr>
+                            <td align="left" width="50%">
+                                <span style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+                                    Powered by
+                                </span>
+                                <a href="http://www.mightbuy.it/" style="text-decoration: none;">
+                                    <img alt="MightBuy" border="0" height="20" src="<%= image_path('email/logo-small.png') %>" valign="middle" width="83">
+                                </a>
+                            </td>
+                            <td align="right" width="50%">
+                                <span style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+                                    &copy; 2012 Prizzm, Inc.
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
 </html>
