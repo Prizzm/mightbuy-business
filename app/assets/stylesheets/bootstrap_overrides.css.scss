@@ -72,9 +72,9 @@ body > .silhouette-bg {
 .header, .header-gradient{
   @include gradient-variables(#af6566, 0%, #610303, 35%);
   height:100px;
-  
+
 }
-.header{  
+.header{
   .navbar{
     margin:0
   }
@@ -96,7 +96,7 @@ h2.logo{
   margin-left: 40px;
   position: relative;
   line-height: 100%;
-  
+
   span {
     font-family: "Museo300", Arial, Helvetica, sans-serif;
     position: absolute;
@@ -105,12 +105,13 @@ h2.logo{
     left: 91px;
   }
 }
-.sale-text{
-  float:right;
-  font-size:22px;
-  margin-top: 50px;
-  margin-right:40px;
+
+.lead-capture{
   color: #999;
+  float: right;
+  font-size: 22px;
+  margin-top: 45px;
+  margin-right: 18px;
 }
 .page-title{
   font:bold 20px/100% 'Trebuchet MS', Arial, Helvetica, sans-serif;
@@ -178,14 +179,14 @@ a.logout{
   font-size:16px;
   color:#989898;
   padding-right:20px;
-  
+
   span{
     font-weight:bold;
     color:#bcbcbc;
   }
   a{
     color:#fff;
-    
+
     &:hover{
       color:#ff0;
       text-decoration:underline;
@@ -230,7 +231,7 @@ table th, table td, .table label, .table input, .table select, .table textarea, 
   border:1px solid #ccc;
   @include border-radius-multi(5px,5px,0,0);
   @include gradient(#fff, #e5e5e5);
-  
+
   .title{
     margin-top: 3px;
     margin-left: 5px;
@@ -293,7 +294,7 @@ table th, table td, .table label, .table input, .table select, .table textarea, 
   ul{
     @include box-shadow(none);
 
-    &>li{  
+    &>li{
       &>a, &>span{
         margin: 0 5px;
         padding: 0 7px;
@@ -302,36 +303,36 @@ table th, table td, .table label, .table input, .table select, .table textarea, 
         @include border-radius(3px);
         border-left-width: 1px;
         color:#333;
-      } 
-      
+      }
+
       &:first-child, &>li:last-child{
         &>a, &>span{
           @include border-radius(3px);
-        } 
-      }      
+        }
+      }
     }
-    
+
     &>li.no-style{
       &>a{
         border:1px solid transparent;
         background:none;
       }
     }
-    
+
     &>li.active{
       &>a, &>a:hover{
         border-color:#1c0203;
         color:#fff;
       }
     }
-    
+
     &>li.disabled{
       &>a:hover{
         border:1px solid transparent;
         background:none;
         color:#999;
       }
-    } 
+    }
   }
 }
 .btn.btn-add{
@@ -378,13 +379,13 @@ table th, table td, .table label, .table input, .table select, .table textarea, 
   display:block;
   margin-top:5px;
   margin-bottom:15px;
-  
+
   &:hover{
     background:#7e0607;
     color:yellow;
     text-decoration: none;
   }
-  
+
   &:active{
     @include box-shadow-2values(0 1px 0 0 rgba(255,255,255,0.10), inset 0 0 5px 2px rgba(0,0,0,0.25));
     color:orange;
@@ -392,7 +393,7 @@ table th, table td, .table label, .table input, .table select, .table textarea, 
 }
 .nav-list{
   padding:0;
-  
+
   &>li{
     a{
       color:#999;
@@ -402,11 +403,11 @@ table th, table td, .table label, .table input, .table select, .table textarea, 
   .arrow-left {
     float: right;
     display:block;
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent; 
-    border-right: 5px solid white; 
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid white;
     margin: 5px -15px 0 0;
     opacity:0;
   }
@@ -425,9 +426,9 @@ table th, table td, .table label, .table input, .table select, .table textarea, 
 .nav.nav-tabs{
   float:right;
   margin: 0 0 -7px 0;
-  
+
   li{
-   
+
     a{
       font-size:12px;
       color: #333;
@@ -444,7 +445,7 @@ table th, table td, .table label, .table input, .table select, .table textarea, 
   color:#111;
   @include text-shadow(0 1px 0 #eee);
   @include yellow-gradient-mixin;
- 
+
   &:hover{
     color:#000;
     @include gradient(#d6ce9c, #ab9c5b);
@@ -487,7 +488,7 @@ input[type="submit"].btn-yellow, .btn-yellow{
   @include text-shadow(0 1px 0 #900);
   @include border-radius(10px);
   @include box-shadow(0 2px 2px 0 rgba(0, 0, 0, 0.5));
-  
+
   &:hover, &:active, &.active, &.disabled, &[disabled] {
     color: #fff;
     border: none;
@@ -534,7 +535,7 @@ input[type="submit"].btn-yellow, .btn-yellow{
   @include text-shadow(0 1px 0 rgba(0,0,0,0.5));
   @include box-shadow(inset 0 1px 0 0 rgba(255, 255, 255, 0.25));
   font: bold 16px/100% 'Trebuchet MS', Arial, Helvetica, sans-serif;
-  
+
   .close {
     right: -11px;
   }
@@ -552,7 +553,7 @@ input[type="submit"].btn-yellow, .btn-yellow{
   color:#fff;
   font-size:14px;
   float:right;
-  
+
   &:hover{
     color:#fff;
     text-decoration:underline;
@@ -570,7 +571,7 @@ input[type="submit"].btn-yellow, .btn-yellow{
     text-decoration: none;
     background: none;
     border:none;
-    
+
     a{
       color:#333;
       text-decoration:none;
@@ -582,7 +583,7 @@ input[type="submit"].btn-yellow, .btn-yellow{
       border-radius: 3px;
       border-left-width: 1px;
       color: #333;
-      
+
       &:hover{
         border: 1px solid #000;
         color: #fff;
@@ -599,7 +600,7 @@ input[type="submit"].btn-yellow, .btn-yellow{
     text-decoration: none;
     background: none;
     border:none;
-    
+
     a{
       color:#333;
       text-decoration:none;
@@ -612,7 +613,7 @@ input[type="submit"].btn-yellow, .btn-yellow{
       background: none;
       border: 1px solid transparent;
       color: #333;
-      
+
       &:hover{
         border: 1px solid #000;
         color: #fff;
@@ -641,16 +642,16 @@ input[type="submit"].btn-yellow, .btn-yellow{
 /* -- Inner Account Profile CSS------------------------------------------------------------------------------------------------- */
 
 .account-profile{
-  
+
   form{
     margin-left:8%;
     margin-top:20px;
   }
-    
+
   legend{
     display:none
   }
-  
+
   textarea {
     height: 148px;
   }
@@ -673,7 +674,7 @@ input[type="submit"].btn-yellow, .btn-yellow{
   margin-bottom:15px;
   @include border-radius(5px);
   z-index:10;
-  
+
   .loader{
     width:170px;
     height:90px;
@@ -687,9 +688,9 @@ input[type="submit"].btn-yellow, .btn-yellow{
 
 #facebox{
   width: 396px;
-  
+
   .content{
-  
+
   }
   h4{
     margin:5px 0 0 0;
@@ -711,7 +712,7 @@ input[type="submit"].btn-yellow, .btn-yellow{
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 20px;
-    
+
     .control-group {
       margin-bottom: 15px;
     }
@@ -726,11 +727,11 @@ input[type="submit"].btn-yellow, .btn-yellow{
     textarea {
       width:95%;
       height:215px;
-    }  
+    }
   }
 }
 .form-veri .lbl{
-  margin-top:20px;  
+  margin-top:20px;
 }
 .btn-preview{
   float:right;
@@ -779,7 +780,7 @@ input[type="submit"].btn-yellow, .btn-yellow{
     margin-bottom:15px;
     height:350px;
     width:100%;
-    text-align: center; 
+    text-align: center;
   }
 }
 .logo-small{
@@ -791,7 +792,7 @@ input[type="submit"].btn-yellow, .btn-yellow{
 }
 .photo-upload{
   text-align:center;
-  
+
   input[type="file"]{
     width:1px;height:1px;opacity: 0;
   }
@@ -804,7 +805,7 @@ input[type="submit"].btn-yellow, .btn-yellow{
 /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 /* Dashboard CSS */
 .dashboard-container{
-  padding:30px;  
+  padding:30px;
 }
 .dash-count {
   height: 150px;
@@ -819,7 +820,7 @@ input[type="submit"].btn-yellow, .btn-yellow{
   padding-top: 20px;
   font:normal 75px/100% 'Museo300', sans-serif;
   @include text-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
-  
+
   small {
     color: #999;
     padding: 8px 0 0 0;
@@ -849,7 +850,7 @@ input[type="submit"].btn-yellow, .btn-yellow{
   border:1px solid rgba(255,255,255,0.10);
   @include text-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
   @include box-shadow-4values(1px 0 0 rgba(0, 0, 0, 0.25), inset 1px 0 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(0, 0, 0, 0.25), inset 0 1px  0 rgba(0, 0, 0, 0.25));
-  
+
   hr{
     border-top-color:rgba(0,0,0,0.25);
     border-bottom-color:rgba(255,255,255,0.10);
@@ -862,7 +863,7 @@ input[type="submit"].btn-yellow, .btn-yellow{
     padding: 8px 0 0 0;
     font:bold 20px/100% 'Museo300', sans-serif;
     display: block;
-    
+
     i{
       background-color: #999;
       color: #333;
@@ -885,7 +886,7 @@ input[type="submit"].btn-yellow, .btn-yellow{
   position:relative;
   margin: 50px auto 0 auto;
   width: 200px;
-  
+
   span {
     display: block;
     float: left;
