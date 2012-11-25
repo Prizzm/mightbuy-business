@@ -160,6 +160,7 @@
                                     <tr>
                                         <td>
                                             <table cellspacing="0" cellpadding="0" width="100%">
+                                                <% if @lead_invite.lead.photo -%>
                                                 <tr>
                                                     <td align="left" colspan="2">
                                                         <a href="<%=@lead_invite.lead_url %>">
@@ -170,6 +171,7 @@
                                                 <tr>
                                                     <td colspan="2" height="15"></td>
                                                 </tr>
+                                                <% end -%>
                                                 <tr>
                                                     <td colspan="2">
                                                         <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold;">
