@@ -66,6 +66,13 @@ module MightbuyBusiness
 
     # Dragonfly middleware.
     config.middleware.insert 1, 'Dragonfly::Middleware', :images
+
+    # Load subdomain helper in mailer
+    config.to_prepare do
+      Devise::Mailer.class_eval do
+        helper :subdomain
+      end
+    end
   end
 end
 
