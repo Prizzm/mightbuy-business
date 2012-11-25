@@ -63,7 +63,7 @@ MightbuyBusiness::Application.configure do
   }
 
   config.action_mailer.default_url_options = {
-    :host => 'www.mightbuy.it'
+    :host => 'mightbuy.it'
   }
   
   config.action_mailer.asset_host = 'http://business.mightbuy.it'
