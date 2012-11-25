@@ -16,25 +16,9 @@ class @Mightbuy.LeadPhotoPreview
   bindPhotoPreviewer: ->
     $("#customer_lead_photo").fileupload
       replaceFileInput: false,
-      process: [
-        {
-          action: 'load',
-          fileTypes: /^image\/(gif|jpeg|png)$/,
-          maxFileSize: 20000000
-        },
-        {
-          action: 'resize',
-          maxWidth: 800,
-          maxHeight: 350,
-          minWidth: 100,
-          minHeight: 100
-        },
-        {
-          action: 'save'
-        }
-      ]
       add: (e, data) =>
-        window.loadImage data.files[0], (imgOrError) =>
+        file = data.files[0]
+        window.loadImage file, (imgOrError) =>
           if imgOrError.type != "error"
             @image = $(imgOrError)
 
@@ -50,11 +34,20 @@ class @Mightbuy.LeadPhotoPreview
               @image.css({'width' : 'auto', 'height' : '350px'})
 
             @photo_preview.html @image
-        $("#customer_lead_photo").fileupload('process', data).done ->
-          $("#photo-form").one "submit", (e) =>
-            data.submit()
-            e.preventDefault()
-            e.stopPropagation() # to avoid rails UJS taking over over and submitting form again
+
+        canvasResize file,
+          width: 900,
+          height: 400,
+          crop: false,
+          quality: 80,
+          callback: (cdata, width, height) ->
+            blob = canvasResize('dataURLtoBlob', cdata)
+            blob.name = file.name
+            data.files[0] = blob
+            $("#photo-form").one "submit", (e) =>
+              data.submit()
+              e.preventDefault()
+              e.stopPropagation()
         true
 
 jQuery ->
