@@ -38,10 +38,11 @@ describe CustomerLead do
   context "should be able to trigger customer invite based on lead" do
     before do
       @lead_invite = customer_lead.create_topic_customer
+      @business_staff = FactoryGirl.create(:business_staff, email: "hemant+test@example.com")
     end
 
     it "should be able to trigger the email" do
-      mailer = @lead_invite.email_customer
+      mailer = @lead_invite.email_customer(@business_staff)
       customer_lead.sent?.should be_true
       mailer.should deliver_to(customer_lead.email)
       mailer.should have_body_text(@lead_invite.message)
