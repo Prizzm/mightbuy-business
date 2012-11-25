@@ -17,7 +17,7 @@
       <% @customers.each do |customer| -%>
         <tr>
           <td>
-            <a href="#">
+            <a href="<%= root_url.sub(/business\./, '') + "users/#{customer.slug}" %>" target="_blank">
             <%= customer.name -%>
             </a>
           </td>
@@ -27,7 +27,7 @@
           <td>
             <%= customer.topics.size -%>
           </td>
-          <td><a href="#">view details</a></td>
+          <td><a href="<%= root_url.sub(/business\./, '') + "users/#{customer.slug}" %>">view details</a></td>
         </tr>
       <% end -%>
     </table>
