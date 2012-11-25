@@ -6,13 +6,15 @@ class @Mightbuy.RetailLeads
       $("#photo-form").submit()
       event.preventDefault()
 
+
     $("#photo-submit-button").click (event) ->
       $(".saving-loader").show().delay(30000).fadeOut()
       $("#send_email").val('0')
       $("#photo-form").submit()
       event.preventDefault()
 
-    $("#customer_lead_email").change (event) ->
+
+    $("#customer_lead_email").keyup (event) ->
       $el = $(this)
       if $el.val().length
         $("#photo-submit-button").attr("disabled", false)
@@ -20,14 +22,16 @@ class @Mightbuy.RetailLeads
       else
         $("#photo-submit-button").attr("disabled", true)
         $("#photo-email-button").attr("disabled", true)
+
+
     $(".lead-capture .close").click (event) ->
       $(".saving-loader").hide()
-      
+
+
     $(".lead-capture").click (event) ->
-      console.log('a')
       $(".saving-loader").hide()
       event.stopPropagation();
-      
+
+
 jQuery ->
   new Mightbuy.RetailLeads()
-
