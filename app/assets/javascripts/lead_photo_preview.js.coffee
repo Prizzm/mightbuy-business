@@ -17,7 +17,8 @@ class @Mightbuy.LeadPhotoPreview
     $("#customer_lead_photo").fileupload
       replaceFileInput: false,
       add: (e, data) =>
-        window.loadImage data.files[0], (imgOrError) =>
+        file = data.files[0]
+        window.loadImage file, (imgOrError) =>
           if imgOrError.type != "error"
             @image = $(imgOrError)
 
@@ -33,6 +34,20 @@ class @Mightbuy.LeadPhotoPreview
               @image.css({'width' : 'auto', 'height' : '350px'})
 
             @photo_preview.html @image
+
+        canvasResize file,
+          width: 900,
+          height: 400,
+          crop: false,
+          quality: 80,
+          callback: (cdata, width, height) ->
+            blob = canvasResize('dataURLtoBlob', cdata)
+            blob.name = file.name
+            data.files[0] = blob
+            $("#photo-form").one "submit", (e) =>
+              data.submit()
+              e.preventDefault()
+              e.stopPropagation()
         true
 
 jQuery ->
