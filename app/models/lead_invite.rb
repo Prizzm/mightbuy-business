@@ -23,9 +23,9 @@ class LeadInvite
     self
   end
 
-  def email_customer
+  def email_customer(business_staff)
     lead.send_invite!
-    LeadsMailer.invite_customer(self).deliver
+    LeadsMailer.invite_customer(self, business_staff).deliver
   end
 
   def success?
