@@ -12,10 +12,9 @@
   </div>
 <% end -%>
 
-<% if flash[:error] -%>
+<% if flash[:error] or flash[:alert] -%>
   <div class="alert alert-error">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <%= flash[:error] -%>
+    <%= flash[:error] or flash[:alert] -%>
   </div>
 <% end -%>
-
