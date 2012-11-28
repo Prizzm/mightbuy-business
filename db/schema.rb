@@ -175,12 +175,12 @@ ActiveRecord::Schema.define(:version => 20121115060548) do
   end
 
   create_table "comments", :force => true do |t|
-    t.integer  "topic_id",                    :null => false
+    t.integer  "topic_id",    :null => false
     t.integer  "user_id"
     t.integer  "parent_id"
-    t.text     "description", :default => ""
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "customer_leads", :force => true do |t|
@@ -197,7 +197,7 @@ ActiveRecord::Schema.define(:version => 20121115060548) do
     t.decimal  "price",                  :precision => 6, :scale => 2
     t.string   "invite_token"
     t.integer  "user_id"
-    t.text     "message",                                              :default => ""
+    t.text     "message"
     t.string   "emergency_phone_number"
     t.string   "helmet_waiver"
   end
@@ -256,7 +256,7 @@ ActiveRecord::Schema.define(:version => 20121115060548) do
   create_table "lead_configs", :force => true do |t|
     t.integer  "business_id"
     t.boolean  "include_liability",        :default => false
-    t.text     "liability",                :default => ""
+    t.text     "liability"
     t.boolean  "ask_for_name",             :default => false
     t.boolean  "ask_to_join_list",         :default => false
     t.boolean  "include_product_select",   :default => false

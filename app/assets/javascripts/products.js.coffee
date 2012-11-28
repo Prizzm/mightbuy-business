@@ -18,6 +18,10 @@ $(window).resize ->
   $('div.unevenheights-caption').setAllToMaxHeight()
   $('div.uneven-val').setAllToMaxHeight()
 
+$("#save-product").click (event) ->                        
+  $(".saving-loader").show().delay(10000).fadOut()
+  $("#new_product").submit()
+  event.preventDefault()
 
 class @Mightbuy.ProductsList
   constructor: ->

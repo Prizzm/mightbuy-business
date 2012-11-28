@@ -56,6 +56,7 @@ group :development do
   gem "quiet_assets"
   gem 'rspec-rails', "~> 2.6"
   gem "sqlite3"
+  gem 'mysql2'
 end
 
 group :test do
