@@ -1,0 +1,37 @@
+<div class="span9 bg-dark unevenheights">
+  <h3 class="page-title align-right">Timeline of your products</h3>
+
+  <div class="table-container">
+    <div class="table-header clearfix">
+      <div class="title">
+        Timeline
+      </div>
+    </div>
+    <table class="table">
+      <tr>
+        <th>Event</th>
+        <th>Product Name</th>
+        <th>User</th>
+        <th>Data</th>
+        <th>Date</th>
+        <th>Options</th>
+      </tr>
+      <%- if @timeline %>
+        <%- @timeline.each do |timeline| -%>
+          <tr id="timeline-entry-<%= timeline.id -%>">
+            <%= render partial: 'entry', locals: { timeline: timeline } -%>
+          </tr>
+        <% end -%>
+      <% else %>
+      <tr>
+        <td colspan="4">No events</td>
+      </tr>
+      <% end %>
+    </table>
+    <div class="table-footer clearfix">
+      <div class="pagination pagination-right">
+        <%= paginate @timeline, :theme => 'mightbuy_theme' -%>
+      </div>
+    </div>
+  </div>
+</div>
