@@ -15,8 +15,9 @@
     <%= csrf_meta_tags %>
   </head>
   <body class="wrap">
-  	
-    <%= render partial: "shares/notifications" %>
+    <div id="flash-notifications">
+      <%= render partial: "shares/notifications" %>
+    </div>
     <%= yield %>
     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     <%= javascript_include_tag :application -%>
