@@ -1,0 +1,66 @@
+<% if timeline.subject_type == 'Topic' -%>
+  <td><%= timeline.event_type.humanize %></td>
+  <td><%= timeline.subject.product.name -%></td>
+  <td>
+    <% if timeline.actor %>
+      <%= timeline.actor.name -%>
+    <% else %>
+      Anonymous
+    <% end %>
+  </td>
+  <td>
+    <% if timeline.subject.body and not timeline.subject.body.empty? %>
+      <%= timeline.subject.body[0..40] if timeline.subject.body -%>...
+    <% else %>
+      N/A
+    <% end %>
+  </td>
+  <td><%= timeline.subject.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+  <td>
+    <a href="<%= root_url.sub('business', 'www')[0...-1] + topic_path(timeline.subject) %>">
+      View
+    </a>
+  </td>
+<% elsif timeline.subject_type == 'Comment' -%>
+  <td><%= timeline.event_type.humanize %></td>
+  <td><%= timeline.secondary_subject.product.name -%></td>
+  <td>
+    <% if timeline.actor %>
+      <%= timeline.actor.name -%>
+    <% else %>
+      Anonymous
+    <% end %>
+  </td>
+  <td>
+    <% if timeline.subject.description and not timeline.subject.description.empty? %>
+      <%= timeline.subject.description[0..40] if timeline.subject.description -%>...
+    <% else %>
+      N/A
+    <% end %>
+  </td>
+  <td><%= timeline.subject.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+  <td>
+    <a href="http://www.mightbuy.it/topics/<%= timeline.secondary_subject.shortcode %>">
+      View
+    </a>
+  </td>
+<% elsif timeline.subject_type == 'Vote' -%>
+  <td><%= timeline.event_type.humanize %></td>
+  <td><%= timeline.secondary_subject.product.name -%></td>
+  <td>
+    <% if timeline.actor %>
+      <%= timeline.actor.name -%>
+    <% else %>
+      Anonymous
+    <% end %>
+  </td>
+  <td>
+    <%= timeline.subject.buyit.to_s.capitalize -%>
+  </td>
+  <td><%= timeline.subject.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+  <td>
+    <a href="http://www.mightbuy.it/topics/<%= timeline.secondary_subject.shortcode %>">
+      View
+    </a>
+  </td>
+<% end %>
