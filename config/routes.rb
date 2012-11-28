@@ -14,6 +14,9 @@ MightbuyBusiness::Application.routes.draw do
     resource :deal
   end
 
+  resources :topics
+
+  resources :timeline
   resources :customers
   resources :leads
 
