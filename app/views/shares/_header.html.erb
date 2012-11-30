@@ -1,9 +1,11 @@
 <div class="header">
   <div class="header-gradient visible-phone"></div>
   <div class="z-index1">
+<%- if @business.url_verified %>
     <div class="lead-capture">
         <%= link_to('Lead Capture', new_retail_lead_path, class: 'btn btn-large btn-danger') -%>
     </div>
+<% end %>
     <a href="/" class="brand"> <h2 class="logo-business">MightBuy.<span>for business</span></h2> </a>
     <div class="navbar navbar-inverse">
       <button type="button" class="btn btn-navbar visible-phone" data-toggle="collapse" data-target=".nav-collapse">
