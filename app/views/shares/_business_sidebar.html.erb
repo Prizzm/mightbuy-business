@@ -32,6 +32,12 @@
         <div class="arrow-left"></div>
       <% end -%>
     </li>
+    <li class="<%= active_tab_class('timeline') -%>">
+        <%= link_to(timeline_index_path) do -%>
+         Activity
+        <div class="arrow-left"></div>
+      <% end -%>
+    </li>
     <li class="<%= active_tab_class('lead_configs') -%>">
       <%= link_to(@business.lead_config ? edit_lead_config_path : new_lead_config_path) do -%>
         Lead Capture
