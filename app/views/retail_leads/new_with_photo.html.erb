@@ -48,7 +48,7 @@
         <%= f.label :phone_number, 'Phone Number' %>
         <%= f.phone_field  :phone_number %>
         <% end %>
-	
+
 
         <%= f.label :email, 'Email' -%>
         <%= f.email_field :email -%>
@@ -58,31 +58,29 @@
     <%- if @business.lead_config.ask_to_join_list? -%>
     <div class="row-fluid">
       <div class="span12">
-        <label class="checkbox"> <%= f.check_box  :join_list -%> Join Mail List 
-	    <%= @business.lead_config.join_list_description -%>
-	    </label>
+        <label class="checkbox"> <%= f.check_box  :join_list -%> Join Mail List
+        <%= @business.lead_config.join_list_description -%>
+        </label>
       </div>
     </div>
     <% end -%>
 
     <%- if @business.lead_config.include_product_select? -%>
-	      <div class="row-fluid">
-	        <div class="span12">
-	          <%= f.label :product_id, 'Select a Product' -%>
-	          <%= f.select :product_id, product_list_helper(@business) -%>
-			</div>
-	      </div>
-     <% else -%>
-		<%= f.hidden_field :product_id, :value=> product_list_default(@business)  -%>
+          <div class="row-fluid">
+            <div class="span12">
+              <%= f.label :product_id, 'Select a Product' -%>
+              <%= f.select :product_id, product_list_helper(@business) -%>
+            </div>
+          </div>
      <% end -%>
 
-	<%- if @business.lead_config.ask_for_description? %> 	
-	<div class="row-fluid">
-		<div class="span12">
-		    <%= f.label :message, 'Description' %>
-		    <%= f.text_area  :message, :rows=>5 %>
-		 </div>
-	</div>
+    <%- if @business.lead_config.ask_for_description? %>
+    <div class="row-fluid">
+        <div class="span12">
+            <%= f.label :message, 'Description' %>
+            <%= f.text_area  :message, :rows=>5 %>
+         </div>
+    </div>
     <% end -%>
 
     <br/>
