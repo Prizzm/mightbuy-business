@@ -47,9 +47,9 @@
     Business
   </div>
   <ul class="nav nav-list">
-    <li class="<%= active_tab_class('lead_configs') -%>">
-      <%= link_to(@business.lead_config ? edit_lead_config_path : new_lead_config_path) do -%>
-        Configuration
+	<li class="<%= active_tab_class('businesses') -%>">
+      <%= link_to(profile_business_path) do -%>
+        Profile
         <div class="arrow-left"></div>
       <% end -%>
     </li>
@@ -59,9 +59,9 @@
         <div class="arrow-left"></div>
       <% end -%>
     </li>
-    <li class="<%= active_tab_class('businesses') -%>">
-      <%= link_to(profile_business_path) do -%>
-        Profile
+    <li class="<%= active_tab_class('lead_configs') -%>">
+      <%= link_to(@business.lead_config ? edit_lead_config_path : new_lead_config_path) do -%>
+        Retail
         <div class="arrow-left"></div>
       <% end -%>
     </li>
@@ -74,5 +74,5 @@
   </ul>
 
 
-  <%= link_to("Account", edit_business_staff_registration_path, class: "other-menus") -%>
+  <%= link_to("Your Account", edit_business_staff_registration_path, class: "other-menus") -%>
 </div>
