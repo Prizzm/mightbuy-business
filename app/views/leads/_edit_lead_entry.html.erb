@@ -8,7 +8,21 @@
         <h4><span class="remove-bold"><%= lead.name -%></span></h4>
 
         <div class="clearfix m-top10">
-          <label class="label-mini">Product:</label>
+	      <label class="label-mini">Name:</label>
+          <div class="pull-left mLeft10">
+            <%= f.text_field :name -%>
+          </div>
+          <br clear="all"/>   
+  		  <br>
+
+          <label class="label-mini">Email:</label>
+          <div class="pull-left mLeft10">
+            <%= f.text_field :email -%>
+          </div>
+          <br clear="all"/>   
+  		  <br>
+
+		  <label class="label-mini">Product:</label>
 
           <div class="pull-left mLeft10">
             <%= f.select :product_id, product_list_helper(lead.business) -%>
@@ -16,6 +30,16 @@
           <br clear="all"/>
 
           <label class="label-mini">&nbsp</label>
+		  <br clear="all"/>
+
+	      <div class="pull-left mLeft10">
+	        <label class="label-mini">Message:</label>
+	        <%= f.text_area :message, rows: 3, cols: 10 -%>
+	        <br clear="all"/>
+	      </div>
+
+          <label class="label-mini">&nbsp</label>
+		  <br clear="all"/>
 
           <div class="pull-left m-top10">
             <button class="btn btn-danger" type="submit">
@@ -26,11 +50,7 @@
         </div>
       </div>
 
-      <div class="pull-left m-left25 m-top10">
-        <label class="label-mini">Message:</label>
-        <%= f.text_area :message, rows: 3, cols: 10 -%>
-        <br clear="all"/>
-      </div>
+
     <% end -%>
   </td>
 </tr>
