@@ -1,5 +1,7 @@
 MightbuyBusiness::Application.routes.draw do
-  devise_for :business_staffs
+  devise_for :business_staffs, controllers: {
+    registrations: 'registrations'
+  }
 
   resource :business do
     collection do

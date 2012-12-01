@@ -1,4 +1,6 @@
 class LeadsMailer < ActionMailer::Base
+  helper RetailLeadsHelper
+
   BCC_ADDRESS = "charles@mightbuy.it".freeze
 
   def invite_customer(lead_invite, business_staff)

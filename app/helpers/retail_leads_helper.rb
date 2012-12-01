@@ -4,4 +4,13 @@ module RetailLeadsHelper
       [ product.name, product.id ]
     end
   end
+
+
+  def replace_variables_helper(signature, lead_invite)
+    if lead_invite.lead.product
+      signature.gsub!(/{{\s*product\.name\s*}}/, lead_invite.lead.product.name)
+    end
+
+    signature
+  end
 end

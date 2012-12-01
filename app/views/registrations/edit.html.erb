@@ -1,0 +1,54 @@
+<div class="span9 bg-dark unevenheights account-profile">
+  <h3 class="page-title align-right"> Profile </h3>
+
+  <div class="span4">
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| -%>
+    <div class="control-group">
+      <label>Email Address</label>
+      <div class="controls">
+        <%= f.text_field :email, required: false, autofocus: true -%>
+      </div>
+    </div>
+
+
+    <div class="control-group">
+      <label>Password</label>
+      <div class="controls">
+        <%= f.password_field :password -%>
+        <span class="help-block">Leave it blank if you don't want to change it</span>
+      </div>
+    </div>
+
+
+    <div class="control-group">
+      <label>Password Confirmation</label>
+      <div class="controls">
+        <%= f.password_field :password_confirmation -%>
+      </div>
+    </div>
+
+
+    <div class="control-group">
+      <label>Email Signature</label>
+      <div class="controls">
+        <%= f.text_area :email_signature, required: true -%>
+        <span class="help-block">You can use variables such as {{product.name}}</span>
+      </div>
+    </div>
+
+
+    <div class="control-group">
+      <label>Current Password</label>
+      <div class="controls">
+        <%= f.password_field :current_password, required: true -%>
+        <span class="help-block">We need your current password to confirm your changes</span>
+      </div>
+    </div>
+
+
+    <button class="<%= save_profile_button_class -%>" type="submit">
+      Update
+    </button>
+  <% end -%>
+  </div>
+</div>
