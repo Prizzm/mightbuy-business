@@ -4,56 +4,75 @@
       <%= @business.name -%>
     </div>
     <div class="customer-name">
+      <% if current_business_staff.name and not current_business_staff.name.empty? -%>
       <div>
         Hello <span><%= current_business_staff.name -%></span>
       </div>
+      <% end -%>
       <%= link_to("logout",destroy_business_staff_session_path, method: :delete) -%>
     </div>
   </div>
+
   <div class="menu-title">
     Dashboard
   </div>
   <ul class="nav nav-list">
+    <li class="<%= active_tab_class('timeline') -%>">
+      <%= link_to(timeline_index_path) do -%>
+         Activity
+        <div class="arrow-left"></div>
+      <% end -%>
+    </li>
+  </ul>
+
+  <div class="menu-title">
+    Customers
+  </div>
+  <ul class="nav nav-list">
+    <li class="<%= active_tab_class('customers') -%>">
+      <%= link_to(customers_path) do -%>
+        Potential
+        <div class="arrow-left"></div>
+      <% end -%>
+    </li>
+    <li class="<%= active_tab_class('leads') -%>">
+      <%= link_to(leads_path) do -%>
+        Leads
+        <div class="arrow-left"></div>
+      <% end -%>
+    </li>
+  </ul>
+
+  <div class="menu-title">
+    Business
+  </div>
+  <ul class="nav nav-list">
+    <li class="<%= active_tab_class('lead_configs') -%>">
+      <%= link_to(@business.lead_config ? edit_lead_config_path : new_lead_config_path) do -%>
+        Configuration
+        <div class="arrow-left"></div>
+      <% end -%>
+    </li>
     <li class="<%= active_tab_class('products') -%>">
       <%= link_to(products_path) do -%>
         Products
         <div class="arrow-left"></div>
       <% end -%>
     </li>
-    <li class="<%= active_tab_class('customers') -%>">
-      <%= link_to(customers_path) do -%>
-        Potential Customers
+    <li class="<%= active_tab_class('businesses') -%>">
+      <%= link_to(profile_business_path) do -%>
+        Profile
         <div class="arrow-left"></div>
       <% end -%>
     </li>
-    <li class="<%= active_tab_class('leads') -%>">
-      <%= link_to(leads_path) do -%>
-        Customers Leads
-        <div class="arrow-left"></div>
-      <% end -%>
-    </li>
-    <li class="<%= active_tab_class('timeline') -%>">
-        <%= link_to(timeline_index_path) do -%>
-         Activity
-        <div class="arrow-left"></div>
-      <% end -%>
-    </li>
-    <li class="<%= active_tab_class('lead_configs') -%>">
-      <%= link_to(@business.lead_config ? edit_lead_config_path : new_lead_config_path) do -%>
-        Lead Capture
-        <div class="arrow-left"></div>
-      <% end -%>
-    </li>
-  </ul>
-  <div class="clear"></div>
-  <%= link_to("Accounts", profile_business_path, class: "other-menus") -%>
-  <ul class="nav nav-list">
     <li class="<%= active_tab_class('business_staffs') -%>">
       <%= link_to(business_business_staffs_path) do -%>
-        Users
+        Staff
         <div class="arrow-left"></div>
       <% end -%>
     </li>
   </ul>
-  <a class="other-menus" href="#">Help</a>
+
+
+  <%= link_to("Account", edit_business_staff_registration_path, class: "other-menus") -%>
 </div>
