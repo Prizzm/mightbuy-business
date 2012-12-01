@@ -96,6 +96,17 @@
                                                 <tr>
                                                     <td height="40"></td>
                                                 </tr>
+                                                <% elsif not @business_staff.email_signature.empty? %>
+                                                <tr>
+                                                    <td>
+                                                        <span style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #000000;">
+                                                            <%= replace_variables_helper(@business_staff.email_signature, @lead_invite) %>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="40"></td>
+                                                </tr>
                                                 <% end %>
                                                 <tr>
                                                     <td>
