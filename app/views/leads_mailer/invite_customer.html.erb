@@ -107,36 +107,28 @@
                                                     <td height="10"></td>
                                                 </tr>
                                                 <% end %>
-
                                                 <tr>
                                                     <td>
                                                         <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;">
-                                                            You can email, call or visit our website	 for more information.
+                                                            You can email, call or visit our website for more information.
                                                         </span>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td height="10"></td>
                                                 </tr>
-
-
-
                                                 <tr>
                                                     <td>
                                                         <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;">
                                                             Hope to hear from you soon! <br>
-	<%= replace_variables_helper(@business_staff.email_signature, @lead_invite) %>           <br>    
-
+                                                            <%= replace_variables_helper(@business_staff.email_signature, @lead_invite) %>
+                                                            <br>
                                                         </span>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td height="10"></td>
                                                 </tr>
-
-                                              
-
-
                                                 <tr>
                                                     <td>
                                                         <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;">
@@ -151,20 +143,18 @@
                                                         </span>
                                                     </td>
                                                 </tr>
-
+                                                <% if @lead_invite.business.business_urls.first -%>
                                                 <tr>
                                                     <td>
                                                         <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;">
-														                                             
-															
-															<a href="<%= @lead_invite.business.business_urls.first.domain%>" style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #d54937;" target="_blank"><%= @lead_invite.lead.business.name %> </a>
+                                                            <a href="<%= @lead_invite.business.business_urls.first.domain%>" style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #d54937;" target="_blank"><%= @lead_invite.lead.business.name %> </a>
                                                         </span>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td height="20"></td>
                                                 </tr>
-
+                                                <% end -%>
                                             </table>
                                         </td>
                                     </tr>
