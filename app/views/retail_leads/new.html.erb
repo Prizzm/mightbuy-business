@@ -3,7 +3,7 @@
   <div class="row-fluid">
     <div class="span12">
       <%= link_to("Logout", destroy_business_staff_session_path, method: :delete, class: 'btn btn-danger pull-right') -%>
-      <%= image_tag(business_form_logo_url_helper(@business), width: 160, height: 80, class: "img-polaroid pull-left m-right25") -%>
+      <%= image_tag(business_form_logo_url_helper(@business), height: 80, class: "img-polaroid pull-left m-right25") -%>
       <h1><%= @business.name -%></h1>
     </div>
   </div>
@@ -27,17 +27,17 @@
         <%= f.text_field  :name -%>
       <% end -%>
 
-      <%- if @business.business_config.ask_for_phonenumber? %> 		
+      <%- if @business.lead_config.ask_for_phonenumber? %>
         <%= f.label :phone_number, 'Phone Number' %>
         <%= f.phone_field  :phone_number %>
       <% end %>
 
-      <%- if @business.business_config.ask_for_emergency_number? %> 		
+      <%- if @business.lead_config.ask_for_emergency_number? %>
         <%= f.label :emergency_phone_number, 'Emergency contact phone number *' %>
         <%= f.phone_field  :emergency_phone_number %>
       <% end %>
 
-      <%- if @business.business_config.ask_for_helmet_waiver? %> 		
+      <%- if @business.lead_config.ask_for_helmet_waiver? %>
         <%= f.label :ask_for_helmet_waiver, 'I have been encouraged to use a bicycle helmet, and I decline using the helmet during this ride.*' %>
         <%= f.text_field  :helmet_waiver %>
       <% end %>
@@ -52,8 +52,8 @@
   <%- if @business.business_config.ask_to_join_list? -%>
   <div class="row-fluid">
     <div class="span12">
-      <label class="checkbox"> <%= f.check_box  :join_list -%> Join Mail List 
-	    <%= @business.business_config.join_list_description -%>
+      <label class="checkbox"> <%= f.check_box  :join_list -%> Join Mail List
+	    <%= @business.lead_config.join_list_description -%>
 	    </label>
     </div>
   </div>
