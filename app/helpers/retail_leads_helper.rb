@@ -7,6 +7,8 @@ module RetailLeadsHelper
 
 
   def replace_variables_helper(signature, lead_invite)
+    return unless signature.is_a? String
+
     if lead_invite.lead.product
       signature.gsub!(/{{\s*product\.name\s*}}/, lead_invite.lead.product.name)
     end
