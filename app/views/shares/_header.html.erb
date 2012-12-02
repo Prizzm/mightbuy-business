@@ -44,8 +44,8 @@
             Customers Leads <div class="arrow-left"></div>
             <% end -%>
           </li>
-          <li class="<%= active_tab_class('lead_configs') -%>">
-            <%= link_to(@business.lead_config ? edit_lead_config_path : new_lead_config_path) do -%>
+          <li class="<%= active_tab_class('business_configs') -%>">
+            <%= link_to(@business.business_config ? edit_business_config_path : new_business_config_path) do -%>
             Lead Capture <div class="arrow-left"></div>
             <% end -%>
           </li>

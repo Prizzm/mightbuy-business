@@ -11,7 +11,7 @@ class RetailLeadsController < ApplicationController
   def new
     @lead = @business.customer_leads.build
 
-    if @business.lead_config.include_liability?
+    if @business.business_config.include_liability?
       render template: 'retail_leads/new'
     else
       render template: 'retail_leads/new_with_photo'
@@ -25,7 +25,7 @@ class RetailLeadsController < ApplicationController
     @lead = @business.customer_leads.create(params[:customer_lead])
 
     if @lead.persisted?
-      if @business.lead_config.include_liability?
+      if @business.business_config.include_liability?
         redirect_to photo_retail_lead_path(@lead)
       else
         send_lead_invite if params[:send_email] == '1'

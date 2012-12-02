@@ -10,7 +10,7 @@ class @Mightbuy.Business
     $(".add-product-btn").live('click',@showAddProduct)
     $(".product-create-cancel").live('click', -> $(".add-product-row").hide())
     $(".product-edit-cancel").live('click', -> $(".edit-product-row").remove())
-    $("#lead_config_liability").markItUp(@markdownSettings())
+    $("#business_config_liability").markItUp(@markdownSettings())
 
   markdownSettings: ->
     {

@@ -36,7 +36,7 @@
       </div>
     </div>
 
-        <%- if @business.lead_config.include_product_select? -%>
+        <%- if @business.business_config.include_product_select? -%>
               <div class="row-fluid">
                 <div class="span12">
                   <%= f.label :product_id, 'Select a Product' -%>
@@ -45,7 +45,7 @@
               </div>
          <% end -%>
 
-        <%- if @business.lead_config.ask_for_description? %>
+        <%- if @business.business_config.ask_for_description? %>
         <div class="row-fluid">
             <div class="span12">
                 <%= f.label :message, 'Description' %>
