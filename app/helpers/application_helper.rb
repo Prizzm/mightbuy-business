@@ -18,4 +18,15 @@ module ApplicationHelper
       ''
     end
   end
+
+
+  def link_to_sort(title, column)
+    if (column.to_s == params[:sort].to_s and params[:direction].to_s == 'asc')
+      direction = 'desc'
+    else
+      direction = 'asc'
+    end
+
+    link_to title, sort: column, direction: direction
+  end
 end

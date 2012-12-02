@@ -3,7 +3,11 @@ class ProductsController < ApplicationController
   layout 'business_with_sidebar'
 
   def index
-    @products = Kaminari.paginate_array(@business.all_products.to_a).page(params[:page]).per(10)
+    products = Product.find(:all, conditions: {
+      business_id: @business.id
+    }, order: sort_column + ' ' + sort_direction)
+
+    @products = Kaminari.paginate_array(products).page(params[:page]).per(10)
     @product = Product.new()
   end
 
@@ -38,5 +42,22 @@ class ProductsController < ApplicationController
     end
     redirect_to products_path
   end
-end
 
+
+  protected
+    def sort_direction
+      if %w[asc desc].include?(params[:direction])
+        params[:direction]
+      else
+        'asc'
+      end
+    end
+
+    def sort_column
+      if Product.column_names.include?(params[:direction])
+        params[:direction]
+      else
+        'name'
+      end
+    end
+end
