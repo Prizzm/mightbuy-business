@@ -14,15 +14,19 @@
       <tr class="add-product-row hide">
         <%= render :partial => "add_product" -%>
       </tr>
-      <tr>
-        <th>URL</th>
-        <th>Product Name</th>
+      <tr class="product-heading">
+        <th>
+            <%= link_to_sort('URL', :url) %>
+        </th>
+        <th>
+            <%= link_to_sort('Product Name', :name) %>
+        </th>
         <th>Interested Buyers</th>
         <th>Available Deal</th>
         <th>Edit/Delete</th>
       </tr>
       <% @products.each do |product| -%>
-        <tr id="product-<%= product.id -%>">
+        <tr class="product-row" id="product-<%= product.id -%>">
           <%= render :partial => "product_line", locals: {product: product} -%>
         </tr>
       <% end -%>
