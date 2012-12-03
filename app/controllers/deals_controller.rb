@@ -1,10 +1,15 @@
 class DealsController < ApplicationController
   before_filter :find_business, :find_product!
   before_filter :find_deal!, only: [:edit, :update]
+
   layout 'business_with_sidebar'
   respond_to :html, :js
 
+
   def edit
+    if @product.bargin.bargin_conditions.blank?
+      @product.bargin.bargin_conditions.build
+    end
   end
 
   def create
@@ -19,14 +24,17 @@ class DealsController < ApplicationController
     respond_with(@deal)
   end
 
+
   def update
     if @deal.update_attributes(params[:bargin])
       flash[:notice] = t("deals.update.success")
     else
       flash[:error]  = t("deals.update.failure")
     end
+
     respond_with(@deal)
   end
+
 
   private
   def find_product!
