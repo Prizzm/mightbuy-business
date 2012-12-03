@@ -26,3 +26,13 @@
 //= require markitup-markdown
 //= require mightbuy
 //= require_tree .
+
+if($("#flash-notifications").is(":visible"))
+{
+	$("#flash-notifications").delay(3000).fadeOut(500);
+}
+
+$("input[type=submit], button[type=submit]").bind('click',function(){
+	$(".saving-loader").show().delay(20000).hide(1000);
+});
+
