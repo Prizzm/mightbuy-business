@@ -89,6 +89,7 @@
                                                     <td>
                                                         <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;">
                                                             Thank you so much for stopping by our store!
+                                                          
                                                         </span>
                                                     </td>
                                                 </tr>
@@ -193,16 +194,26 @@
                                                             <li>Get more product information</li>
                                                             <li>Ask your friends opinion</li>
                                                             <li>Buy online!</li>
+                                                            <% if @lead_invite.lead.product.bargin -%>
+                                                              <br> 
+                                                              <li>                                          
+                                                                <b>SPECIAL BONUS from <%= @lead_invite.lead.business.name %>!</b><br> 
+                                                                <%= @lead_invite.lead.product.bargin.offer %>
+                                                                <div style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+ Valid when  <%= @lead_invite.lead.product.bargin.bargin_conditions.first.operator %> <%= @lead_invite.lead.product.bargin.bargin_conditions.first.operand %> of your friends <%= @lead_invite.lead.product.bargin.bargin_conditions.first.object   %> that *you* should buy, using MightBuy. </div>
+                                                              </li>
+                                                            <% end -%>
                                                         </ul>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="2" height="15"></td>
                                                 </tr>
+
                                                 <tr>
                                                     <td colspan="2">
-                                                        <a href="<%= @lead_invite.lead_url %>" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #d54937">
-                                                            View on MightBuy.it!
+                                                        <a href="<%= @lead_invite.lead_url %>" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #d54937">
+                                                            See it on MightBuy.it!
                                                         </a>
                                                     </td>
                                                 </tr>
