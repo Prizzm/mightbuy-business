@@ -1,4 +1,6 @@
-$("#flash-notifications").html("<%= escape_javascript(render partial: 'shares/notifications') -%>");
+$(".saving-loader").show().delay(300).hide(200);
+$("#flash-notifications").delay(1000).html("<%= escape_javascript(render partial: 'shares/notifications') -%>");
+$("#flash-notifications").show().delay(6000).fadeOut(500);
 <%- flash.clear -%>
 
 <%- if @lead.errors.empty? -%>

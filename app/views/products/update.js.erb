@@ -1,5 +1,11 @@
 <% if @product && @product.update_attributes!(params[:product]) -%>
   $("#product-<%= @product.id -%>").html("<%= escape_javascript(render :partial => 'product_line', locals: {product: @product}) -%>")
+
+$(".saving-loader").show().delay(300).hide(200);
+$("#flash-notifications").delay(1000).html("<%= escape_javascript(render partial: 'shares/notifications') -%>");
+$("#flash-notifications").show().delay(6000).fadeOut(500);
+
+
 <% end -%>
 <% if @product -%>
   $("#edit-product-<%= @product.id -%>").remove();
