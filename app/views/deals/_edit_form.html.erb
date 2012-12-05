@@ -41,6 +41,12 @@
               <%= f.text_area :offer, rows: 2, class: "m-top5 span3" -%>
             </div>
           </div>
+          <div class="control-group">
+            <label class="control-label">Public?</label>
+            <div class="controls">
+              <%= f.check_box :public -%>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -59,13 +65,13 @@
           <div class="control-group">
             <label class="control-label">Operator:</label>
             <div class="controls">
-              <%= condition.select :operator, BarginCondition::OPERATORS, required: true, class: "span1" -%>
+              <%= condition.select :operator, BarginCondition::OPERATORS.invert, required: true, class: "span1" -%>
             </div>
           </div>
           <div class="control-group">
             <label class="control-label">Operand:</label>
             <div class="controls">
-              <%= condition.text_field :operand, required: true, class: "span1" -%>
+              <%= condition.text_field :operand, class: "span1" -%>
             </div>
           </div>
         </div>
