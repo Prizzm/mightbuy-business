@@ -2,6 +2,6 @@ $("#flash-notifications").html("<%= escape_javascript(render partial: 'shares/no
 <%- flash.clear -%>
 
 <% if @lead.errors.empty? -%>
-  $("#lead-confirmation").modal();
+  $("#lead-confirmation").modal().center();
 <% end -%>
 
