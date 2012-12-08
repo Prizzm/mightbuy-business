@@ -1,6 +1,11 @@
 /* Large desktop */
 @import 'mixin';
 @media (min-width: 1200px) {
+  .container > .content-new {
+    .form-button, .hr-width{
+      width: 285px;
+    }
+  }
   .user-info {
     padding-right:0;
   }
@@ -146,12 +151,41 @@
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------ */
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
-
+  .container .social-ad, .container >.content-new {
+    width: 400px;
+  }
   .photo-upload #fileselectbutton{
       float:none;
   }
   .min-height-val{
     min-height:52px;
+  }
+  .hr-vertical {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    margin: 20px 0 20px 50px;
+    position: relative;
+    height: auto;
+    float: left;
+    width:450px;
+  }
+  .col-form{
+    margin-left:250px;
+    margin-left: 35px;
+  }
+  .hr-vertical {
+    margin-left:20px;
+    width: 355px;
+  }
+  .col-video{
+    padding:10px 0 0;
+    margin:0 0 20px 20px;
+    width: 360px;
+  }
+  .foot-links{
+    margin-bottom:20px;
   }
 }
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------ */
@@ -300,6 +334,9 @@
   .saving-loader{
     top: 35%;
     left: 40%;
+  }
+  .content-new  h2.logo span {
+    left: 130px;
   }
 }
 /* Portrait phones */
