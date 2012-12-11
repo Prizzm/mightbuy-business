@@ -3,14 +3,20 @@ class RetailLeadsController < ApplicationController
   before_filter :find_business
   before_filter :find_customer_lead!, only: [:show, :photo, :update]
   layout 'retail'
+  
 
   def show
     render_wizard
   end
 
   def new
-    @lead = @business.customer_leads.build
 
+    @lead = @business.customer_leads.build 
+    
+    if params[:add] == "true"
+      render template: 'retail_leads/new_add_photo' and return;
+    end
+    
     if @business.business_config.include_liability?
       render template: 'retail_leads/new'
     else
@@ -53,7 +59,7 @@ class RetailLeadsController < ApplicationController
   private
   def find_customer_lead!
     unless @lead = @business.customer_leads.find_by_id(params[:id])
-      redirect_to new_retail_leads_path
+      redirect_to new_retail_lead_path
     end
   end
 
