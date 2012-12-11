@@ -14,7 +14,11 @@ class RetailLeadsController < ApplicationController
     @lead = @business.customer_leads.build 
     
     if params[:add] == "true"
-      render template: 'retail_leads/new_add_photo' and return;
+      render(template: 'retail_leads/new_add_photo') and return;
+    end
+    
+    if params[:list_add] == "1"
+      render(template: 'retail_leads/new_add_list') and return;
     end
     
     if @business.business_config.include_liability?
@@ -30,9 +34,9 @@ class RetailLeadsController < ApplicationController
   def create
     @lead = @business.customer_leads.create(params[:customer_lead])
 
-    if @lead.persisted?
-      if @business.business_config.include_liability?
-        redirect_to photo_retail_lead_path(@lead)
+    if @lead.persisted? 
+      if @business.business_config.include_liability? && params[:added] != '1'
+        redirect_to photo_retail_lead_path(@lead, :email => @lead.email, :phone_number => @lead_phone_number, :name => @lead.name ) 
       else
         send_lead_invite if params[:send_email] == '1'
       end

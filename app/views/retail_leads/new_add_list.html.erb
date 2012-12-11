@@ -5,9 +5,17 @@
         <%= link_to("Logout", destroy_business_staff_session_path, method: :delete, class: 'btn btn-danger pull-right') -%>
         <%= image_tag(business_form_logo_url_helper(@business), height: 80, class: "img-polaroid pull-left m-right25") -%>
         <h1><%= @business.name -%></h1>
+        <h2 >Add another to <%= params[:email] -%></h2>
+        <a class="btn btn-danger pull-right" href="/retail_leads/new"> Cancel </a>
       </div>
     </div>
     <%= hidden_field_tag "send_email", 0 -%>
+    <%= hidden_field_tag "added", 1 -%>
+    <%= hidden_field_tag "list_add", 1 -%>
+    <%= f.hidden_field :email, :value=>params[:email] -%>
+    <%= f.hidden_field :name, :value=>params[:name] -%>
+    <%= f.hidden_field :phone_number, :value=>params[:phone_number] -%>
+	
 
     <div class="row-fluid">
       <div class="span12">
@@ -37,34 +45,6 @@
       </div>
     </div>
 
-    <div class="row-fluid">
-      <div class="span12">
-        <%- if @business.business_config.ask_for_name? -%>
-        <%= f.label :name, 'Name' -%>
-        <%= f.text_field  :name -%>
-        <% end -%>
-
-        <%- if @business.business_config.ask_for_phonenumber? %>
-        <%= f.label :phone_number, 'Phone Number' %>
-        <%= f.phone_field  :phone_number %>
-        <% end %>
-
-
-        <%= f.label :email, 'Email' -%>
-        <%= f.email_field :email -%>
-      </div>
-    </div>
-
-    <%- if @business.business_config.ask_to_join_list? -%>
-    <div class="row-fluid">
-      <div class="span12">
-        <label class="checkbox"> <%= f.check_box  :join_list -%> Join Mail List
-        <%= @business.business_config.join_list_description -%>
-        </label>
-      </div>
-    </div>
-    <% end -%>
-
     <%- if @business.business_config.include_product_select? -%>
           <div class="row-fluid">
             <div class="span12">
@@ -87,10 +67,10 @@
 
     <div class="row-fluid">
       <div class="span12">
-        <%= f.submit 'Save', class: 'btn btn-large btn-danger', id: "photo-submit-button", disabled: 'disabled' %>
-        <button class="btn btn-large btn-danger pull-right" type="button" id="photo-email-button" disabled="disabled">
+        <button class="btn btn-large btn-danger pull-right" type="button" id="photo-email-button" >
           Send Now
         </button>
+        <%= f.submit 'Save', class: 'btn btn-large btn-danger', id: "photo-submit-button" %>
       </div>
     </div>
   <% end -%>
@@ -99,4 +79,6 @@
   <small class="pull-left">powered by</small>
   <%= link_to("", "http://www.mightbuy.it", class: 'logo-small', target: '_blank') -%>
 </div>
+
+
 

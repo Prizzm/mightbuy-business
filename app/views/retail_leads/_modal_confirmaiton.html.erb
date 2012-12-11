@@ -11,15 +11,14 @@
   </div>
 
   <div class="modal-footer">
-    <a class="btn btn-danger btn-large" href="/retail_leads/new"> Ok </a>
+    <a class="btn btn-danger btn-large" href="/retail_leads/new"> Done </a>
   </div>
 
 
   <div class="modal-footer">
-    <a class="btn btn-danger btn-large" href="/retail_leads/new?add=true&email="<%= lead.email -%> > Add another! </a>
+    <a class="btn btn-danger btn-large" href="/retail_leads/new?add=true&email=<%= lead.email -%>&name=<%= lead.name -%>&phone_number=<%= lead.phone_number-%>" > Add another to <%= lead.email -%> </a>
   </div>
 
-<%= debug  params %> 
-
+<%= debug params %>
 
 </div>

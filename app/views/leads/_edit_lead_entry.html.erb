@@ -36,10 +36,12 @@
 	        <label class="label-mini">Message:</label>
 	        <%= f.text_area :message, rows: 3, cols: 10 -%>
 	        <br clear="all"/>
-	      </div>
+	      </div>1
 
           <label class="label-mini">&nbsp</label>
 		  <br clear="all"/>
+		
+    <a class="btn btn-danger btn-large" href="/retail_leads/new?list_add=1&email=<%= lead.email -%>&name=<%= lead.name -%>&phone_number=<%= lead.phone_number-%>" > Add another to <%= lead.email -%> </a>
 
           <div class="pull-left m-top10">
             <button class="btn btn-danger" type="submit">
