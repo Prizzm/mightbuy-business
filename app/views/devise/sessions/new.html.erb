@@ -1,61 +1,63 @@
 <div class="container silhouette-bg">
-  <div class="trapezoid-bg hidden-phone"></div>
-  <div class="content">
-    <div class="top-gradient"></div>
-    <div class="row">
+  <div class="social-ad"></div>
+  <div class="content-new">
+    <div class="col-form">
       <div class="login-form">
         <h2 class="logo">MightBuy.<span>for business</span></h2>
-        <hr/>
         <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| -%>
-          <%= f.hidden_field :remember_me, value: 1 -%>
-          <fieldset>
-            <label>Username</label>
-            <%= f.text_field :email -%>
-            <label>Password</label>
-            <%= f.password_field :password -%>
-
-            <div class="clearfix">
-              <button class="btn btn-yellow w80 pull-right" type="submit">
-                Login
-              </button>
-            </div>
-            <hr class="m-bot0"/>
-          </fieldset>
+        <%= f.hidden_field :remember_me, value: 1 -%>
+        <fieldset>
+          <label>Username</label>
+          <%= f.text_field :email -%> <label>Password</label>
+          <%= f.password_field :password -%>
+          <div class="form-button clearfix">
+            <button class="btn btn-yellow w80 pull-right" type="submit">
+              Login
+            </button>
+          </div>
+          <hr class="m-bot0 hr-width"/>
+        </fieldset>
         <% end -%>
       </div>
-    </div>
-    <div class="footer">
-      <div class="row-fluid">
-        <div class="span6 b-right-dark">
-          <div class="c-holder-left">
-            <%= link_to(new_business_staff_password_path) do -%>
-              <span class="normal-font">Password recovery</span>
+      <div class="footer">
+        <div class="row-fluid">
+          <div class="span6 b-right-dark">
+            <div class="c-holder-left">
+              <%= link_to(new_business_staff_password_path) do -%> <span class="normal-font">Password recovery</span>
               <span class="tiny-font">You forgot your password?</span>
-            <% end -%>
+              <% end -%>
+            </div>
           </div>
-        </div>
-        <div class="span6 b-right-light">
-          <div class="c-holder-right">
-            <%= link_to(new_business_path) do -%>
-              <span class="normal-font">Register account</span>
+          <div class="span6 b-right-light">
+            <div class="c-holder-right">
+              <%= link_to(new_business_path) do -%> <span class="normal-font">Register account</span>
               <span class="tiny-font">Register a new account here!</span>
-            <% end -%>
+              <% end -%>
+            </div>
           </div>
-        </div>
-        <div class="span12 b-center">
-          <div class="c-holder-center">
-            <a class="open-window" href="http://www.youtube.com/embed/dScpCe1SJzE" data-window-name="MightBuy for Business">Video: Overview</a>
-		  </div>	
-		<div class="c-holder-center">
-            <a class="open-window" href="http://www.youtube.com/embed/oaqDJTnnm5c" data-window-name="MightBuy Retail">Video: For retail stores</a>
-        </div>
-        <div class="c-holder-center">
-          <a href="http://www.mightbuy.it/" class="btn btn-danger c-holder-center">
-            Not a business?
-          </a>
-        </div>
         </div>
       </div>
     </div>
+    <div class="hr-vertical p-rel"></div>
+    <div class="col-video">
+      <a class="open-window" href="http://www.youtube.com/embed/dScpCe1SJzE" data-window-name="MightBuy for Business"> <img src="/assets/video-image.png" class="mtop30" width="467" height="316" alt="" /> </a>
+    </div>
+    <div class="span6 hide">
+      <div class="b-center">
+        <div class="c-holder-center">
+          <a class="open-window" href="http://www.youtube.com/embed/dScpCe1SJzE" data-window-name="MightBuy for Business">Video: Overview</a>
+        </div>
+        <div class="c-holder-center">
+          <a class="open-window" href="http://www.youtube.com/embed/oaqDJTnnm5c" data-window-name="MightBuy Retail">Video: For retail stores</a>
+        </div>
+        <div class="c-holder-center">
+          <a href="http://www.mightbuy.it/" class="btn btn-danger c-holder-center"> Not a business? </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-links">
+    <!--a href="#">About</a>| <a href="#">How It Works</a>| <a href="#">Contact Us</a>| <a href="#">Jobs</a>| <a href="#">Privacy Policy</a>| <a href="#">Term</a>| <a href="#">Blog</a>| <a href="#">Help</a>| <a href="#">Pricing</a-->
+    <a href="#">About</a>|<a href="#">Privacy Policy</a>|<a href="#">Contact Us</a>
   </div>
 </div>
