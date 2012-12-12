@@ -46,7 +46,13 @@
               Send
             </button>
             <%= link_to 'Cancel', "#", class: "btn btn-danger m-left5 edit-cancel", "data-edit-lead-entry-id" => "edit-lead-entry-#{lead.id}" -%>
+            <a class="btn btn-danger" href="/retail_leads/new?list_add=1&email=<%= lead.email -%>&name=<%= lead.name -%>&phone_number=<%= lead.phone_number-%>" > Add image </a>
           </div>
+
+
+
+   
+
         </div>
       </div>
 

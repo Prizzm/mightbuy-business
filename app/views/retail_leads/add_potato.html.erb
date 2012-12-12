@@ -1,5 +1,5 @@
 <div class="release-liability clearfix">
-  <%= form_for @lead, url: retail_lead_path(@lead), remote: true,method: :put, html: {multipart: true, id: "photo-form"} do |f| -%>
+  <%= form_for @lead, url: retail_leads_path, remote: true, method: :post, html: {multipart: true, id: "photo-form"} do |f| -%>
     <div class="row-fluid">
       <div class="span12">
         <%= link_to("Logout", destroy_business_staff_session_path, method: :delete, class: 'btn btn-danger pull-right') -%>
@@ -8,6 +8,7 @@
       </div>
     </div>
     <%= hidden_field_tag "send_email", 0 -%>
+
     <div class="row-fluid">
       <div class="span12">
         <div class="well">
@@ -36,32 +37,30 @@
       </div>
     </div>
 
-        <%- if @business.business_config.include_product_select? -%>
-              <div class="row-fluid">
-                <div class="span12">
-                  <%= f.label :product_id, 'Select a Product' -%>
-                  <%= f.select :product_id, product_list_helper(@business) -%>
-                </div>
-              </div>
-        <% else -%>
-            <%= f.hidden_field :product_id, :value=> product_list_helper(@business).first[1]  -%>
-        <% end -%>
-
-        <%- if @business.business_config.ask_for_description? %>
-        <div class="row-fluid">
+    <%- if @business.business_config.include_product_select? -%>
+          <div class="row-fluid">
             <div class="span12">
-                <%= f.label :message, 'Description' %>
-                <%= f.text_area  :message, :rows=>5 %>
-             </div>
-        </div>
-        <% end -%>
+              <%= f.label :product_id, 'Select a Product' -%>
+              <%= f.select :product_id, product_list_helper(@business) -%>
+            </div>
+          </div>
+     <% end -%>
+
+    <%- if @business.business_config.ask_for_description? %>
+    <div class="row-fluid">
+        <div class="span12">
+            <%= f.label :message, 'Description' %>
+            <%= f.text_area  :message, :rows=>5 %>
+         </div>
+    </div>
+    <% end -%>
 
     <br/>
 
     <div class="row-fluid">
       <div class="span12">
-        <%= f.submit 'Save', class: 'btn btn-large btn-danger', id: "photo-submit-button" %>
-        <button class="btn btn-large btn-danger pull-right" type="button" id="photo-email-button">
+        <%= f.submit 'Save', class: 'btn btn-large btn-danger', id: "photo-submit-button", disabled: 'disabled' %>
+        <button class="btn btn-large btn-danger pull-right" type="button" id="photo-email-button" disabled="disabled">
           Send Now
         </button>
       </div>
@@ -72,4 +71,6 @@
   <small class="pull-left">powered by</small>
   <%= link_to("", "http://www.mightbuy.it", class: 'logo-small', target: '_blank') -%>
 </div>
+
+<%= render :partial => "modal_confirmaiton" -%>
 

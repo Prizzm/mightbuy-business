@@ -7,3 +7,16 @@ $("#flash-notifications").html("<%= escape_javascript(render partial: 'shares/no
 
 <% end -%>
 
+
+
+<% if params[:list_add] == "1" -%>
+  $('div.release-liability').after("<%= raw escape_javascript( render :partial => 'list_confirmation', :locals => {:lead => @lead} ) 
+%>");
+	$('#list-confirmation').modal().center();
+<% else -%>
+ $('div.release-liability').after("<%= raw escape_javascript( render :partial => 'modal_confirmaiton', :locals => {:lead => @lead} )
+%>");
+	$('#lead-confirmation').modal().center();
+<% end -%>
+
+

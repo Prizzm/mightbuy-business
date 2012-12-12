@@ -1,4 +1,4 @@
-<div class="modal lead-capture hide fade" id="lead-confirmation">
+<div class="modal lead-capture hide fade" id="list-confirmation">
   <div class="modal-header">
     <button class="close" type="button" data-dismiss="modal" area-hidden="tru">
       &times
@@ -11,14 +11,11 @@
   </div>
 
   <div class="modal-footer">
-    <a class="btn btn-danger btn-large" href="/retail_leads/new"> Done </a>
+    <a class="btn btn-danger btn-large" href="/leads"> Done </a>
   </div>
-
 
   <div class="modal-footer">
-    <a class="btn btn-danger btn-large" href="/retail_leads/new?add=true&email=<%= lead.email -%>&name=<%= lead.name -%>&phone_number=<%= lead.phone_number-%>" > Add image </a>
+    <a class="btn btn-danger btn-large" href="/retail_leads/new?list_add=1&email=<%= lead.email -%>&name=<%= lead.name -%>&phone_number=<%= lead.phone_number-%>" > Add image </a>
   </div>
-
-
 
 </div>

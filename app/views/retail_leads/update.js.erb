@@ -6,3 +6,7 @@ $("#flash-notifications").html("<%= escape_javascript(render partial: 'shares/no
   $("#lead-confirmation").modal().center();
 <% end -%>
 
+$('div.release-liability').after("<%= raw escape_javascript( render :partial => 'modal_confirmaiton', :locals => {:lead => @lead} ) %>");
+
+
+$('#lead-confirmation').modal().center();
