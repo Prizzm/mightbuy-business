@@ -36,19 +36,23 @@
 	        <label class="label-mini">Message:</label>
 	        <%= f.text_area :message, rows: 3, cols: 10 -%>
 	        <br clear="all"/>
-	      </div>1
+	      </div>
 
           <label class="label-mini">&nbsp</label>
 		  <br clear="all"/>
-		
-    <a class="btn btn-danger btn-large" href="/retail_leads/new?list_add=1&email=<%= lead.email -%>&name=<%= lead.name -%>&phone_number=<%= lead.phone_number-%>" > Add another to <%= lead.email -%> </a>
 
           <div class="pull-left m-top10">
             <button class="btn btn-danger" type="submit">
               Send
             </button>
             <%= link_to 'Cancel', "#", class: "btn btn-danger m-left5 edit-cancel", "data-edit-lead-entry-id" => "edit-lead-entry-#{lead.id}" -%>
+            <a class="btn btn-danger" href="/retail_leads/new?list_add=1&email=<%= lead.email -%>&name=<%= lead.name -%>&phone_number=<%= lead.phone_number-%>" > Add image </a>
           </div>
+
+
+
+   
+
         </div>
       </div>
 
