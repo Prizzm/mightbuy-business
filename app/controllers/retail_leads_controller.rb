@@ -68,10 +68,12 @@ class RetailLeadsController < ApplicationController
   end
 
   def send_lead_invite
+    puts "sending invite"
     lead_invite = @lead.create_topic_customer
     if lead_invite.success?
       lead_invite.email_customer(current_business_staff)
     else
+       puts "failed invited"+ lead_invite.message
       @lead.errors.add(:base,lead_invite.message)
     end
   end
