@@ -56,7 +56,14 @@ body {
   height: 100%;
 }
 .silhouette-bg {
+  height: 100%;  
+}
+.container.silhouette-bgg {
   height: 100%;
+  width: 100%;
+  @include gradient-image('silhouette-bg.png', #4d4b4c, #333);
+  background-position:center bottom;
+  background-repeat:no-repeat;
 }
 body > .silhouette-bg {
   height: auto;

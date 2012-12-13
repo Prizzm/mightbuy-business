@@ -8,4 +8,18 @@ class WelcomeController < ApplicationController
       redirect_to new_business_staff_session_path
     end
   end
+  def about
+    
+  end
+  def contact
+    
+  end
+  
+  def terms
+    
+  end
+  def pricing
+    
+  end
+    
 end
