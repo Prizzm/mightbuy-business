@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> <%= title -%></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Le styles -->
+    <%= stylesheet_link_tag :application, :media => "all" -%>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="wrap">
+    <div id="flash-notifications">
+      <%= render partial: "shares/notifications" %>
+    </div>
+
+		<div id="wraper">
+			<div id="container">
+				<div id="header">
+					<div class="main_logo"><%= image_tag("logo.png")%>
+
+					</div>
+					<div class="menu">
+						<ul>
+							<li>
+								<a href="/">Home</a>
+							</li>
+							<li>
+								<a href="/about">About</a>
+							</li>
+							<li>
+								<a href="/contact">Contact</a>
+							</li>
+							<li>
+								<a href="/terms">Terms</a>
+							</li>
+							<li>
+								<a href="/pricing" class="last">Pricing</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+
+
+    <%= yield %>
+    
+    
+    <div id="footer">
+					<ul>
+						<li>
+							<a href="/about">About</a>
+						</li>
+						<li>
+							<a href="/contact">Contact Us</a>
+						</li>
+						<li>
+							<a href="#">Privacy Policy</a>
+						</li>
+						<li>
+							<a href="/terms">Terms</a>
+						</li>
+						<li>
+							<a href="/pricing">Pricing</a>
+						</li>
+						<li>
+							<a href="#" class="last">Help</a>
+						</li>
+						
+					</ul>
+
+				</div>
+				<div style="clear:both;"></div>
+			</div>
+		</div>
+
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <%= javascript_include_tag :application -%>
+
+    <div id="mixpanel" style="visibility: hidden; "></div>
+    <div class="saving-loader">Wait...</div>
+  </body>
+</html>

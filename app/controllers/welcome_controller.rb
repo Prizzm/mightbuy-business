@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
   skip_before_filter :authenticate_business_staff!
+  layout 'anonymous', :except => [:index]
 
   def index
     if signed_in?
