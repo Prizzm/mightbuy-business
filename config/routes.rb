@@ -29,4 +29,8 @@ MightbuyBusiness::Application.routes.draw do
   resource  :business_config, only: [:edit, :update]
 
   root :to => "welcome#index"
+  match "/contact" => "welcome#contact"
+  match "/about" => "welcome#about"
+  match "/terms" => "welcome#terms"
+  match "/pricing" => "welcome#pricing"
 end
