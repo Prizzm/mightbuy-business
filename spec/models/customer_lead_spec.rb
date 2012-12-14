@@ -21,10 +21,13 @@ describe CustomerLead do
     end
   end
 
+
   context "creating topic and customer from a lead" do
     it "should create topic & customer given a lead" do
-      lead_invite = customer_lead.create_topic_customer
-      lead_invite.success?.should be_true
+      customer_lead.topics.build()
+      customer_lead.save
+
+      lead_invite = customer_lead.create_invite
 
       lead_invite.topic.should_not be_nil
       lead_invite.user.should_not be_nil
@@ -35,17 +38,37 @@ describe CustomerLead do
     end
   end
 
+
   context "should be able to trigger customer invite based on lead" do
     before do
-      @lead_invite = customer_lead.create_topic_customer
       @business_staff = FactoryGirl.create(:business_staff, email: "hemant+test@example.com")
+
+      @lead_invite = customer_lead.create_invite
+      @lead_invite.business_staff = @business_staff
+
+      @mailer = @lead_invite.email_customer
     end
 
     it "should be able to trigger the email" do
-      mailer = @lead_invite.email_customer(@business_staff)
       customer_lead.sent?.should be_true
-      mailer.should deliver_to(customer_lead.email)
-      mailer.should have_body_text(@lead_invite.message)
+
+      @mailer.should deliver_to(customer_lead.email)
+      @mailer.should have_body_text(@lead_invite.message)
+    end
+
+    #ensure that the subject is correct
+    it 'render the subject' do
+      @mailer.subject.should == "Your image from #{@lead_invite.business_name}"
+    end
+
+    #ensure that the receiver is correct
+    it 'renders the receiver email' do
+      @mailer.to.should == [@lead_invite.email]
+    end
+
+    #ensure that the sender is correct
+    it 'renders the sender email' do
+      @mailer.from.should == ["no-reply@mightbuy.it"]
     end
   end
 
@@ -56,10 +79,11 @@ describe CustomerLead do
     end
     it "should not redirect user to invite url" do
       customer_lead = FactoryGirl.create(:customer_lead, email: "hemant+test@example.com")
-      lead_invite = customer_lead.create_topic_customer
+      lead_invite = customer_lead.create_invite
       lead_invite.lead_url.should match(/topics\//)
     end
   end
+
 
   context "If customer lead has no name" do
     before do
@@ -67,11 +91,12 @@ describe CustomerLead do
     end
 
     it "should regex email and create a customer with that name" do
-      lead_invite = @customer_lead.create_topic_customer
-      lead_invite.user.should_not be_nil
-      lead_invite.user.name.should match(/lead\d+/)
+      lead_invite = @customer_lead.create_invite
+      lead_invite.lead.user.should_not be_nil
+      lead_invite.lead.user.name.should match(/lead\d+/)
     end
   end
+
 
   describe ".to_csv" do
     let(:business) { FactoryGirl.create(:business) }

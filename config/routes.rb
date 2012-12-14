@@ -20,7 +20,9 @@ MightbuyBusiness::Application.routes.draw do
 
   resources :timeline
   resources :customers
-  resources :leads
+  resources :leads do
+    resources :topics, only: [:destroy]
+  end
 
   resource  :retail
   resources :retail_leads do

@@ -1,5 +1,5 @@
 <div class="release-liability clearfix">
-  <%= form_for @lead, url: retail_lead_path(@lead), remote: true,method: :put, html: {multipart: true, id: "photo-form"} do |f| -%>
+  <%= form_for @lead, url: retail_lead_path(@lead), remote: true,method: :put, html: {multipart: true, id: "photo-form"} do |lead_form| -%>
     <div class="row-fluid">
       <div class="span12">
         <%= link_to("Logout", destroy_business_staff_session_path, method: :delete, class: 'btn btn-danger pull-right') -%>
@@ -8,6 +8,8 @@
       </div>
     </div>
     <%= hidden_field_tag "send_email", 0 -%>
+
+    <%= lead_form.fields_for :topics do |topic_form| %>
     <div class="row-fluid">
       <div class="span12">
         <div class="well">
@@ -26,8 +28,8 @@
               <div class="span6 photo-upload">
                 <input id="filename" type="text" class="input disabled pull-left visible-desktop" name="filename" readonly>
                 <a id="fileselectbutton" class="btn btn-danger pull-left">Take Pic</a>
-                <%= f.file_field :photo %>
-                <%= f.hidden_field :retained_photo %>
+                <%= topic_form.file_field :photo %>
+                <%= topic_form.hidden_field :retained_photo %>
               </div>
               <div class="span3 hidden-phone">&nbsp;</div>
             </div>
@@ -35,30 +37,30 @@
         </div>
       </div>
     </div>
+    <% end -%>
 
-        <%- if @business.business_config.include_product_select? -%>
-              <div class="row-fluid">
-                <div class="span12">
-                  <%= f.label :product_id, 'Select a Product' -%>
-                  <%= f.select :product_id, product_list_helper(@business) -%>
-                </div>
-              </div>
-         <% end -%>
-
-        <%- if @business.business_config.ask_for_description? %>
-        <div class="row-fluid">
+    <%- if @business.business_config.include_product_select? -%>
+          <div class="row-fluid">
             <div class="span12">
-                <%= f.label :message, 'Description' %>
-                <%= f.text_area  :message, :rows=>5 %>
-             </div>
-        </div>
-        <% end -%>
+              <%= lead_form.label :product_id, 'Select a Product' -%>
+              <%= lead_form.select :product_id, product_list_helper(@business) -%>
+            </div>
+          </div>
+     <% end -%>
 
+    <%- if @business.business_config.ask_for_description? %>
+    <div class="row-fluid">
+        <div class="span12">
+            <%= lead_form.label :message, 'Description' %>
+            <%= lead_form.text_area  :message, :rows=>5 %>
+         </div>
+    </div>
+    <% end -%>
     <br/>
 
     <div class="row-fluid">
       <div class="span12">
-        <%= f.submit 'Save', class: 'btn btn-large btn-danger', id: "photo-submit-button" %>
+        <%= lead_form.submit 'Save', class: 'btn btn-large btn-danger', id: "photo-submit-button" %>
         <button class="btn btn-large btn-danger pull-right" type="button" id="photo-email-button">
           Send Now
         </button>

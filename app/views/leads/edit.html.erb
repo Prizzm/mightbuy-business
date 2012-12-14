@@ -1,0 +1,102 @@
+<div class="span9 bg-dark unevenheights edit-lead">
+  <h3 class="page-title align-right">Edit Lead</h3>
+
+  <div class="row-fluid">
+    <%= form_for @lead, url: lead_path(@lead) do |lead_form| -%>
+
+
+      <%= lead_form.fields_for :topics do |topic_form| %>
+        <% if topic_form.object.new_record? %>
+          <div class="span11">
+            <div class="well">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td id="lead-photo-preview" valign="center" class="picture">
+                    &nbsp;
+                  </td>
+                </tr>
+              </table>
+              <br/>
+
+              <div class="clearfix">
+                <div class="row-fluid">
+                  <div class="span3 hidden-phone">&nbsp;</div>
+                  <div class="span6 photo-upload">
+                    <input id="filename" type="text" class="input disabled pull-left visible-desktop" name="filename" readonly>
+                    <a id="fileselectbutton" class="btn btn-danger pull-left">Add another</a>
+                    <%= topic_form.file_field :image, class: 'preview-photo-upload' %>
+                    <%= topic_form.hidden_field :retained_image %>
+                  </div>
+                  <div class="span3 hidden-phone">&nbsp;</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% else -%>
+        <div class="span2 image-preview" data-topic="<%= topic_form.object.to_param %>">
+          <div class="well">
+            <% if topic_form.object.image -%>
+              <%= link_to topic_form.object.image.url, target: '_blank' do -%>
+              <%= image_tag(lead_topic_image_url_helper(topic_form.object), class: "m-right20") -%>
+              <% end %>
+            <% else %>
+              <%= image_tag(lead_topic_image_url_helper(topic_form.object), class: "m-right20") -%>
+            <% end %>
+
+            <% if not @lead.sent? -%>
+            <%= link_to('Delete', lead_topic_path(@lead, topic_form.object), data: { remote: true, method: :delete }) %>
+            <% end -%>
+          </div>
+        </div>
+        <% end -%>
+      <% end -%>
+
+
+      <div class="span12">
+        <%- if @business.business_config.ask_for_name? -%>
+        <%= lead_form.label :name, 'Name' -%>
+        <%= lead_form.text_field  :name -%>
+        <% end -%>
+
+        <%- if @business.business_config.ask_for_phonenumber? %>
+        <%= lead_form.label :phone_number, 'Phone Number' %>
+        <%= lead_form.phone_field  :phone_number %>
+        <% end %>
+
+        <%= lead_form.label :email, 'Email' -%>
+        <%= lead_form.email_field :email -%>
+      </div>
+
+      <%- if @business.business_config.ask_to_join_list? -%>
+        <div class="span12">
+          <label class="checkbox"> <%= lead_form.check_box  :join_list -%> Join Mail List
+          <%= @business.business_config.join_list_description -%>
+          </label>
+        </div>
+      <% end -%>
+
+      <%- if @business.business_config.include_product_select? -%>
+        <div class="span12">
+          <%= lead_form.label :product_id, 'Select a Product' -%>
+          <%= lead_form.select :product_id, product_list_helper(@business) -%>
+        </div>
+      <% end -%>
+
+      <%- if @business.business_config.ask_for_description? %>
+        <div class="span12">
+          <%= lead_form.label :message, 'Description' %>
+          <%= lead_form.text_area  :message, :rows=>5 %>
+        </div>
+      <% end -%>
+
+      <div class="span12">
+        <%= lead_form.label :message, 'Description' %>
+        <%= lead_form.text_area :message, rows: 3, cols: 10 -%>
+      </div>
+
+      <div class="span12">
+        <%= lead_form.submit 'Save', class: 'btn btn-large btn-danger' %>
+      </div>
+    <% end -%>
+  </div>
+</div>

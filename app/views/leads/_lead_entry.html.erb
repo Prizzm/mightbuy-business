@@ -4,7 +4,7 @@
 <td><%= lead.product.try(:name) -%></td>
 <td><%= lead.humanized_status -%></td>
 <td>
-  <%= link_to edit_lead_path(lead), remote: true do -%>
+  <%= link_to edit_lead_path(lead) do -%>
     <button class="btn btn-mini">
       <i class="icon-pencil"></i>
     </button>
