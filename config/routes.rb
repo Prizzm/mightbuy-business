@@ -33,4 +33,6 @@ MightbuyBusiness::Application.routes.draw do
   match "/about" => "welcome#about"
   match "/terms" => "welcome#terms"
   match "/pricing" => "welcome#pricing"
+  match "/help" => "welcome#help"
+  
 end

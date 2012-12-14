@@ -22,4 +22,8 @@ class WelcomeController < ApplicationController
   def pricing
     
   end  
+  def help
+    
+  end  
+
 end
