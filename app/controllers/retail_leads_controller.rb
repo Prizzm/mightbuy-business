@@ -20,6 +20,7 @@ class RetailLeadsController < ApplicationController
   end
 
   def photo
+    @lead.topics.build
   end
 
   def create

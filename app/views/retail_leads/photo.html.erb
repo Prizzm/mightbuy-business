@@ -1,4 +1,4 @@
-<div class="release-liability clearfix">
+<div class="new-lead release-liability clearfix">
   <%= form_for @lead, url: retail_lead_path(@lead), remote: true,method: :put, html: {multipart: true, id: "photo-form"} do |lead_form| -%>
     <div class="row-fluid">
       <div class="span12">
@@ -28,8 +28,8 @@
               <div class="span6 photo-upload">
                 <input id="filename" type="text" class="input disabled pull-left visible-desktop" name="filename" readonly>
                 <a id="fileselectbutton" class="btn btn-danger pull-left">Take Pic</a>
-                <%= topic_form.file_field :photo %>
-                <%= topic_form.hidden_field :retained_photo %>
+                <%= topic_form.file_field :image, class: 'preview-photo-upload' %>
+                <%= topic_form.hidden_field :retained_image %>
               </div>
               <div class="span3 hidden-phone">&nbsp;</div>
             </div>
