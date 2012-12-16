@@ -24,9 +24,12 @@ class LeadsController < ApplicationController
     @lead.assign_attributes(params[:customer_lead])
 
     if @lead.save!
-      # lead_invite.email_customer(current_business_staff)
-
-      flash[:notice] = "Updated Lead Successfully"
+      if params[:commit] == 'Send'
+        send_lead_invite
+        flash[:notice] = "Sent Lead Successfully"
+      else
+        flash[:notice] = "Updated Lead Successfully"
+      end
     else
       flash[:error]  = @lead.errors.full_messages.first
     end
@@ -44,5 +47,11 @@ class LeadsController < ApplicationController
     unless @lead = @business.customer_leads.find_by_id(params[:id])
       redirect_to root_path
     end
+  end
+
+  def send_lead_invite
+    @lead_invite = @lead.create_invite
+    @lead_invite.business_staff = current_business_staff
+    @lead_invite.email_customer
   end
 end
