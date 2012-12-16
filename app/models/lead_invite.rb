@@ -40,9 +40,17 @@ class LeadInvite
 
   def lead_url
     if lead.invite_token
-      "#{MB.config.invite_url}?token=#{lead.invite_token}&topic_id=#{lead.topics.first.to_param}"
+      if lead.topics.length > 1
+        "#{MB.config.invite_url}?token=#{lead.invite_token}"
+      else
+        "#{MB.config.invite_url}?token=#{lead.invite_token}&topic_id=#{lead.topics.first.to_param}"
+      end
     else
-      "#{MB.config.app_url}/topics/#{lead.topics.first.to_param}"
+      if lead.topics.length > 1
+        "#{MB.config.app_url}/me"
+      else
+        "#{MB.config.app_url}/topics/#{lead.topics.first.to_param}"
+      end
     end
   end
 
