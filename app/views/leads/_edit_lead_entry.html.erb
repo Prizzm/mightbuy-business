@@ -2,7 +2,7 @@
   <td colspan="6" class="add-deal">
     <%= form_for lead, url: lead_path(lead), remote: true, html: { class: "form-horizontal clearfix" } do |f| -%>
       <div class="pull-left m-top10">
-        <%= image_tag(lead_photo_url_helper(lead), class: "m-right20") -%>
+        <%# image_tag(lead_photo_url_helper(lead), class: "m-right20") -%>
       </div>
       <div class="pull-left">
         <h4><span class="remove-bold"><%= lead.name -%></span></h4>
@@ -12,14 +12,14 @@
           <div class="pull-left mLeft10">
             <%= f.text_field :name -%>
           </div>
-          <br clear="all"/>   
+          <br clear="all"/>
   		  <br>
 
           <label class="label-mini">Email:</label>
           <div class="pull-left mLeft10">
             <%= f.text_field :email -%>
           </div>
-          <br clear="all"/>   
+          <br clear="all"/>
   		  <br>
 
 		  <label class="label-mini">Product:</label>

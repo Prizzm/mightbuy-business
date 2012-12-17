@@ -16,20 +16,25 @@ class LeadsController < ApplicationController
   end
 
   def edit
+    @lead.topics.build
     respond_with(@lead)
   end
 
   def update
-    if @lead.update_attributes(params[:customer_lead])
-      lead_invite = @lead.create_topic_customer
-      lead_invite.email_customer(current_business_staff)
+    @lead.assign_attributes(params[:customer_lead])
 
-      flash[:notice] = "Updated Lead Successfully"
+    if @lead.save!
+      if params[:commit] == 'Send'
+        send_lead_invite
+        flash[:notice] = "Sent Lead Successfully"
+      else
+        flash[:notice] = "Updated Lead Successfully"
+      end
     else
       flash[:error]  = @lead.errors.full_messages.first
     end
 
-    respond_with(@lead)
+    redirect_to edit_lead_path(@lead)
   end
 
   def destroy
@@ -37,10 +42,16 @@ class LeadsController < ApplicationController
     redirect_to leads_path
   end
 
-  private
+  protected
   def find_lead!
     unless @lead = @business.customer_leads.find_by_id(params[:id])
       redirect_to root_path
     end
+  end
+
+  def send_lead_invite
+    @lead_invite = @lead.create_invite
+    @lead_invite.business_staff = current_business_staff
+    @lead_invite.email_customer
   end
 end

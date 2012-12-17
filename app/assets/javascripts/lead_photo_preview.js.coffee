@@ -5,7 +5,7 @@ $(document).ready ->
   $(".photo-upload input[type='file']").change (e) ->
     val = $(this).val()
     file = val.split(/[\\/]/)
-    $("#filename").val file[file.length - 1]
+    $("#filename").val(file[file.length - 1])
 
 class @Mightbuy.LeadPhotoPreview
   constructor: ->
@@ -14,7 +14,7 @@ class @Mightbuy.LeadPhotoPreview
 
   # well this bind the photo file uploader
   bindPhotoPreviewer: ->
-    $("#customer_lead_photo").fileupload
+    $(".preview-photo-upload").fileupload
       replaceFileInput: false,
       add: (e, data) =>
         file = data.files[0]

@@ -121,11 +121,12 @@
                                                     <td>
                                                         <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;">
                                                             Hope to hear from you soon! <br>
-                                                            <%= replace_variables_helper(@business_staff.email_signature, @lead_invite) %>
+                                                            <%= replace_variables_helper(@lead_invite.business_staff.email_signature, @lead_invite) %>
                                                             <br>
                                                         </span>
                                                     </td>
                                                 </tr>
+                                                <% if @lead_invite.business_phone and not @lead_invite.business_phone.empty? -%>
                                                 <tr>
                                                     <td height="10"></td>
                                                 </tr>
@@ -136,6 +137,8 @@
                                                         </span>
                                                     </td>
                                                 </tr>
+                                                <% end -%>
+                                                <% if @lead_invite.business_email and not @lead_invite.business_email.empty? -%>
                                                 <tr>
                                                     <td>
                                                         <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;">
@@ -143,6 +146,7 @@
                                                         </span>
                                                     </td>
                                                 </tr>
+                                                <% end -%>
                                                 <% if @lead_invite.business.business_urls.first -%>
                                                 <tr>
                                                     <td>
@@ -164,11 +168,11 @@
                                     <tr>
                                         <td>
                                             <table cellspacing="0" cellpadding="0" width="100%">
-                                                <% if @lead_invite.lead.photo -%>
+                                                <% if @lead_invite.lead.topics.length > 0 -%>
                                                 <tr>
                                                     <td align="left" colspan="2">
                                                         <a href="<%=@lead_invite.lead_url %>">
-                                                            <img alt="Product" border="0" src="<%= image_path @lead_invite.lead.photo.thumb('125x').url %>" width="125">
+                                                            <img alt="Product" border="0" src="<%= image_path @lead_invite.lead.topics.first.image.thumb('125x').url %>" width="125">
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -193,7 +197,7 @@
                                                             <li>Get more product information</li>
                                                             <li>Ask your friends opinion</li>
                                                             <li>Buy online!</li>
-                                                            <% if @lead_invite.lead.product.bargin -%>
+                                                            <% if @lead_invite.lead.product and @lead_invite.lead.product.bargin -%>
                                                             <li>
                                                               <b>SPECIAL BONUS from <%= @lead_invite.lead.business.name %>!</b><br>
                                                               <%= @lead_invite.lead.product.bargin.offer %><br>
