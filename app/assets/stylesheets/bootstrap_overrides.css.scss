@@ -774,14 +774,6 @@ input[type="submit"].btn-yellow, .btn-yellow{
     margin-bottom:25px;
     width:100%
   }
-  .picture{
-    background:#eee image-url('no-image-small.gif') center center no-repeat;
-    border:1px solid #ccc;
-    margin-bottom:15px;
-    height:350px;
-    width:100%;
-    text-align: center;
-  }
 }
 .logo-small{
   background:image-url('logo-small.png') 0 0 no-repeat;
@@ -963,4 +955,21 @@ input[type="submit"].btn-yellow, .btn-yellow{
   @include box-shadow(0 0 20px 0 #000);
   top: 42%;
   left: 45%;
+}
+
+
+.new-lead,
+.edit-lead {
+  .picture{
+    background:#eee image-url('no-image-small.gif') center center no-repeat;
+    border:1px solid #ccc;
+    margin-bottom:15px;
+    height:350px;
+    width:100%;
+    text-align: center;
+  }
+
+  .submit {
+    margin: 25px 0 10px;
+  }
 }
