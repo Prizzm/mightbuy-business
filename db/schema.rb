@@ -213,8 +213,8 @@ ActiveRecord::Schema.define(:version => 20121210083104) do
   end
 
   create_table "customer_lead_topics", :force => true do |t|
-    t.integer  "customer_lead_id"
-    t.integer  "topic_id"
+    t.integer "customer_lead_id"
+    t.integer "topic_id"
   end
 
   add_index "customer_lead_topics", ["customer_lead_id"], :name => "index_customer_lead_topics_on_customer_lead_id"
