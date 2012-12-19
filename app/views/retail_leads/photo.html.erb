@@ -2,8 +2,11 @@
   <%= form_for @lead, url: retail_lead_path(@lead), remote: true,method: :put, html: {multipart: true, id: "photo-form"} do |lead_form| -%>
     <div class="row-fluid">
       <div class="span12">
-        <%= link_to("Logout", destroy_business_staff_session_path, method: :delete, class: 'btn btn-danger pull-right') -%>
         <%= image_tag(business_form_logo_url_helper(@business), height: 80, class: "img-polaroid pull-left m-right25") -%>
+        <%= link_to("Logout", destroy_business_staff_session_path, method: :delete, class: 'btn btn-danger pull-right') -%>
+		<br><br>
+         <%= link_to('No Picture', new_retail_lead_path, class: 'btn btn-danger pull-right') -%>
+        
         <h1><%= @business.name -%></h1>
       </div>
     </div>
