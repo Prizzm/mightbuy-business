@@ -88,14 +88,44 @@
                                                 <tr>
                                                     <td>
                                                         <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;">
-                                                            Thank you so much for stopping by our store!
+                                                            Thank you for stopping by our <%= @lead_invite.lead.business.name %> store. 
                                                         </span>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td height="10"></td>
                                                 </tr>
-                                                <% if not @lead_invite.message.empty? %>
+                                                <tr>
+                                                    <td>
+                                                        <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;">
+															Feel free to share this <a href="<%= @lead_invite.lead_url %>" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #d54937">
+	                                                            image </a> 
+	 with your friends, and get their opinion.
+ <% if @lead_invite.lead.product and @lead_invite.lead.product.bargin -%>
+<br><br>
+Also, we are offering a bonus for sharing using MightBuy.it:  You will get	 <%= @lead_invite.lead.product.bargin.offer %>
+   
+     when you share and <%= @lead_invite.lead.product.bargin.humanize -%> that *you* should buy it. Go ahead and ask them!
+ <% end %>
+
+                                                        </span>
+                                                    </td>
+                                                </tr>
+
+                                             
+                                                <tr>
+                                                    <td height="10"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;">
+                                                            If you have any more questions, feel free to contact us. <br>
+                                                            <%= replace_variables_helper(@lead_invite.business_staff.email_signature, @lead_invite) %>
+                                                            <br>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+												<% if not @lead_invite.message.empty? %>
                                                 <tr>
                                                     <td>
                                                         <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;">
@@ -107,25 +137,7 @@
                                                     <td height="10"></td>
                                                 </tr>
                                                 <% end %>
-                                                <tr>
-                                                    <td>
-                                                        <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;">
-                                                            You can email, call or visit our website for more information.
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td height="10"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;">
-                                                            Hope to hear from you soon! <br>
-                                                            <%= replace_variables_helper(@lead_invite.business_staff.email_signature, @lead_invite) %>
-                                                            <br>
-                                                        </span>
-                                                    </td>
-                                                </tr>
+
                                                 <% if @lead_invite.business_phone and not @lead_invite.business_phone.empty? -%>
                                                 <tr>
                                                     <td height="10"></td>
@@ -165,6 +177,13 @@
                                 </table>
 
                                 <table cellspacing="0" bgcolor="#ffffff" cellpadding="25" width="40%">
+									<tr>
+                                        <td colspan="2">
+                                            <span style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold;">
+                                               <%= @lead_invite.lead.product.name %>
+                                            </span>
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td>
                                             <table cellspacing="0" cellpadding="0" width="100%">
