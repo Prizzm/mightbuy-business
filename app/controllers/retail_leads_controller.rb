@@ -10,6 +10,7 @@ class RetailLeadsController < ApplicationController
 
   def new
     @lead = @business.customer_leads.build
+    @lead.topics.build
 
     if @business.business_config.include_liability?
       render template: 'retail_leads/new'
@@ -19,12 +20,13 @@ class RetailLeadsController < ApplicationController
   end
 
   def photo
+    @lead.topics.build
   end
 
   def create
-    @lead = @business.customer_leads.create(params[:customer_lead])
+    @lead = @business.customer_leads.new(params[:customer_lead])
 
-    if @lead.persisted?
+    if @lead.save!
       if @business.business_config.include_liability?
         redirect_to photo_retail_lead_path(@lead)
       else
@@ -58,11 +60,8 @@ class RetailLeadsController < ApplicationController
   end
 
   def send_lead_invite
-    lead_invite = @lead.create_topic_customer
-    if lead_invite.success?
-      lead_invite.email_customer(current_business_staff)
-    else
-      @lead.errors.add(:base,lead_invite.message)
-    end
+    @lead_invite = @lead.create_invite
+    @lead_invite.business_staff = current_business_staff
+    @lead_invite.email_customer
   end
 end

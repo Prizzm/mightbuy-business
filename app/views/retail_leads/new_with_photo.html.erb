@@ -1,5 +1,5 @@
-<div class="release-liability clearfix">
-  <%= form_for @lead, url: retail_leads_path, remote: true, method: :post, html: {multipart: true, id: "photo-form"} do |f| -%>
+<div class="new-lead release-liability clearfix">
+  <%= form_for @lead, url: retail_leads_path, remote: true, method: :post, html: {multipart: true, id: "photo-form"} do |lead_form| -%>
     <div class="row-fluid">
       <div class="span12">
         <%= link_to("Logout", destroy_business_staff_session_path, method: :delete, class: 'btn btn-danger pull-right') -%>
@@ -9,6 +9,7 @@
     </div>
     <%= hidden_field_tag "send_email", 0 -%>
 
+    <%= lead_form.fields_for :topics do |topic_form| %>
     <div class="row-fluid">
       <div class="span12">
         <div class="well">
@@ -27,8 +28,8 @@
               <div class="span6 photo-upload">
                 <input id="filename" type="text" class="input disabled pull-left visible-desktop" name="filename" readonly>
                 <a id="fileselectbutton" class="btn btn-danger pull-left">Take Pic</a>
-                <%= f.file_field :photo %>
-                <%= f.hidden_field :retained_photo %>
+                <%= topic_form.file_field :image, class: 'preview-photo-upload' %>
+                <%= topic_form.hidden_field :retained_image %>
               </div>
               <div class="span3 hidden-phone">&nbsp;</div>
             </div>
@@ -36,29 +37,30 @@
         </div>
       </div>
     </div>
+    <% end -%>
 
     <div class="row-fluid">
       <div class="span12">
         <%- if @business.business_config.ask_for_name? -%>
-        <%= f.label :name, 'Name' -%>
-        <%= f.text_field  :name -%>
+        <%= lead_form.label :name, 'Name' -%>
+        <%= lead_form.text_field  :name -%>
         <% end -%>
 
         <%- if @business.business_config.ask_for_phonenumber? %>
-        <%= f.label :phone_number, 'Phone Number' %>
-        <%= f.phone_field  :phone_number %>
+        <%= lead_form.label :phone_number, 'Phone Number' %>
+        <%= lead_form.phone_field  :phone_number %>
         <% end %>
 
 
-        <%= f.label :email, 'Email' -%>
-        <%= f.email_field :email -%>
+        <%= lead_form.label :email, 'Email' -%>
+        <%= lead_form.email_field :email -%>
       </div>
     </div>
 
     <%- if @business.business_config.ask_to_join_list? -%>
     <div class="row-fluid">
       <div class="span12">
-        <label class="checkbox"> <%= f.check_box  :join_list -%> Join Mail List
+        <label class="checkbox"> <%= lead_form.check_box  :join_list -%> Join Mail List
         <%= @business.business_config.join_list_description -%>
         </label>
       </div>
@@ -68,17 +70,23 @@
     <%- if @business.business_config.include_product_select? -%>
           <div class="row-fluid">
             <div class="span12">
-              <%= f.label :product_id, 'Select a Product' -%>
-              <%= f.select :product_id, product_list_helper(@business) -%>
+              <%= lead_form.label :product_id, 'Select a Product' -%>
+              <%= lead_form.select :product_id, product_list_helper(@business) -%>
             </div>
           </div>
-     <% end -%>
+     <% else %>
+        <% if @business.products.count > 0 %>
+          <%= lead_form.hidden_field :product_id, :value=> product_list_helper(@business).first[1]  -%>
+        <% else %>
+          <h1>MUST CONFIGURE PRODUCT!!</h1> <%= link_to('ADD PRODUCT', "/products") -%> 
+        <% end %>
+     <% end %>
 
     <%- if @business.business_config.ask_for_description? %>
     <div class="row-fluid">
         <div class="span12">
-            <%= f.label :message, 'Description' %>
-            <%= f.text_area  :message, :rows=>5 %>
+            <%= lead_form.label :message, 'Description' %>
+            <%= lead_form.text_area  :message, :rows=>5 %>
          </div>
     </div>
     <% end -%>
@@ -87,7 +95,7 @@
 
     <div class="row-fluid">
       <div class="span12">
-        <%= f.submit 'Save', class: 'btn btn-large btn-danger', id: "photo-submit-button", disabled: 'disabled' %>
+        <%= lead_form.submit 'Save', class: 'btn btn-large btn-danger', id: "photo-submit-button", disabled: 'disabled' %>
         <button class="btn btn-large btn-danger pull-right" type="button" id="photo-email-button" disabled="disabled">
           Send Now
         </button>
