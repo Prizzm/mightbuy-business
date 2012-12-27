@@ -18,5 +18,7 @@ body{ background:#000000; margin:0px; padding:0px; font-family:"Times New Roman"
 #footer a{display:block;padding:0px 10px ;color:#FFFFFF;font-size:13px;border-right:1px solid #FFFFFF;text-decoration:none;}
 a:hover{ text-decoration:underline;}
 .text_div{width:35%; float:left; height:300px; color:#FFFFFF; text-align:center; padding:30px;}
-.slider_video{width:55%; float:right; height:300px; margin-top:30px;}
+.text_bottom{width:95%; float:bottom; color:#FFFFFF; text-align:center; padding:30px;}
+.text_right{width:55%; float:right; color:#FFFFFF; margin-top:30px;}
+.slider_video{width:55%; float:right; height:500px; margin-top:30px;
 .arrow{margin:55px 0px; cursor:pointer;}
