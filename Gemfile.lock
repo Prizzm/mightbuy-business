@@ -403,7 +403,6 @@ DEPENDENCIES
   heroku
   inherited_resources
   jquery-fileupload-rails (= 0.3.4)
-  jquery-rails
   jquery-ui-rails
   kaminari
   launchy

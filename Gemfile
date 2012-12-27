@@ -15,7 +15,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
 # Authentication
 gem 'devise', '1.4.7'
 gem 'omniauth-twitter'
