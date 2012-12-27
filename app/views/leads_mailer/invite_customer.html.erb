@@ -176,13 +176,14 @@
       <div class="offerMessage" >
         <h1> Hi <%= @lead_invite.name.titlecase %> </h1>
         <h2> Thank you so much for shopping our <%= @lead_invite.lead.business.name.titlecase %> store.<br><br>
-          Here is a link to the <a href="<%= @lead_invite.lead_url %>" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #d54937">image</a> from your visit to remind you about exactly what you looked at in our store. 
-You can see the full size image, see more product information, buy online, and share the image with friends.
+          Here is a link to the <a href="<%= @lead_invite.lead_url %>" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #d54937">image</a> from your visit to remind you about exactly what you looked at in our store.  The image is easy to share, please do so, ask your friends what they think.  
 
           <% if @lead_invite.lead.product and @lead_invite.lead.product.bargin -%>
               <br><br>
-              In addition, we are offering a bonus for sharing on MightBuy.it. We make an offer on this product: <%= @lead_invite.lead.product.bargin.offer %><br />
-              When you share and <%= @lead_invite.lead.product.bargin.humanize -%> that You should buy it. Go ahead and ask them!
+              Also - we are offering MightBuy Special: <%= @lead_invite.lead.product.bargin.offer %>
+			  <% if @lead_invite.lead.product.bargin.has_conditions -%>
+                  when you share and <%= @lead_invite.lead.product.bargin.humanize -%>. Go ahead and ask them!
+              <% end %>
           <% end %>
           <br/>
 		  <br/> 
@@ -202,7 +203,7 @@ You can see the full size image, see more product information, buy online, and s
         </h2>
 
         <center>
-          <a href="#" target="_blank"><img src="http://www.ryanloper.com/mightbuyemail/buttonLarge.png"/></a>
+          <a href="<%= @lead_invite.lead_url %>" target="_blank"><img src="http://www.ryanloper.com/mightbuyemail/buttonLarge.png"/></a>
         </center>
 
 
@@ -241,12 +242,16 @@ You can see the full size image, see more product information, buy online, and s
             <li>Buy online</li>
             <% if @lead_invite.lead.product and @lead_invite.lead.product.bargin -%>
                   PLUS:</br>
-				  <b>***SPECIAL BONUS**** </b><br>
+				  <b>***MIGHTBUY SPECIAL BONUS**** </b><br>
 				   from <%= @lead_invite.lead.business.name %>:
                   <%= @lead_invite.lead.product.bargin.offer %><br>
-                  <span style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
-                    Valid when <%= @lead_invite.lead.product.bargin.humanize -%> using MightBuy.
-                  </span>
+				  
+				   <% if @lead_invite.lead.product.bargin.has_conditions -%>
+                     <span style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+                       Valid when <%= @lead_invite.lead.product.bargin.humanize -%> using MightBuy.
+                     </span>
+                   <% end %>
+
             <% end -%>
           </h6>
         </center>
