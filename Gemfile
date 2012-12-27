@@ -71,3 +71,7 @@ group :test do
   gem 'simplecov-rcov', :require => false
   gem 'database_cleaner'
 end
+
+group :production, :development do
+  gem 'rack-google_analytics', :require => "rack/google_analytics"
+end
