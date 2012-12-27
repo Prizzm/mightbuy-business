@@ -157,7 +157,7 @@
       <div class="social">
 
         <% if !@lead_invite.lead.business.twitter_handle.blank? %>
-            <a href="<%= @lead_invite.lead.business.twitter_handle %>" >
+            <a href="http://www.twitter.com/<%= @lead_invite.lead.business.twitter_handle %>" >
               <img alt="Twitter" src="<%= image_path('http://www.ryanloper.com/mightbuyemail/twitter.png') %>" align="right" />
             </a>
         <% end %>
@@ -175,16 +175,17 @@
     <div class="emailBody" >
       <div class="offerMessage" >
         <h1> Hi <%= @lead_invite.name.titlecase %> </h1>
-        <h2> Thank you so much for shopping our <%= @lead_invite.lead.business.name.titlecase %> store.<br />
-          Feel free to email, call or visit our website for more information. Share this <a href="<%= @lead_invite.lead_url %>" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #d54937">image</a>
-          with your friends, and get their opinion.
+        <h2> Thank you so much for shopping our <%= @lead_invite.lead.business.name.titlecase %> store.<br><br>
+          Here is a link to the <a href="<%= @lead_invite.lead_url %>" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #d54937">image</a> from your visit to remind you about exactly what you looked at in our store. 
+You can see the full size image, see more product information, buy online, and share the image with friends.
 
           <% if @lead_invite.lead.product and @lead_invite.lead.product.bargin -%>
               <br><br>
-              Also, we are offering a bonus for sharing using MightBuy.it. We make an offer on this product: <%= @lead_invite.lead.product.bargin.offer %><br />
+              In addition, we are offering a bonus for sharing on MightBuy.it. We make an offer on this product: <%= @lead_invite.lead.product.bargin.offer %><br />
               When you share and <%= @lead_invite.lead.product.bargin.humanize -%> that You should buy it. Go ahead and ask them!
           <% end %>
-          <br />
+          <br/>
+		  <br/> 
           If you have any more questions, feel free to contact us. <br>
           <%= replace_variables_helper(@lead_invite.business_staff.email_signature, @lead_invite) %>
           <br>
@@ -215,10 +216,13 @@
         <center>
           <br />
           <p><font color="#6d3939"> <strong><%= @lead_invite.lead.product.name %></strong> </font> &nbsp; &nbsp;
-
-            <font color="#000000"><del> $899 </del></font> &nbsp;
-
-            <font color="#6d3939"><strong> $799</strong></font> </p>
+			
+			<!-- REPLACE THIS SECTION with the following logic: if there is product.price, and product.discount, show the full price crossed out and the discount % shown,
+			<% if @lead_invite.lead.product.price -%>
+            	<font color="#000000"><del> $899 </del></font> &nbsp;
+			<% end %>
+			-->
+            <font color="#6d3939"><strong> <%= number_to_currency(@lead_invite.lead.product.price) -%> </strong></font> </p>
         </center>
 
 
@@ -231,18 +235,18 @@
 
         <center>
           <h6>
-            Access the full size image <br />
-            Get more product information <br />
-            Ask your friends opinion<br />
-            Buy online
+            <li>Access the full size image</li>
+            <li>Get more product information </li>
+            <li>Ask your friends opinion</li>
+            <li>Buy online</li>
             <% if @lead_invite.lead.product and @lead_invite.lead.product.bargin -%>
-                <li>
-                  <b>SPECIAL BONUS from <%= @lead_invite.lead.business.name %>!</b><br>
+                  PLUS:</br>
+				  <b>***SPECIAL BONUS**** </b><br>
+				   from <%= @lead_invite.lead.business.name %>:
                   <%= @lead_invite.lead.product.bargin.offer %><br>
                   <span style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
                     Valid when <%= @lead_invite.lead.product.bargin.humanize -%> using MightBuy.
                   </span>
-                </li>
             <% end -%>
           </h6>
         </center>
