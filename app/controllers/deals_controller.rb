@@ -7,7 +7,7 @@ class DealsController < ApplicationController
 
 
   def edit
-    if @product.bargin.bargin_conditions.blank?
+    if @product.bargin.bargin_conditions.blank? && @product.bargin.has_conditions?
       @product.bargin.bargin_conditions.build
     end
   end

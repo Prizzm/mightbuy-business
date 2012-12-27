@@ -1,93 +1,109 @@
 <tr id="edit-deal-form-wrapper-<%= product.id -%>" >
   <td colspan="5" class="edit-bargin">
     <%= form_for @deal, url: product_deal_path(product), remote: true, html: { class: "form-horizontal" } do |f| -%>
-      <legend>
-        <span class="remove-bold">Add a Deal for </span><%= product.name %>
-      </legend>
-      <div class="row">
-        <div class="span8">
-          <div class="control-group">
-            <label class="control-label">Price:</label>
-            <div class="controls">
-              <%= f.text_field :value, class: "span1" -%>
+        <legend>
+          <span class="remove-bold">Add a Deal for </span><%= product.name %>
+        </legend>
+        <div class="row">
+          <div class="span8">
+            <div class="control-group">
+              <label class="control-label">Price:</label>
+              <div class="controls">
+                <%= f.text_field :value, class: "span1" -%>
+              </div>
             </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label">% Discount:</label>
-            <div class="controls">
-              <%= f.text_field :discount, class: "span1" -%>
+            <div class="control-group">
+              <label class="control-label">% Discount:</label>
+              <div class="controls">
+                <%= f.text_field :discount, class: "span1" -%>
+              </div>
             </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label">Collect payment from:</label>
-            <div class="controls">
-              <label class="radio inline">
-                <%= f.radio_button :payment_type, value: "MightBuy" -%>
-                MightBuy </label>
-              <label class="radio inline">
-                <%= f.radio_button :payment_type, value: "URL" -%>
-                URL </label>
+            <div class="control-group">
+              <label class="control-label">Collect payment from:</label>
+              <div class="controls">
+                <label class="radio inline">
+                  <%= f.radio_button :payment_type, "MightBuy" -%>
+                  MightBuy </label>
+                <label class="radio inline">
+                  <%= f.radio_button :payment_type, "URL" -%>
+                  URL </label>
+              </div>
             </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label">URL:</label>
-            <div class="controls">
-              <%= f.text_field :url -%>
+            <div class="control-group">
+              <label class="control-label">URL:</label>
+              <div class="controls">
+                <%= f.text_field :url -%>
+              </div>
             </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label">Offer</label>
-            <div class="controls">
-              <%= f.text_area :offer, rows: 2, class: "m-top5 span3" -%>
+            <div class="control-group">
+              <label class="control-label">Offer</label>
+              <div class="controls">
+                <%= f.text_area :offer, rows: 2, class: "m-top5 span3" -%>
+              </div>
             </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label">Public?</label>
-            <div class="controls">
-              <%= f.check_box :public -%>
+            <div class="control-group">
+              <label class="control-label">Public?</label>
+              <div class="controls">
+                <%= f.check_box :public -%>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <%= f.fields_for :bargin_conditions do |condition| %>
-      <legend>
-        <h4 class="remove-bold">Deal Conditions for <%= product.name %></h4>
-      </legend>
-      <div class="row">
-        <div class="span8">
-          <div class="control-group">
-            <label class="control-label">Object:</label>
-            <div class="controls">
-              <%= condition.select :object, BarginCondition::OBJECTS, required: true, class: 'span1' -%>
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label">Operator:</label>
-            <div class="controls">
-              <%= condition.select :operator, BarginCondition::OPERATORS.invert, required: true, class: "span1" -%>
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label">Operand:</label>
-            <div class="controls">
-              <%= condition.text_field :operand, class: "span1" -%>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% end -%>
+            <!-- Is User allowed to add conditions once he has set it false? If yes then uncomment these lines.-->
 
-      <div class="row">
-        <div class="span8">
-          <div class="control-group">
-            <div class="controls m-top5">
-              <%= f.submit "Update Deal", class: "btn btn-danger" -%>
-              <%= f.submit "Cancel", class: "btn btn-danger m-left5 cancel-deal", "data-form-wrapper-id" => "#edit-deal-form-wrapper-#{product.id}"-%>
+  <!--          <div class="control-group">
+              <label class="control-label">Has conditions?</label>
+              <div class="controls">
+                <label class="radio inline">
+                  <%#= f.radio_button :has_conditions, "true" -%>
+                  Yes </label>
+                <label class="radio inline">
+                  <%#= f.radio_button :has_conditions, "false"  -%>
+                  No </label>
+              </div>
+            </div>-->
+          </div>
+        </div>
+
+        <% if @deal.has_conditions? %>
+            <%= f.fields_for :bargin_conditions do |condition| %>
+                <legend>
+                  <h4 class="remove-bold">Deal Conditions for <%= product.name %></h4>
+                </legend>
+                <div class="row">
+                  <div class="span8">
+                    <div class="control-group">
+                      <label class="control-label">Object:</label>
+                      <div class="controls">
+                        <%= condition.select :object, BarginCondition::OBJECTS, required: true, class: 'span1' -%>
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">Operator:</label>
+                      <div class="controls">
+                        <%= condition.select :operator, BarginCondition::OPERATORS.invert, required: true, class: "span1" -%>
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">Operand:</label>
+                      <div class="controls">
+                        <%= condition.text_field :operand, class: "span1" -%>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            <% end -%>
+        <% end %>
+
+        <div class="row">
+          <div class="span8">
+            <div class="control-group">
+              <div class="controls m-top5">
+                <%= f.submit "Update Deal", class: "btn btn-danger" -%>
+                <%= f.submit "Cancel", class: "btn btn-danger m-left5 cancel-deal", "data-form-wrapper-id" => "#edit-deal-form-wrapper-#{product.id}"-%>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     <% end -%>
   </td>
 </tr>
