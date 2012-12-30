@@ -1,24 +1,18 @@
 body{ background:#000000; margin:0px; padding:0px; font-family:"Times New Roman", Times, serif; font-size:15px;}
 
-#wraper{ background:url(background_wraper.jpg); width:960px; margin:0px auto; }
+#wraper{ background:url(background_wraper.jpg); }
 #container{ width:890px; margin:0px auto; }
-#header{width:100%; height:180px; background:url(background_image.png) no-repeat;}
-.main_logo{float:left; width:100%; height:100px; margin-top:20px;}
-.menu{float:left; width:100%; height:35px; margin-top:20px;}
+#header{width:100%; float: left; background:url(background_image.png) no-repeat;}
+.main_logo{ margin-top:20px;}
 .menu ul{list-style-type:none;margin:0px auto;padding:0;overflow:hidden;width:65%;height:25px;}
 .menu li{float:left;}
-.menu a{display:block;padding:0px 20px ;color:#FFFFFF;font-size:23px;border-right:1px solid #000000;text-decoration:none;}
-
+.menu a{display:block;color:#FFFFFF;border-right:1px solid #000000;text-decoration:none;}
+.menu a.last { border: none;}
 .last{ border:0px !important;}
-#container_middle{ background:url(vertical_background.png) repeat-x;  width:98%; border:4px solid #FFF; border-radius:10px;}
-#container_bottom{width:100%; height:190px; background:url(background_image.png) no-repeat; float:left;}
+#content_middle{ color: #FFFFFF; width: 99%; float: left; background: #660303; border-radius:10px;}
+#container_bottom{width: auto; background:url(background_image.png) no-repeat; float:left;}
+#footer ul { width: 80%;}
 #footer{float:left; width:100%; height:150px; margin-top:20px;}
-#footer ul{list-style-type:none;margin:0px auto;padding:0;overflow:hidden;width:50%;}
-#footer li{float:left;}
-#footer a{display:block;padding:0px 10px ;color:#FFFFFF;font-size:13px;border-right:1px solid #FFFFFF;text-decoration:none;}
 a:hover{ text-decoration:underline;}
-.text_div{width:35%; float:left; height:300px; color:#FFFFFF; text-align:center; padding:30px;}
-.text_bottom{width:95%; float:bottom; color:#FFFFFF; text-align:center; padding:30px;}
-.text_right{width:55%; float:right; color:#FFFFFF; margin-top:30px;}
-.slider_video{width:55%; float:right; height:500px; margin-top:30px;}
-.arrow{margin:55px 0px; cursor:pointer;}
+.text_bottom{width:95%;text-align:center; padding:30px;}
+.slider_video { text-align: center;}

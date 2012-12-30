@@ -1,6 +1,6 @@
 MightbuyBusiness::Application.routes.draw do
   devise_for :business_staffs, controllers: {
-    registrations: 'registrations'
+      registrations: 'registrations'
   }
 
   resource :business do
@@ -36,5 +36,5 @@ MightbuyBusiness::Application.routes.draw do
   match "/terms" => "welcome#terms"
   match "/pricing" => "welcome#pricing"
   match "/help" => "welcome#help"
-  
+
 end
