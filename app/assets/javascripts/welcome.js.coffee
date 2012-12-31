@@ -23,7 +23,7 @@ $(->
 $(->
     $('a.introVidRetail').click(->
         $("#intro_vid_retail").hide();
-        $("#intro_vid_retail").html("<iframe title='MightBuy for Business Video' width='467' height='316' src='http://www.youtube.com/embed/oaqDJTnnm5c?autoplay=1' frameborder='0' allowfullscreen ></iframe>");
+        $("#intro_vid_retail").html("<iframe title='MightBuy for Business Video' width='445' height='316' src='http://www.youtube.com/embed/oaqDJTnnm5c?autoplay=1' frameborder='0' allowfullscreen ></iframe>");
         $('a.introVidRetail').hide();
         $("#intro_vid_retail").fadeIn(100);
         
