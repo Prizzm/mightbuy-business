@@ -565,6 +565,10 @@
   .container-middle {
     width: 220px;
     margin: 0 auto;
+    .foot-links {
+      font-size: 10px;
+      a { margin: 0 4px;}
+    }
   }
 
   #content_middle {
@@ -620,7 +624,6 @@
       margin: 0;
     }
     .container.silhouette-bg{
-      background:#650304;
       min-height:auto;
     }
   }
@@ -637,21 +640,24 @@
       margin: 0;
       width: 100%;
       .login-form{
-        padding: 33px 10px;
+        padding: 28px 0  10px 10px;
         h2.logo {
-          font-size: 54px;
+          font-size: 40px;
           span {
-            font-size: 13px;
-            left: 81px;
+            font-size: 14px;
+            left: 88px;
             top: 24px;
           }
         }
+        input { width: 188px;}
       }
       .footer {
         width: 100%;
         padding: 0;
       }
     }
+
+    .form-button, .hr-width { width: 202px !important;}
   }
 
   .signup input[type="text"], .signup input[type="password"], .signup input[type="email"] {
@@ -663,21 +669,9 @@
   .login-form {
     padding: 15px 23px 0 23px;
   }
-  .c-holder-left, .c-holder-right{
-    min-height:15px;
-    height: 15px;
-  }
-  .c-holder-left{
-    padding-left: 0;
-  }
-  a .tiny-font{
-    display:none;
-  }
+
   form{
     margin-bottom:10px;
-  }
-  .btn-yellow.w80 {
-    float: none;
   }
   .row-fluid .span6{
     width:auto;
