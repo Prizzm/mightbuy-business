@@ -176,17 +176,17 @@
       <div class="offerMessage" >
         <h1> Hi <%= @lead_invite.name.titlecase %> </h1>
         <h2> Thank you so much for shopping our <%= @lead_invite.lead.business.name.titlecase %> store.<br><br>
-          Here is a link to the <a href="<%= @lead_invite.lead_url %>" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #d54937">image</a> from your visit to remind you about exactly what you looked at in our store.  The image is easy to share, please do so, ask your friends what they think.  
+          Here is a link to the <a href="<%= @lead_invite.lead_url %>" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #d54937">image</a> from your visit to remind you about exactly what you looked at in our store.  The image is easy to share, please do so, ask your friends what they think.
 
-          <% if @lead_invite.lead.product and @lead_invite.lead.product.bargin -%>
+          <% if @lead_invite.lead.topics.first.product and @lead_invite.lead.topics.first.product.bargin -%>
               <br><br>
-              Also - we are offering MightBuy Special: <%= @lead_invite.lead.product.bargin.offer %>
-			  <% if @lead_invite.lead.product.bargin.has_conditions -%>
-                  when you share and <%= @lead_invite.lead.product.bargin.humanize -%>. Go ahead and ask them!
+              Also - we are offering MightBuy Special: <%= @lead_invite.lead.topics.first.product.bargin.offer %>
+			  <% if @lead_invite.lead.topics.first.product.bargin.has_conditions -%>
+                  when you share and <%= @lead_invite.lead.topics.first.product.bargin.humanize -%>. Go ahead and ask them!
               <% end %>
           <% end %>
           <br/>
-		  <br/> 
+		  <br/>
           If you have any more questions, feel free to contact us. <br>
           <%= replace_variables_helper(@lead_invite.business_staff.email_signature, @lead_invite) %>
           <br>
@@ -216,14 +216,14 @@
       <div class="imageSide">
         <center>
           <br />
-          <p><font color="#6d3939"> <strong><%= @lead_invite.lead.product.name %></strong> </font> &nbsp; &nbsp;
-			
+          <p><font color="#6d3939"> <strong><%= @lead_invite.lead.topics.first.product.name %></strong> </font> &nbsp; &nbsp;
+
 			<!-- REPLACE THIS SECTION with the following logic: if there is product.price, and product.discount, show the full price crossed out and the discount % shown,
-			<% if @lead_invite.lead.product.price -%>
+			<% if @lead_invite.lead.topics.first.product.price -%>
             	<font color="#000000"><del> $899 </del></font> &nbsp;
 			<% end %>
 			-->
-            <font color="#6d3939"><strong> <%= number_to_currency(@lead_invite.lead.product.price) -%> </strong></font> </p>
+            <font color="#6d3939"><strong> <%= number_to_currency(@lead_invite.lead.topics.first.product.price) -%> </strong></font> </p>
         </center>
 
 
@@ -240,15 +240,15 @@
             <li>Get more product information </li>
             <li>Ask your friends opinion</li>
             <li>Buy online</li>
-            <% if @lead_invite.lead.product and @lead_invite.lead.product.bargin -%>
+            <% if @lead_invite.lead.topics.first.product and @lead_invite.lead.topics.first.product.bargin -%>
                   PLUS:</br>
 				  <b>***MIGHTBUY SPECIAL BONUS**** </b><br>
 				   from <%= @lead_invite.lead.business.name %>:
-                  <%= @lead_invite.lead.product.bargin.offer %><br>
-				  
-				   <% if @lead_invite.lead.product.bargin.has_conditions -%>
+                  <%= @lead_invite.lead.topics.first.product.bargin.offer %><br>
+
+				   <% if @lead_invite.lead.topics.first.product.bargin.has_conditions -%>
                      <span style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
-                       Valid when <%= @lead_invite.lead.product.bargin.humanize -%> using MightBuy.
+                       Valid when <%= @lead_invite.lead.topics.first.product.bargin.humanize -%> using MightBuy.
                      </span>
                    <% end %>
 
