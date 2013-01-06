@@ -37,6 +37,14 @@
         </div>
       </div>
     </div>
+    <%- if @business.business_config.include_product_select? -%>
+      <div class="row-fluid">
+        <div class="span12">
+          <%= topic_form.label :product_id, 'Select a Product' -%>
+          <%= topic_form.select :product_id, product_list_helper(@business) -%>
+        </div>
+      </div>
+    <% end %>
     <% end -%>
 
     <div class="row-fluid">
@@ -66,21 +74,6 @@
       </div>
     </div>
     <% end -%>
-
-    <%- if @business.business_config.include_product_select? -%>
-          <div class="row-fluid">
-            <div class="span12">
-              <%= lead_form.label :product_id, 'Select a Product' -%>
-              <%= lead_form.select :product_id, product_list_helper(@business) -%>
-            </div>
-          </div>
-     <% else %>
-        <% if @business.products.count > 0 %>
-          <%= lead_form.hidden_field :product_id, :value=> product_list_helper(@business).first[1]  -%>
-        <% else %>
-          <h1>MUST CONFIGURE PRODUCT!!</h1> <%= link_to('ADD PRODUCT', "/products") -%> 
-        <% end %>
-     <% end %>
 
     <%- if @business.business_config.ask_for_description? %>
     <div class="row-fluid">

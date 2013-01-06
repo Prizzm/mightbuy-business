@@ -1,7 +1,11 @@
 <td><%= lead.created_at.to_date -%></td>
 <td><%= lead.name || "-" -%></td>
 <td><%= lead.email -%></td>
-<td><%= lead.product.try(:name) -%></td>
+<% if lead.product.length > 0 %>
+<td><%= lead.product.map(&:name).join(', ') %></td>
+<% else %>
+<td>No Product</td>
+<% end %>
 <td><%= lead.humanized_status -%></td>
 <td>
   <%= link_to edit_lead_path(lead) do -%>

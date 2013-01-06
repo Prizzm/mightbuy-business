@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121226175926) do
+ActiveRecord::Schema.define(:version => 20130105135523) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -214,8 +214,10 @@ ActiveRecord::Schema.define(:version => 20121226175926) do
   end
 
   create_table "customer_lead_topics", :force => true do |t|
-    t.integer "customer_lead_id"
-    t.integer "topic_id"
+    t.integer  "customer_lead_id"
+    t.integer  "topic_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   add_index "customer_lead_topics", ["customer_lead_id"], :name => "index_customer_lead_topics_on_customer_lead_id"
@@ -225,7 +227,6 @@ ActiveRecord::Schema.define(:version => 20121226175926) do
     t.string   "email"
     t.string   "name"
     t.string   "status",                                               :default => "notsent"
-    t.integer  "product_id"
     t.datetime "created_at",                                                                  :null => false
     t.datetime "updated_at",                                                                  :null => false
     t.integer  "business_id",                                                                 :null => false
