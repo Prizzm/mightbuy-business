@@ -6,7 +6,7 @@
         <%= link_to("Logout", destroy_business_staff_session_path, method: :delete, class: 'btn btn-danger pull-right') -%>
 		<br><br>
          <%= link_to('No Picture', new_retail_lead_path, class: 'btn btn-danger pull-right') -%>
-        
+
         <h1><%= @business.name -%></h1>
       </div>
     </div>
@@ -49,13 +49,7 @@
               <%= lead_form.select :product_id, product_list_helper(@business) -%>
             </div>
           </div>
-	    <% else %>
-	        <% if @business.products.count > 0 %>
-	          <%= lead_form.hidden_field :product_id, :value=> product_list_helper(@business).first[1]  -%>
-	        <% else %>
-	          <h1>MUST CONFIGURE PRODUCT!!</h1> <%= link_to('ADD PRODUCT', "/products") -%> 
-	        <% end %>
-	     <% end %>
+    <% end %>
 
     <%- if @business.business_config.ask_for_description? %>
     <div class="row-fluid">
