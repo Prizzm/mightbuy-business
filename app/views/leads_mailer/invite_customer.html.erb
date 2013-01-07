@@ -187,12 +187,12 @@
           <br/>
 		  <br/>
           If you have any more questions, feel free to contact us. <br>
-          <%= replace_variables_helper(@lead_invite.business_staff.email_signature, @lead_invite) %>
           <br>
           <% if not @lead_invite.message.empty? %>
               <%= @lead_invite.message %>
               <br>
           <% end %>
+		  <%= replace_variables_helper(@lead_invite.business_staff.email_signature, @lead_invite) %>
           <br />
           Phone: <%= @lead_invite.business_phone -%>
           <br />
