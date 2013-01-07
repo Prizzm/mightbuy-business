@@ -174,8 +174,7 @@
 
     <div class="emailBody" >
       <div class="offerMessage" >
-        <h1> Hi <%= @lead_invite.name.titlecase %> </h1>
-        <h2> Thank you so much for shopping our <%= @lead_invite.lead.business.name.titlecase %> store.<br><br>
+        <h2> Thank you for shopping our <%= @lead_invite.lead.business.name.titlecase %> store.<br><br>
           Here is a link to the <a href="<%= @lead_invite.lead_url %>" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #d54937">image</a> from your visit to remind you about exactly what you looked at in our store.  The image is easy to share, please do so, ask your friends what they think.
 
           <% if @lead_invite.lead.topics.first.product and @lead_invite.lead.topics.first.product.bargin -%>
@@ -202,13 +201,17 @@
           Web: <a href="<%= @lead_invite.business.business_urls.first.domain%>"><%= @lead_invite.lead.business.name %></a>
         </h2>
 
-        <center>
+        <!-- center>
           <a href="<%= @lead_invite.lead_url %>" target="_blank"><img src="http://www.ryanloper.com/mightbuyemail/buttonLarge.png"/></a>
-        </center>
+        </center -->
 
-
+		 
         <div class="poweredBy" >
-          <h5>Powered By: <a href="http://www.mightbuy.it" target="_blank">MightBuy</a></h5>
+          	<br>
+			<br>
+			<br>
+			<br>    
+			<h5>Powered By: <a href="http://www.mightbuy.it" target="_blank">MightBuy</a></h5>
         </div>
       </div>
 

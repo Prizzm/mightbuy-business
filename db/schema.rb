@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130106222009) do
+ActiveRecord::Schema.define(:version => 20130107000941) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(:version => 20130106222009) do
     t.string   "payment_type",                                  :default => "MightBuy"
     t.boolean  "public"
     t.boolean  "has_conditions"
-    t.text     "other"
+    t.string   "other"
   end
 
   create_table "beta_signups", :force => true do |t|
@@ -215,10 +215,8 @@ ActiveRecord::Schema.define(:version => 20130106222009) do
   end
 
   create_table "customer_lead_topics", :force => true do |t|
-    t.integer  "customer_lead_id"
-    t.integer  "topic_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.integer "customer_lead_id"
+    t.integer "topic_id"
   end
 
   add_index "customer_lead_topics", ["customer_lead_id"], :name => "index_customer_lead_topics_on_customer_lead_id"
