@@ -192,6 +192,7 @@
               <%= @lead_invite.message %>
               <br>
           <% end %>
+		  <br>
 		  <%= replace_variables_helper(@lead_invite.business_staff.email_signature, @lead_invite) %>
           <br />
           Phone: <%= @lead_invite.business_phone -%>
