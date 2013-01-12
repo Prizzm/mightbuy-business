@@ -13,43 +13,44 @@
     <%= hidden_field_tag "send_email", 0 -%>
 
     <%= lead_form.fields_for :topics do |topic_form| %>
-    <div class="row-fluid">
-      <div class="span12">
-        <div class="well">
-          <table border="0" cellpadding="0" cellspacing="0" width="100%">
-            <tr>
-              <td id="lead-photo-preview" valign="center" class="picture">
-                &nbsp;
-              </td>
-            </tr>
-          </table>
-          <br/>
+	    <div class="row-fluid">
+	      <div class="span12">
+	        <div class="well">
+	          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+	            <tr>
+	              <td id="lead-photo-preview" valign="center" class="picture">
+	                &nbsp;
+	              </td>
+	            </tr>
+	          </table>
+	          <br/>
 
-          <div class="clearfix">
-            <div class="row-fluid">
-              <div class="span3 hidden-phone">&nbsp;</div>
-              <div class="span6 photo-upload">
-                <input id="filename" type="text" class="input disabled pull-left visible-desktop" name="filename" readonly>
-                <a id="fileselectbutton" class="btn btn-danger pull-left">Take Pic</a>
-                <%= topic_form.file_field :image, class: 'preview-photo-upload' %>
-                <%= topic_form.hidden_field :retained_image %>
-              </div>
-              <div class="span3 hidden-phone">&nbsp;</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+	          <div class="clearfix">
+	            <div class="row-fluid">
+	              <div class="span3 hidden-phone">&nbsp;</div>
+	              <div class="span6 photo-upload">
+	                <input id="filename" type="text" class="input disabled pull-left visible-desktop" name="filename" readonly>
+	                <a id="fileselectbutton" class="btn btn-danger pull-left">Take Pic</a>
+	                <%= topic_form.file_field :image, class: 'preview-photo-upload' %>
+	                <%= topic_form.hidden_field :retained_image %>
+	              </div>
+	              <div class="span3 hidden-phone">&nbsp;</div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+    
+
+	    <%- if @business.business_config.include_product_select? -%>
+	          <div class="row-fluid">
+	            <div class="span12">
+	              <%= topic_form.label :product_id, 'Select a Product' -%>
+	              <%= topic_form.select :product_id, product_list_helper(@business) -%>
+	            </div>
+	          </div>
+	    <% end %>
     <% end -%>
-
-    <%- if @business.business_config.include_product_select? -%>
-          <div class="row-fluid">
-            <div class="span12">
-              <%= lead_form.label :product_id, 'Select a Product' -%>
-              <%= lead_form.select :product_id, product_list_helper(@business) -%>
-            </div>
-          </div>
-    <% end %>
 
     <%- if @business.business_config.ask_for_description? %>
     <div class="row-fluid">
