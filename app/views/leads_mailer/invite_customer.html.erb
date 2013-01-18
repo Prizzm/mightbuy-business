@@ -74,7 +74,7 @@
           height: auto;
           width: 100%;
           float: left;
-          background: #E6DFD6;
+          background: #EFEFEF;
       }
 
       h1 {
@@ -105,11 +105,11 @@
       }
 
       .heading {
-          background: #6B393D;
+          background: #B4D8E7;
           line-height: 75px;
           float: left;
           width: 100%;
-          border-bottom: 18px solid #572E32;
+          border-bottom: 18px solid #999999;
       }
 
       .businessName {
@@ -153,7 +153,7 @@
   <div class="content" style=" width:665px;">
 
     <div class="heading" >
-      <div class="businessName"><p><%= @lead_invite.lead.business.name.titlecase %></p></div>
+      <div class="businessName"><p><%= @lead_invite.lead.business.name %></p></div>
       <div class="social">
 
         <% if !@lead_invite.lead.business.twitter_handle.blank? %>
@@ -174,8 +174,8 @@
 
     <div class="emailBody" >
       <div class="offerMessage" >
-        <h2> Thank you for shopping our <%= @lead_invite.lead.business.name.titlecase %> store.<br><br>
-          Here is a link to the <a href="<%= @lead_invite.lead_url %>" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #d54937">image</a> from your visit to remind you about exactly what you looked at in our store.  The image is easy to share, please do so, ask your friends what they think.
+        <h2> Thank you for shopping our <%= @lead_invite.lead.business.name %> store.<br><br>
+          Here is a link to the <a href="<%= @lead_invite.lead_url %>" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #d54937">image</a> from your visit to remind you about exactly what you looked at in our store.  The image is easy to share.  Please share and ask your friends what they think.
 
           <% if @lead_invite.lead.topics.first.product and @lead_invite.lead.topics.first.product.bargin -%>
               <br><br>
